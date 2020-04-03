@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	var btnOk = document.getElementById("btnOk");
+	btnOk.addEventListener("click", aaFunc);
+	}
+	
+	function aaFunc(){
+		if(frm.name.value === ""){
+			frm.name.focus();
+			alert("이름 입력");
+			return;
+		}
+		
+		frm.submit();
+	}
+</script>
+</head>
+<body>
+<h2>get test</h2>
+<form action="GetServlet" method="get" name="frm">
+이름 : <input type="text" name="name" value="이지운"><br>
+나이 : <input type="text" name="age" value="26"><br>
+주소 : <input type="text" name="addr" size="50" value="청라동 131"><br>
+<br>
+<input type="button" id="btnOk" value="자료전송">
+<input type="reset" id="btnClear" value="자료정리">
+ </form>
+</body>
+</html>

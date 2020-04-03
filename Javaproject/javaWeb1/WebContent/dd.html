@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name='author' content='문자열'>
+<!--  
+<meta http-equiv='refresh' content='5; url=aa.html'>
+-->
+<title>DD에용</title>
+</head>
+<body>
+	자료 입력 양식
+	<br>
+	<form action='hello.jsp' method='post'>
+		이름 : <input type='text' name='irum' size='20' value='tom' maxlength='10'><br>
+		나이 : <input type='text' name='nai'><br>
+		비밀 번호 : <input type='password' name='pwd'><br>
+		수다 떨기 : <textarea rows="5" cols="50" name='suda'></textarea><br>
+		사진 선택 : <input type='file' name='fname'><br> 
+		성별 : 
+		<input type='radio' name='gender' value='m' checked='checked'>남자&nbsp;&nbsp;
+		<input type='radio' name='gender' value='f' checked='checked'>여자<br>
+		수업 과목 :
+		<input type='checkbox' name='kwa' value='c'>C언어&nbsp;&nbsp;
+		<input type='checkbox' name='kwa' value='java'>자바&nbsp;&nbsp;
+		<input type='checkbox' name='kwa' value='python'>파이썬<br>
+		거주지 :
+		<select name='site'>
+			<option value='k'>강남구</option>
+			<option value='s'>서초구</option>
+			<option value='y'>용산구</option>
+		</select><br><br><br>
+		숨김 : <input type='hidden' name='hi' value='korea'>
+		
+		<br>
+		<input type='submit' value='서버로 전송'>
+		<input type='reset' value='입력 취소'>
+		</form>
+</body>
+</html>
+.

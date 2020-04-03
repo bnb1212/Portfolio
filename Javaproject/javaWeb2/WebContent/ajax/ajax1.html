@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btnOk").onclick = function() {
+			startXhr();
+		}
+	}
+
+	//AJAX 처리
+	var xhr;
+	function createXhr() {
+		// x(cross) browsing
+		if (window.ActiveXObject) {
+			xhr = new ActiveXObject("Msxml2.XMLHTTP"); // IE8 이하
+		} else if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		}
+
+	}
+
+	function startXhr() {
+		createXhr();
+		// alert(xhr);
+		xhr.open('get', 'a1_aa.txt', true);
+		// 세번째 bool 매개변수는 반응을 기다리느냐(동기, false), 기다리지 않느냐(비동기, true);
+
+		xhr.onreadystatechange = function() {
+			// alert(xhr.readyState);
+			if (xhr.readyState == 4) {
+				//alert("통신상태 양호");
+				// alert(xhr.status);
+				if (xhr.status == 200) {
+					//alert("요청 성공(Ajax 정상 처리 기대)")
+					process();
+				} else {
+					alert("통신요청 실패" + xhr.status);
+				}
+			}
+		}
+		xhr.send(null);
+	}
+	function process() {
+		var data = xhr.responseText;
+		//document.getElementById("disp").innerText = data;
+		var my = document.createTextNode(data);
+		document.getElementById("disp").appendChild(my);
+	}
+</script>
+<body>
+	AJAX 연습
+	<br>
+	<button id='btnOk'>가자가자</button>
+	<br>
+	<div id="disp"></div>
+</body>
+</html>

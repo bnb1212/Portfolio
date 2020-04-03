@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btnOk").onclick = function() {
+			frm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><img src="images/aa.jpg"></td>
+			<td><pre>
+배송비 2,000원
+판매가 55,000원
+무료배송
+			</pre></td>
+		</tr>
+		<td colspan="2">
+			<form action="Cart" name="frm" method="post">
+				<input type="hidden" name="name" value="Epic7_v1"> <input
+					type="hidden" name="price" value="55000"> <input
+					type="button" id="btnOk" value="장바구니에 물건 담기"> <input
+					type="button" id="btnCancel" value="홈으로" onclick="history.back()">
+			</form>
+		<tr>
+
+		</tr>
+	</table>
+</body>
+</html>

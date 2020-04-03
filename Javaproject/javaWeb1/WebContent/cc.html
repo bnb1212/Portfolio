@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table</title>
+</head>
+<body>
+	표(table tag)연습
+	<br>
+	<table border="1">
+		<!--  border 1 초과는 권장하지 않음 -->
+		<tr>
+			<th>번호</th>
+			<th width="150">이름></th>
+			<th>주소</th>
+		</tr>
+		<tr>
+			<td>번호</td>
+			<td style="text-align: center;"><b>이름</b></td>
+			<td>주소</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>tom</td>
+			<td>역삼1동</td>
+		</tr>
+
+		<tr>
+			<td>2</td>
+			<td>tom</td>
+			<td>역삼1동</td>
+		</tr>
+	</table>
+	<br>
+	<table border="1" width="300" background="images/back.png">
+		<caption>상품자료</caption>
+		<tr bgcolor="yellow">
+			<td width="120" height="50" bgcolor="red">상품명</td>
+			<td>수량</td>
+			<td>단가</td>
+		</tr>
+		<tr>
+			<td>컴퓨터</td>
+			<td>12</td>
+			<td>56000</td>
+		</tr>
+
+	</table>
+	<br>
+	<table border="1">
+		<tr>
+			<td>번호</td>
+			<td width="150"'>이름</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td height='100'>
+				<table border="1">
+					<tr>
+						<td>별명</td>
+						<td>본명</td>
+						<td>나이</td>
+					</tr>
+					<tr>
+						<td>tom</td>
+						<td>james</td>
+						<td>22</td>
+					</tr>
+					<tr>
+						<td>길동</td>
+						<td>김밥</td>
+						<td>32</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table border="1">
+		<tr>
+			<td colspan='2'>a</td>
+			<td>b</td>
+			<td rowspan='2'>c</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>e</td>
+			<td>f</td>
+		</tr>
+	</table>
+	<br>
+	<table border='1'>
+		<tr>
+			<td rowspan='2'>1</td>
+			<td colspan='2'>2</td>
+			<td rowspan='2'>3</td>
+		</tr>
+		<tr>
+			<td colspan='2'>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td rowspan='2'>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td colspan='2'>10</td>
+		</tr>
+	</table>
+	<br>
+	<p> iframe tag 연습: 한 개의 frame은 html문 하나를 표현함</p>
+	<iframe src="bb.html" width="80%" height="300" name="star"></iframe>
+	<br> 어쩌구 저쩌구
+	<br>
+	<a href='aa.html' target='star'>aa 문서 읽기</a>
+	<br> ** 이미지 맵 **
+	<br>
+	<img src="images/냥이.jpg" usemap='#cat' />
+	<map name='cat'>
+		<area shape='rect' coords='0,0,100,100' href='http://www.dcinside.com'>
+	</map>
+
+</body>
+</html>

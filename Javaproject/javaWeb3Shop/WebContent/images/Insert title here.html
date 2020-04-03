@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://localhost/javaWeb5etc/eltest.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Insert title here</title>
+</head>
+<body>
+	EL 연습 : 연산자, 내장 객체
+	<br> --- 연산자 사용
+	<br> ${3+4} --&gt; 7
+	<br>${5/4}--&gt;1.25, <!-- 이거 에러 아님  1.25<br> --> 
+	<br>${5 / 0 } --&gt; Infinity
+	<br>${5 % 4} --&gt; 1
+	<!-- 여기서부터는 논리 연산 -->
+	<br><br>
+	${5 &gt;= 4} --&gt; true
+	<br>${5 le 4} --&gt; false<br>
+	<br>${5 &gt; 4 and 3 gt 2 } --&gt; true
+	<br>${5 &gt; 4?10:20 * 2 } --&gt; 10
+	<br>
+	---- 내장 객체 사용-----
+	<br>
+	
+	air &nbsp; air<br>
+	book &nbsp; book<br>
+	cat &nbsp; cat<br>
+	<br>
+	jsp의 내장 객체 : localhost
+	<br>EL의 내장 객체 : localhost, localhost 
+	
+</body></html>

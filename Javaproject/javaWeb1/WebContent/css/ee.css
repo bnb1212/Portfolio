@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* 이거 주석 */
+#i2 {
+	background-color: yellow;
+	color: red;
+	font-size: 24px;
+}
+
+table {
+	width: 70%;
+	margin-bottom: 10px
+}
+
+table tr td {
+	padding: 5px 10px;
+	border-top: 1px solid #EB3300;
+	border-bottom: 1px dashed #5576D1;
+}
+
+input {
+	border: 5px double rgb(255, 255, 0);
+	background-color: #FFB3AB
+}
+
+input.btnOk {
+	border: 1px solid #94A9CB;
+	background-color: #FFB25B;
+}
+
+/*동적 선택자 */
+input:focus {
+	background-color: #E3C8D8
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	color: red
+}
+
+a:active {
+	color: yellow;
+	font-family: 궁서;
+}
+
+a:hover {
+	color: cyan;
+	font-size: 30px;
+}
+
+i, strong {
+	color: #7C2855;
+}
+
+b {
+	font-size: 8px;
+}
+/* 공백 : 하위 어디든 */
+div b {
+	font-size: 16px;
+}
+/* 부등호 : div 바로 아래 위치한 태그만 */
+div>b {
+	font-size: 24px;
+}
+
+div span b {
+	font-size: 32px;
+}
+
+div b#hi {
+	font-size: 40px;
+}
+
+div b.hi {
+	font-size: 48px;
+}
+
+div#pic{
+	height: 500px;
+	background-image: url('../images/댕댕이.jpg')
+}
+

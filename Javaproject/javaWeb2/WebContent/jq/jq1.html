@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.korea{font-size:50px};
+</style>
+<!-- jquery lib 설치 방법1 -->
+<!-- 
+<script src="../js/jquery.js"></script>
+-->
+<!--  jquery lib 설치방법 2 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+-->
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+	//window.onload = function(){};
+
+	//jQuery(document).ready(function(){
+	$(document).ready(function() {
+		alert("a");
+		$("*").css("border", "1px solid #ff0000");
+		$('span').css("border", "3px dotted blue");
+		$('#content').css("background-color", "cyan");
+		$('.my').css("border", "5px solid yellow");
+		$('i>.my').css("color", "red")
+	});
+	
+	$(function(){
+		$(".kor").css("color", "green").addClass("korea");
+	});
+</script>
+</head>
+<body>
+	<h2>jQuery 연습</h2>
+	<p class="my">화창한 날씨</p>
+	<div>
+		<div id="content">공기도 매우 좋음</div>
+	</div>
+	<b>점심을 먹으니 나른해요우</b>
+	<span>강남 거리</span>
+	<i><span class="my">시원한 바람</span></i>
+	<br>
+	<b class="kor">대한민국 만세</b>
+</body>
+</html>

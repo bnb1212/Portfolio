@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+	<select id="selectDataAll" resultType="dto">
+		select * from jikwon where jikwon_jik in ("대리","과장")
+	</select>
+
+
+	<select id="selectDataPart" resultType="dto">
+		select jikwon_jik, count(jikwon_jik) as jikwon_count, sum(jikwon_pay) as pay_sum, avg(jikwon_pay) as pay_avg from jikwon group by jikwon_jik
+	</select>
+</mapper>

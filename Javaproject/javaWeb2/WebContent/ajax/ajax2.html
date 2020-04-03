@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btnXml").onclick = function() {
+			startXhr1();
+		}
+
+		document.getElementById("btnJson").onclick = function() {
+			startXhr2();
+		}
+		
+		document.getElementById("btnJson2").onclick = function() {
+			startXhr2_1();
+		}
+	}
+
+	//AJAX 처리
+	var xhr;
+
+	function startXhr1() {
+		xhr = new XMLHttpRequest();
+		xhr.open('get', 'a2_aa.xml', true);
+
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					processXml();
+				} else {
+					alert("통신요청 실패" + xhr.status);
+				}
+			}
+		}
+		xhr.send(null);
+	}
+
+	function startXhr2() {
+		xhr = new XMLHttpRequest();
+		xhr.open('get', 'a2_bb.json', true);
+
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					processJson();
+				} else {
+					alert("통신요청 실패" + xhr.status);
+				}
+			}
+		}
+		xhr.send(null);
+	}
+
+
+	function startXhr2_1() {
+		xhr = new XMLHttpRequest();
+		xhr.open('get', "http://openapi.seoul.go.kr:8088/sample/json/SeoulLibraryTime/1/5/", true);
+		// 다른 웹서버의 Json, XML같은 경우 보안정책에 의해 기본적으로 읽지 못하게 되어있으나, 위의 경우 공공의 목적(서울도서관)을 위해 풀어두어서 읽을수 있음
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					processJson2();
+				} else {
+					alert("통신요청 실패" + xhr.status);
+				}
+			}
+		}
+		xhr.send(null);
+	}
+	
+	function processXml() {
+		//alert('a');
+		// var data = xhr.responseText; // 텍스트 형식으로 읽기 - DOM 사용 불가
+		// document.getElementById("dispXml").innerText = data;
+
+		var data = xhr.responseXML; // Xml 객체 형식으로 읽기 - DOM 사용rksmd
+		var itemNode = data.getElementsByTagName("item");
+		var codeNode = data.getElementsByTagName("code");
+		var sangNode = data.getElementsByTagName("sang");
+
+		var str = "";
+		for (var i = 0; i < itemNode.length; i++) {
+			str += codeNode[i].firstChild.nodeValue + " ";
+			str += sangNode[i].childNodes[0].nodeValue + " ";
+			str += codeNode[i].getAttribute("price");
+			str += "<br>";
+		}
+		document.getElementById("dispXml").innerHTML = str;
+	}
+
+	function processJson() {
+		var data = xhr.responseText; // XML 이외의 데이터 읽기
+		// document.getElementById("dispJson").innerHTML = data;
+		var parseData = JSON.parse(data);
+		//document.getElementById("dispJson").innerHTML = parseData;
+
+		str = "";
+		for (var i = 0; i < parseData.item.length; i++) {
+			str += parseData.item[i].code + " "
+					+ parseData.item[i].sang
+					+ "<br>";
+		}
+		document.getElementById("dispJson").innerHTML = str;
+	}
+	
+	function processJson2(){
+		var data = xhr.responseText;
+		var parseData = JSON.parse(data);
+		var str = "<table border='1'>";
+		for(var i=0; i < parseData.SeoulLibraryTime.row.length;i++){
+			str += "<tr><td>" + parseData.SeoulLibraryTime.row[i].LBRRY_NAME +"</td>";
+			str += "<td>" + parseData.SeoulLibraryTime.row[i].ADRES +"</td>";
+			str += "<td>" + parseData.SeoulLibraryTime.row[i].TEL_NO +"</td></tr>";
+		}
+		str += "</table>";
+		document.getElementById("dispJson2").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	AJAX 연습
+	<br>
+	<button id='btnXml'>XML 읽기</button>
+	<br>
+	<div id="dispXml"></div>
+	<hr>
+	<button id='btnJson'>JSON 읽기</button>
+	<br>
+	<div id="dispJson"></div>
+	<hr>
+	<button id='btnJson2'>JSON 읽기2</button>
+	<br>
+	<div id="dispJson2"></div>
+
+</body>
+</html>
