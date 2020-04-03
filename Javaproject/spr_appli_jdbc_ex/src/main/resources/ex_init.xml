@@ -9,10 +9,6 @@
 
 
 	<!-- <bean id="dataSource" class="pack.DbDataSource" />-->
-	 <bean id="jikwonImpl" class="pack.JikwonImpl">
-		<property name="dataSource" ref="dbSource" />
-	</bean>
-	
 	
 	
 	

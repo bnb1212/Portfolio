@@ -17,13 +17,17 @@ public class LoginAspect {
 	
 	@Around("execution(public void dataList())")
 	public Object trace(ProceedingJoinPoint joinPoint) throws Throwable{
+		jikwoninter.initList();
 		System.out.println("AOP로 로긴");
+		
 		System.out.println("사번 : ");
 		Scanner scanner = new Scanner(System.in);
 		String no = scanner.nextLine();
 		System.out.println("이름 : ");
 		String name = scanner.nextLine();
-		for(JikwonDto s:jikwoninter.selectList()) {
+		
+		
+		for(JikwonDto s:jikwoninter.getList()) {
 			if(no.equals(s.getJikwon_no()) && name.equals(s.getJikwon_name())) {
 				System.out.println("로그인 성공");
 				Object object = joinPoint.proceed();

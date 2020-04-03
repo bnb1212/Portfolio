@@ -2,8 +2,12 @@ package pack;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.dao.DataAccessException;
 
 public interface JikwonInter {
-	List<JikwonDto> selectList() throws DataAccessException;
+	void initList() throws DataAccessException;
+	List<JikwonDto> getList();
 }
+
