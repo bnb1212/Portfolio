@@ -22,7 +22,6 @@
 	<bean id="dataSource" class="pack.DbDataSource"/>
 	<bean id="sangpumImpl" class="pack.SangpumImpl">
 		<property name="dataSource" ref="dataSource" />
-
 	</bean>
 	<bean id="businessImpl" class="pack.BusinessImpl">
 		<property name="sangpumInter" ref="sangpumImpl"/>

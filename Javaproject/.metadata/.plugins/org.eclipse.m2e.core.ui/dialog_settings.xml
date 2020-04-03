@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\work\Portfolio\spr_appli_aop1"/>
 			<item value="C:\work\jsou\spr_appli_di_anno\src\main\resources\anno2.xml"/>
 			<item value="C:\work\jsou\spr_sppli_di_arrange\src\main\java\pack\Main2.java"/>
 			<item value="C:\work\jsou\spr_appli_di\src\main\resources\ex_init.xml"/>
@@ -49,17 +50,11 @@
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
 			<item value="aa.bb.cc"/>
-			<item value="aaa"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="spr_appli_aop1"/>
-			<item value="spr_appli_di_anno"/>
-			<item value="spr_sppli_di_arrange"/>
-			<item value="spr_appli_di"/>
-			<item value="spr_appli_maven"/>
-			<item value="javapro4_maven"/>
+			<item value="spr_appli_jdbc_ex"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

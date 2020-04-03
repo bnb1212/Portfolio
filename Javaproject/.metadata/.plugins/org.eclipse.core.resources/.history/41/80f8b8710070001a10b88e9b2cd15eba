@@ -1,8 +1,0 @@
-package pack.equip;
-
-public class EquipDto {
-	private int equip_no;
-	private String equip_name, equip_stock, equip_info, equip_image;
-	
-	
-}

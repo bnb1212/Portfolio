@@ -1300,3 +1300,45 @@ java.lang.ClassFormatError: Duplicate method name "setDataSource" with signature
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:06:35.022
 !MESSAGE executing callback sts4.classpath.YoHqLDZL SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.852
+!MESSAGE Preparing classpath changed notification javapro3
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.856
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.860
+!MESSAGE classpath=3 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.863
+!MESSAGE buffering callback sts4.classpath.YoHqLDZL javapro3 false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.867
+!MESSAGE Preparing classpath changed notification javapro4_normal
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.870
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.874
+!MESSAGE classpath=4 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.877
+!MESSAGE buffering callback sts4.classpath.YoHqLDZL javapro4_normal false 3
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.880
+!MESSAGE executing callback sts4.classpath.YoHqLDZL 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:46.894
+!MESSAGE executing callback sts4.classpath.YoHqLDZL SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:48.723
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.YoHqLDZL
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:48.727
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.YoHqLDZL
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:48.731
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-03 17:54:48.735
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.YoHqLDZL => OK

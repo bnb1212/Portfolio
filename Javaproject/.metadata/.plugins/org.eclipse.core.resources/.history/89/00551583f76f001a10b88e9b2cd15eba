@@ -1,6 +1,0 @@
-@charset "UTF-8";
-figure{
-	width:250px;
-	height:300px;
-	margin: 100px;
-}
