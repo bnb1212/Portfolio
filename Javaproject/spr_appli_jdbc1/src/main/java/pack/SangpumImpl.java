@@ -10,7 +10,9 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 public class SangpumImpl extends JdbcDaoSupport implements SangpumInter {
-	public SangpumImpl() {
+	
+	
+	public SangpumImpl(){
 
 	}
 
