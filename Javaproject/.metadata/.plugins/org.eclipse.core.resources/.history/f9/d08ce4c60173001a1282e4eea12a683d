@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+body {
+	background-color: #D9D5D2;
+}
+
+.headtop {
+	display: grid;
+	width: 1500px;
+	grid-template-columns: auto auto;
+}
+
+div.admin_button {
+	text-align: right;
+	padding: 8px;
+	padding-top: 12px;
+}
+
+.currentPage {
+	background-color: #A6243C;
+	width: 1500px;
+	height: 100px;
+}
+
+.incurrentPage {
+	background-color: #F2A341;
+	transform: translate(0%, 10%);
+	width: 1500px;
+	height: 80px;
+	width: 100%;
+	color: #260101;
+	text-indent: 1em;
+	font-size: 35px;
+}
+
+.headline {
+	padding: 15px;
+}
+
+nav ul {
+	list-style-type: none;
+	color: #260101;
+	font-family: 'Do Hyeon';
+	font-size: 26px;
+	line-height: 1;
+	margin: 0;
+	padding: 10px;
+	background-color: #FDD692;
+}
+
+nav li {
+	line-height: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-indent: 1em;
+}
+
+nav li a {
+	color: #260101;
+	display: block;
+	text-decoration: none;
+}
+
+nav li.active {
+	background-color: #FC913A;
+	color: white;
+}
+
+nav li a:hover:not (.active ){
+	background-color: #555;
+	color: white;
+}
+
+nav#menu {
+	width: 200px;
+	height: 743px;
+	float: left;
+	background-color: #A6243C;
+	border-right: 5px solid #A6243C;
+}
+
+main {
+	width: 100%;
+	height: 720px;
+	background-color: #FFFFF5;
+	padding: 10px;
+	border-bottom: 3px solid #A6243C;
+	border-right: 3px solid #A6243C;
+}
+
+div#body_wrap {
+	display: grid;
+	grid-template-columns: 205px auto;
+}
+
+div.equip_table {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.equip_table table {
+	width: 800px;
+	border: 1px solid #A6243C;
+
+}
+
+.guest_table {
+	width: 1250px;
+	border: 1px solid #A6243C;
+}
+
+div.add_table {
+	width: 400px;
+	height: 200px;
+	float: right;
+}
+
+th.check {
+	border-right: 1px solid #A6243C;
+	width: 50px;
+}
+
+th.name {
+	border-right: 1px solid #A6243C;
+	width: 500px;
+}
+
+th.stock {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+
+th.image {
+	width: 200px;
+}
+
+th.guest_no {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+th.guest_name {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+th.guest_id {
+	border-right: 1px solid #A6243C;
+	width: 150px;
+}
+
+th.guest_grade {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+
+th.guest_gen {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+
+th.guest_addr {
+	border-right: 1px solid #A6243C;
+	width: 250px;
+}
+
+th.guest_birth {
+	border-right: 1px solid #A6243C;
+	width: 150px;
+}
+th.stock {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+th.stock {
+	border-right: 1px solid #A6243C;
+	width: 100px;
+}
+th.guest_tel {
+		border-right: 1px solid #A6243C;
+	width: 200px;
+}
+
+
+td a {
+	text-decoration: none;
+}
+
+tr.create_row td {
+	border-top: 1px solid #A6243C;
+	border-right: 1px solid #A6243C;
+}
+
+td.tel {
+	font-size: 12px;
+}
+
+td.buttons {
+	padding-right: 10px;
+	border-top: 1px solid #A6243C;
+}
+
+td.buttons ul {
+	list-style: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+}
+
+td.buttons li {
+	float: right;
+	font-size: 30px;
+	margin-right: 10px;
+}
+
+td.buttons li a:hover {
+	background-color: #555;
+	color: white;
+}
+
+table.ins_equip {
+	width: 450px;
+}

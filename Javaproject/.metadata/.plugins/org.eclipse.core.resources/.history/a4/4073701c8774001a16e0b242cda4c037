@@ -1,0 +1,25 @@
+package other;
+
+public class OutFileInterImpl implements OutFileInter{
+	private String filePath;
+	
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	
+	@Override
+	public void outFile(String msg) {
+		// TODO Auto-generated method stub
+		try {
+			
+		} catch(Exception e) {
+			System.out.println("outfile err: " + e);
+		}
+	}
+
+	@Override
+	public void etc() {
+		// TODO Auto-generated method stub
+		
+	}
+}

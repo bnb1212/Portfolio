@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<%request.setCharacterEncoding("utf-8"); %>
+<jsp:useBean id="admin" class="pack.admin.AdminDto" />
+<jsp:useBean id="adminLoginProc" class="pack.admin.AdminLoginProc" />
+<%
+	boolean b = Process.adminLogin("admin", "123");
+
+	if (b) {
+		response.sendRedirect("admin_index.jsp");
+	} else {
+		response.sendRedirect("fail.jsp");
+	}
+%>

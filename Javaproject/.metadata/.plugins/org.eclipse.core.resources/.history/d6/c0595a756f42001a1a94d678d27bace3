@@ -1,0 +1,18 @@
+package aa.bb.pack4;
+
+import java.util.Scanner;
+
+public class MachineUse {
+	
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("동전을 입력하세요 : ");
+		Machine machine = new Machine(sc.nextInt()); // 기계에 동전을 넣음
+		System.out.println("몇 잔을 원하세요 : ");
+		machine.setCupCount(sc.nextInt()); // 잔 설정
+		
+		machine.showData();
+	}
+}

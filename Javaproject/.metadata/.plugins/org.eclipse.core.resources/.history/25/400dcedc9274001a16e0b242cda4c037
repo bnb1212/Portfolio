@@ -1,0 +1,10 @@
+package pack.auto;
+
+public class Main {
+	
+	
+	public static void main(String[] args){
+		String[] metas = new String[] {"anno2.xml"};
+		
+		}
+}

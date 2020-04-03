@@ -1,0 +1,9 @@
+package pack.admin;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import pack.mybatis.SqlMapConfig;
+
+public class AdminLoginProc {
+	private SqlSessionFactory factory = SqlMapConfig.getSqlSession();
+}

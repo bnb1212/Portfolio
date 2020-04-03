@@ -1,0 +1,9 @@
+package javapro4_normal;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.JDialog;
+
+public class DBTest9ExLogin extends JDialog implements ActionListener{
+
+}

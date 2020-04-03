@@ -1,0 +1,10 @@
+package pack;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Config {
+	public class Config { // arrange.xml 대신 클래스에 어노테이션을 적용
+		
+	}
+}

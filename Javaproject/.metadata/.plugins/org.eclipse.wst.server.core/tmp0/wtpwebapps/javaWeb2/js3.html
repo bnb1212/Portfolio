@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+tr.jjak {
+	background-color: #FAE053;
+}
+</style>
+</head>
+<body>
+	조건판단문 if
+	<br>
+	<script type='text/javascript'>
+		var su = prompt("숫자 입력 : ");
+
+		if (su % 2 === 0) {
+			document.write("짝수");
+			document.write("<br>짝");
+
+		} else
+			document.write("홀수");
+	</script>
+	<br> 조건판단문 switch
+	<br>
+	<script type='text/javascript'>
+		var hak = 'b';
+		switch (hak.toUpperCase()) {
+		case "A":
+			document.write("매우 우수");
+			document.write(hak);
+			break;
+		case "B":
+		case "C":
+			document.write("우수");
+			break;
+		default:
+			document.write("기타");
+		}
+	</script>
+	<br> 반복 for
+	<br>
+	<script type='text/javascript'>
+		for (a = 1; a <= 5; a++) {
+			document.write("a: " + a + "<br>");
+		}
+		document.write("반복문 수행 후 a: " + a + "<br>");
+		document.write("<br>");
+
+		for (a = 1; a <= 10; a++) {
+			if (a === 3)
+				continue;
+			document.write("a: " + a + " ");
+			if (a === 5)
+				break;
+		}
+	</script>
+	<br>
+	<script type='text/javascript'>
+		//문 ) 2 ~ 9 까지의 구구단 출력 단 별로 <tr>을 사용. 짝수단은 tr 배경색은 노랑
+		document.write("<br>문제를 풀어보자<br>")
+		document.write("<table border='1'><tr class='jjak'>");
+		for (i = 2; i <= 9; i++) {
+			for (j = 1; j <= 9; j++) {
+				document.write("<td>")
+				document.write(i + " * " + j + " = " + i * j);
+				document.write("</td>")
+			}
+			if (i % 2 === 1) {
+				document.write("</tr><tr class='jjak'>");
+			} else {
+				document.write("</tr><tr>");
+			}
+		}
+		document.write("</tr></table>");
+	</script>
+	<br> 반복문 while
+	<br>
+	<script type='text/javascript'>
+		var a = 0;
+		while (a <= 5) {
+			a++;
+			document.write("이해하시죠?");
+			if (a === 2)
+				continue;
+			if (a === 4)
+				break;
+		}
+		document.write("<br>while 수행 후 a:" + a);
+
+		document.write("<br>");
+		var i = 0, tot = 0;
+		do {
+			i++;
+			tot += i;
+		} while (i < 10);
+		document.write("<br>tot:" + tot);
+	</script>
+	<hr>
+	-- 배열 --
+	<br>
+	<script type='text/javascript'>
+		aa = new Array(3);
+		aa[0] = 100;
+		aa[3] = 200;
+		aa[4] = {
+			a : 1,
+			b : 2
+		};
+		aa[5] = "결과 확인";
+		document.write("<br>" + aa[5] + "<br>" + aa[0] + " " + aa[3] + " "
+				+ aa[4]);
+		document.write("<br>" + aa.length);
+		// 배열 크기가 자동으로 확장됨
+
+		var test = [];
+		test.push(1);
+		test.push(2, 3, 4, 5);
+		document.write("<br>" + test[3]);
+
+		bb = new Array(100, 200, 300);
+		document.write("<br>" + bb[0]);
+
+		document.write("<br>");
+		cc = new Array();
+		for (k = 0; k < 10; k++) {
+			cc[k] = k + 1;
+		}
+		for (k = 0; k < cc.length; k++) {
+			document.write(cc[k] + " ");
+		}
+	</script>
+</body>
+</html>

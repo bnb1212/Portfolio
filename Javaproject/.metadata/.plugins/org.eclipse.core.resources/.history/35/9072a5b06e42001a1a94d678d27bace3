@@ -1,0 +1,33 @@
+package aa.bb.pack4;
+
+import java.util.Scanner;
+
+public class Machine {
+	private int cupCount;
+	CoinIn ci;
+	
+	
+//	Scanner sc = new Scanner(System.in);
+	//생성자
+	
+	public Machine(int coin) {
+		ci = new CoinIn(coin);
+		
+//		*****8setCupcount없이 할때***** 
+//		System.out.println("몇 잔을 원하세요 : ");
+//		cupCount = sc.nextInt();
+		
+	}
+	public void showData() {
+		
+		System.out.println("커피 "+cupCount+"잔과 잔돈 "+ci.calc(cupCount)+"원");
+		// 돈이 부족하다면 부족ㅂ
+		if(ci.calc(cupCount) < 0) {
+			System.out.println("돈이 부족합니다 ");
+		}
+	}
+	
+	public void setCupCount(int cupCount) {
+		this.cupCount = cupCount;
+	}
+}

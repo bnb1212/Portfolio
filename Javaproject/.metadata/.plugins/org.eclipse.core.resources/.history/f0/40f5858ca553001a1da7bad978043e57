@@ -1,0 +1,193 @@
+package javapro4_normal;
+
+import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javapro4_normal.GreatInsert;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+public class GreatFrame extends JFrame implements ActionListener {
+
+	Connection conn;
+	PreparedStatement pstmt1, pstmt2, pstmt3;
+	ResultSet rs1, rs2, rs3;
+
+	private String sql;
+	private String greatName;
+	
+	// 레이아웃 관련 변수
+	private JLabel lblGukga;
+	private JTextField txtGukga;
+	private JButton btnIns, btnDel;
+
+	// Table 관련 멤버변수
+	String datas[][] = new String[0][4];
+	String[] title = { "위인번호", "이름", "성별", "직업" };
+	DefaultTableModel model = new DefaultTableModel(datas, title);
+	JTable table = new JTable(model);
+
+	private int gukgaNum;
+	// ===== 생성자 ====
+	public GreatFrame(int gukgaNum) {
+		super("해당 국가 위인");
+		this.gukgaNum = gukgaNum;
+		layInit(gukgaNum);
+
+		setBounds(300, 300, 400, 400);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		accDb();
+		showData();
+
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				table = (JTable) e.getComponent();
+				model = (DefaultTableModel) table.getModel();
+				greatName = (String) model.getValueAt(table.getSelectedRow(), 1);
+
+				showInfo();
+			}
+		});
+	}
+
+	// ==== LAYOUT INIT ====
+	private void layInit(int gukgaNum) {
+		// 상단
+		JPanel norPanel = new JPanel();
+		lblGukga = new JLabel("국가 : ");
+		txtGukga = new JTextField(Integer.toString(gukgaNum), 10);
+		txtGukga.setEditable(false);
+		norPanel.add(lblGukga);
+		norPanel.add(txtGukga);
+
+		// 중단 테이블
+		table.getColumnModel().getColumn(0).setPreferredWidth(10);
+		table.getColumnModel().getColumn(1).setPreferredWidth(100);
+		table.getColumnModel().getColumn(2).setPreferredWidth(20);
+		JScrollPane cenPanel = new JScrollPane(table);
+
+		// 하단 버튼 레이아웃 패널
+		JPanel souPanel = new JPanel();
+		btnIns = new JButton("등록");
+		btnDel = new JButton("삭제");
+		souPanel.add(btnIns);
+		souPanel.add(btnDel);
+
+		btnIns.addActionListener(this);
+		btnDel.addActionListener(this);
+
+		// 프레임에 추가
+		add("North", norPanel);
+		add("Center", cenPanel);
+		add("South", souPanel);
+	}
+
+	// ==== accDB ====
+	private void accDb() {
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (Exception accErr) {
+			System.out.println("accessDb err : " + accErr);
+			return;
+		}
+	}
+
+	// ==== SHOW DATA ====
+	private void showData() {
+		
+		model.setNumRows(0);
+		sql = "select * from greatpeople where great_country = ?";
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "123");
+			pstmt1 = conn.prepareStatement(sql);
+			pstmt1.setInt(1, 1);
+			rs1 = pstmt1.executeQuery();
+			while (rs1.next()) {
+				String[] data = { rs1.getString(1), rs1.getString(2), rs1.getString(5), rs1.getString(7) };
+				model.addRow(data);
+			}
+
+		} catch (Exception showErr) {
+			System.out.println("showData err : " + showErr);
+		} finally {
+			try {
+				if (rs1 != null)
+					rs1.close();
+				if (rs2 != null)
+					rs2.close();
+				if (rs3 != null)
+					rs3.close();
+				if (pstmt1 != null)
+					pstmt1.close();
+				if (pstmt2 != null)
+					pstmt2.close();
+				if (pstmt3 != null)
+					pstmt3.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	private void showInfo() {
+		try {
+			String ss = "";
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "123");
+			String sql2 = "select great_name, great_birth, great_info from" + " greatpeople" + " where great_name=?";
+			pstmt2 = conn.prepareStatement(sql2);
+			pstmt2.setString(1, greatName);
+			rs2 = pstmt2.executeQuery();
+
+			while (rs2.next()) {
+				ss = "이름 : " + rs2.getString("great_name") + "\n" + "출생일 : " + rs2.getString("great_birth") + "\n"
+						+ "정보 : " + rs2.getString("great_info") + "\n";
+			}
+			JOptionPane.showMessageDialog(this, ss, "인물정보", JOptionPane.PLAIN_MESSAGE);
+
+		} catch (Exception shResultErr) {
+			System.out.println("결과출력 에러 : " + shResultErr);
+		} finally {
+			try {
+				if (rs1 != null)
+					rs1.close();
+				if (rs2 != null)
+					rs2.close();
+				if (rs3 != null)
+					rs3.close();
+				if (pstmt1 != null)
+					pstmt1.close();
+				if (pstmt2 != null)
+					pstmt2.close();
+				if (pstmt3 != null)
+					pstmt3.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	// ==== ACTION PERFROMED ====
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == btnIns) { // 인물 추가
+			GreatInsert greatInsert = new GreatInsert(this, gukgaNum);
+
+			showData(); // 추가후 자료보-기
+		}
+	}
+	
+	public static void main(String[] args) {
+//		new GreatFrame(); // 임시 테스트용
+	}
+}

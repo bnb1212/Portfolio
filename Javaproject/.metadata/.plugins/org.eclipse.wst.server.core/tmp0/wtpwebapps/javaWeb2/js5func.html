@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript'>
+	// head Tag 내에서 선언 후 body 영역에서 호출
+	count = 0;
+	function aa() {
+		count += 1;
+		document.write(count + '번 호출<br>');
+	}
+
+	function bb() {
+		document.write("함수 내에서 함수 호출 가능<br>");
+		cc(7);
+		var re = cc(10);
+		document.write("<br>bb 안에서 re에 의한 kk " + re);
+
+		dd(5, 10);
+		dd(5);
+		dd(5, 10, 15);
+	}
+
+	function cc(arg) {
+		var kk = arg + 10;
+		document.write("cc 안에서 kk " + kk);
+		return kk;
+	}
+
+	function dd(arg1, arg2) {
+		document.write("<br>dd 안에서 " + arg1 + " " + arg2);
+	}
+
+	function f1() { // 일급함수 지원
+		document.write("<br>안녕?");
+	}
+	function f2(func) {
+		func();
+	}
+	function f3() {
+		// return f1();
+		return f1;
+	}
+
+	function hi() {
+		f2(f1); // 함수를 arg로 줌. 이런것을 일급함수(1st class function)라고 함
+		// f3();
+		sbs = f3();
+		sbs();
+
+		f3()();
+	}
+</script>
+
+<script type='text/javascript'>
+	a = 10; // 전역 변수
+	var b = 20; // 전역 변수
+
+	function fu1() {
+		var c = 30;// 지역 변수
+		d = 40; // 전역 변수
+
+		document.write("<br>a: " + a + ', b: ' + b);
+		document.write("<br>a: " + c + ', b: ' + d);
+	}
+
+	function fu2() {
+		document.write("<br>a: " + a + ', b: ' + b);
+		// document.write("<br>a: " + c + ', b: ' + d);
+		document.write("<br>d: " + d);
+	}
+</script>
+</head>
+<body>
+	사용자 정의 함수 연습
+	<p />
+	<script type='text/javascript'>
+		function my() {
+			document.write("body 내에서 선언한 함수");
+
+		}
+
+		my();
+	</script>
+
+	<br> html 작업 하다가...
+	<br>
+	<script type='text/javascript'>
+		my();
+		document.write("<br>");
+		aa();
+		aa();
+		kbs = bb;
+		kbs();
+		document.write("<hr>");
+		f1();
+		hi();
+		document.write("<hr>");
+		fu1();
+		fu2();
+	</script>
+</body>
+</html>

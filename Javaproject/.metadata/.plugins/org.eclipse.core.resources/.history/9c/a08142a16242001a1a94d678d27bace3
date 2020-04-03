@@ -1,0 +1,19 @@
+package aa.bb.pack4;
+
+public class CoinIn {
+	private int coin;
+	private int jandon;
+	
+	public CoinIn(int coin) {
+		this.coin = coin;
+		jandon = 0;
+	}
+	
+	public void calc(int cupCount) {
+		jandon =  coin - ( 200 * cupCount );
+	}
+	
+	public int getJandon() {
+		return jandon;
+	}
+}

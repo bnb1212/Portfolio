@@ -1,0 +1,45 @@
+package pack8;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+// 예외 처리 : 외부장치( 키보드, 파일처리, DB작업, 네트워크 등등 )와 연결해 작업시 반드시 기술.
+// 그 외에는 선택적으로  기술
+
+public class TryTest {
+	
+	public void test() {
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		int a[] = {1, 2, 3};
+		System.out.println("배열 값 : " + a[5]);
+	}
+
+//	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) {
+//		FileReader fr = new FileReader("c:/work/aa.txt");
+//		FileReader fr = new FileReader("c:\\work\\aa.txt");
+		try {
+			FileReader fr = new FileReader("c:\\work\\aa.txt");
+			int re = 10 / 2;
+			
+			System.out.println("re : " + re);
+			
+			TryTest tt = null;
+			tt.test();
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("파일 오류");
+		} catch(ArithmeticException e) {
+			e.printStackTrace();
+			System.out.println("나누기 에러 : " + e.getMessage());
+		}	catch (NullPointerException e) {
+			System.out.println("객체 오류");
+		}
+		System.out.println("종료");
+	}
+}

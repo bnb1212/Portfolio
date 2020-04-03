@@ -1,0 +1,6 @@
+package pack.controller;
+
+public interface ExInter {
+	void dispStudent(String student);
+	void dispGugudan(int number);
+}

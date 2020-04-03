@@ -1,0 +1,19 @@
+package aa.bb.pack4;
+
+public class CoinIn {
+	private int coin;
+	private int jandon;
+	
+
+	public CoinIn() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int calc(int cupCount) {
+		jandon =  coin - ( 200 * cupCount );
+		return jandon;
+	}
+	public void setCoin(int coin) {
+		this.coin = coin;
+	}
+}

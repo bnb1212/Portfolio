@@ -1,0 +1,21 @@
+package pack;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class Config { // arrange.xml 대신 클래스에 어노테이션을 적용
+	
+	
+		@Bean
+		public MyInfo myInfo() {
+			return new MyInfo();
+	}
+		
+		@Bean
+		public MessageImpl messageImpl() {
+			MessageImpl impl = new MessageImpl("장비", "관우", 2000, myInfo());
+			
+			return impl;
+		}
+}

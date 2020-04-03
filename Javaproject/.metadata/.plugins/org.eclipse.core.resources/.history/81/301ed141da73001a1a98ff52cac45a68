@@ -1,0 +1,12 @@
+package pack.controller;
+
+public class SelectServiceImpl implements SelectService {
+	private DataDaoImpl daoImpl;
+	public SelectServiceImpl() {
+		
+	}
+
+	public void selectProcess() {
+
+	}
+}

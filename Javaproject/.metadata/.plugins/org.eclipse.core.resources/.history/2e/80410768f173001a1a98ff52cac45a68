@@ -1,0 +1,7 @@
+package pack.controller;
+
+import pack.model.ExGugudanInter;
+
+public interface ExInter {
+	private ExGugudanInter inter;
+}

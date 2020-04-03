@@ -1,0 +1,52 @@
+package javapro4_normal;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class DBTest9ExLogin extends JDialog implements ActionListener {
+
+	public DBTest9ExLogin(JFrame frame) {
+
+		/*
+		 * super(frame); setTitle("메모장 정보"); // setModal(true); setModal(false); // true
+		 * : Modal, flase : Modaless
+		 */
+		super(frame, "로그인", true);// 세번쨰 인자는 modal인자
+
+		JPanel panel = new JPanel();
+		JPanel panel2 = new JPanel();
+		JLabel lblNo = new JLabel("사원번호 : ");
+		JTextField txtNo = new JTextField("", 3);
+		JLabel lblName = new JLabel("이름 : ");
+		JTextField txtName = new JTextField("", 6);
+		JButton login = new JButton("확인");
+		
+		panel.add(lblNo);
+		panel.add(txtNo);
+		panel2.add(lblName);
+		panel2.add(txtName);
+		
+		add(panel);
+		add(panel2);
+		add("South", login);
+
+		setBackground(Color.LIGHT_GRAY);
+		setBounds(350, 350, 200, 200);
+		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		dispose();
+	}
+
+}

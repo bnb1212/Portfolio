@@ -1,0 +1,11 @@
+package spr_sppli_di_arrange;
+
+public class MessageImpl implements MessageInter {
+	private String name1, name2;
+
+	public void sayHi() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

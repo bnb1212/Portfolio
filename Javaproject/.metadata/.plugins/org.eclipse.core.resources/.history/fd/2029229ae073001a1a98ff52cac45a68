@@ -1,0 +1,16 @@
+package pack.model;
+
+public class MoneyCalc implements MoneyInter {
+	public int[] calcMoney(int money) { // 12345
+		int re[] = new int[5];
+		re[0] = money/10000;
+		re[1] = money%10000 /1000;
+		
+		return null;
+	}
+
+	public void dispMoney() {
+		// TODO Auto-generated method stub
+
+	}
+}

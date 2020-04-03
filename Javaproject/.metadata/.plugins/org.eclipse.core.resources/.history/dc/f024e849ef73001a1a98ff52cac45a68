@@ -1,0 +1,18 @@
+package pack.model;
+
+public class ExProcess implements ExInter {
+
+	public void dispStudent(String student) {
+		System.out.println("작성자는 " + student);
+		System.out.println();
+
+	}
+
+	public void dispGugudan(int number) {
+		for(int i=1; i <10; i++) {
+			System.out.println(number +" x " + i  + " = " + (number*i));
+		}
+
+	}
+
+}

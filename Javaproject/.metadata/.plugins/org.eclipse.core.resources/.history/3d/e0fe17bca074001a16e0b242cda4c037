@@ -1,0 +1,25 @@
+package pack.auto;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class SenderProcess {
+	//@Autowired(required = true)
+	//@Autowired // 내부적으로 setter 메소드를 만들어서 운영. type에 의한 매핑(mapping)
+	//private Sender sender;
+	
+	@Autowired
+	private SenderInter sender;
+	/*
+	public void setSender(Sender sender) {
+		this.sender = sender;
+		
+	}
+	*/
+	
+	public Sender getSender() {
+		return sender;
+	}
+	public void dispData() {
+		sender.show();
+	}
+}

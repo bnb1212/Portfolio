@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+자료 입력<br>
+<form action="GoMvc" method="post">
+메세지 : <input type="text" name="message" value="korea">
+<input type="submit" value="요청1">
+</form>
+<br>
+<a href="GoMvc">요청2</a>
+<a href="GoMvc">요청3</a>
+<a href="GoMvc">요청4</a>
+
+</body>
+</html>

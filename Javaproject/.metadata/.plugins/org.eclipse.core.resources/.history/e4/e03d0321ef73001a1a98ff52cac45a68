@@ -1,0 +1,15 @@
+package pack.model;
+
+public class ExProcess implements ExInter {
+	
+	public void dispStudent(String student) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void dispGugudan(int number) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

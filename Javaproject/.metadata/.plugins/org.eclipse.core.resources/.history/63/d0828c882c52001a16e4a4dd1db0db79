@@ -1,0 +1,127 @@
+package javapro4_normal;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class DBTest9ExLogin extends JDialog implements ActionListener{
+
+	JButton login = new JButton("확인");
+	JTextField txtNo, txtName;
+	int failCount = 0;
+
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+
+	public DBTest9ExLogin(JFrame frame) {
+
+		super(frame, "로그인", true);// 세번쨰 인자는 modal인자
+
+		dialogLayInit();
+		accDb();
+
+		setBackground(Color.LIGHT_GRAY);
+		setBounds(350, 350, 200, 200);
+		setVisible(true);
+		frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+	}
+
+	private void dialogLayInit() {
+
+		JPanel panel = new JPanel();
+		JPanel panel2 = new JPanel();
+		JPanel panel3 = new JPanel();
+
+		JLabel lblNo = new JLabel("사원번호 : ");
+		txtNo = new JTextField("", 3);
+		JLabel lblName = new JLabel("이름 : ");
+		txtName = new JTextField("", 6);
+
+		panel.add(panel2);
+		panel.add(panel3);
+
+		panel2.add(lblNo);
+		panel2.add(txtNo);
+
+		panel3.add(lblName);
+		panel3.add(txtName);
+
+		add(panel);
+		add("South", login);
+		login.addActionListener(this);
+	}
+
+	private void accDb() {
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (Exception e) {
+			System.out.println("accDb err : " + e);
+		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (txtNo.getText().equals("") || txtName.getText().equals("")) {
+			JOptionPane.showMessageDialog(this, "로그인 자료 입력");
+			return;
+		}
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "123");
+			String sql = "select * from jikwon where jikwon_no = ? and jikwon_name=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, txtNo.getText());
+			pstmt.setString(2, txtName.getText());
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+//				txtResult.setText("로그인");
+				dispose();
+				}
+			
+			else {
+				JOptionPane.showMessageDialog(this, "로그인 실패");
+				failCount++;
+			}
+			if(failCount >= 3) {
+				JOptionPane.showMessageDialog(this, "3회 초과 로그인 실패. 종료.");
+				System.exit(0);
+			}
+		}catch(
+
+	Exception e2)
+	{
+		System.out.println("actionPerformed err : " + e);
+	}finally
+	{
+		try {
+			if (rs != null)
+				rs.close();
+			if (pstmt != null)
+				pstmt.close();
+			if (conn != null)
+				conn.close();
+		} catch (Exception e3) {
+			// TODO: handle exception
+		}
+	}
+
+}
+
+}

@@ -1,0 +1,14 @@
+package aa.bb.pack4;
+
+public class CoinIn {
+	private int coin;
+	private int jandon;
+	
+	public CoinIn() {
+		
+	}
+	
+	public int calc() {
+		return jandon;
+	}
+}

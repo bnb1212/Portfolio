@@ -1,0 +1,13 @@
+package pack8;
+
+import java.io.FileReader;
+
+// 예외 처리 : 외부장치( 키보드, 파일처리, DB작업, 네트워크 등등 )와 연결해 작업시 반드시 기술.
+// 그 외에는 선택적으로  기술
+
+public class TryTest {
+	
+	public static void main(String[] args) {
+		FileReader fr = new FileReader("c:/work/aa.txt");
+	}
+}

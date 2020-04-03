@@ -1,0 +1,15 @@
+package aa.bb.pack4;
+
+public class Machine {
+	private int cupCount;
+	CoinIn coinin;
+	
+	//생성자
+	public Machine(int coin) {
+		coinin = new CoinIn(coin);
+	}
+	
+	public void showData() {
+		System.out.println("커피 "+cupCount+"잔과 잔돈 "+coinin.getJandon()+"원");
+	}
+}

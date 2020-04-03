@@ -1,0 +1,11 @@
+package pack;
+
+public class MessageMain {
+	public static void main(String[] args) {
+		Message1 message1 = new Message1();
+		
+		MessageInter inter;
+		inter = message1;
+		inter.sayHello("홍길동");
+	}
+}

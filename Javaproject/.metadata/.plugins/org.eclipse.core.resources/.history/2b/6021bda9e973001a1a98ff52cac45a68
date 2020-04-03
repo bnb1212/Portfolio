@@ -1,0 +1,26 @@
+package pack.model;
+
+public class SetterProcess { // BL
+	private int nai;
+	private SetterShowData setterShowData;
+
+	public SetterProcess() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void setNai(int nai) {
+		this.nai = nai;
+	}
+
+	public int getNai() {
+		return nai;
+	}
+
+	public void setSetterShowData(SetterShowData setterShowData) {
+		this.setterShowData = setterShowData;
+	}
+
+	public SetterShowData getSetterShowData() {
+		return setterShowData;
+	}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="setterProcess" class="pack.controller.SetterProcess">
+		<property name="nai" value="23" />
+		<property name="setterShowData" ref="setterShowData" />
+
+	</bean>
+	
+	<bean id="exProcess" class="pack.controller.ExProcess">
+		<constructor-arg>
+			<ref bean="exGugudanProc" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="exGugudanProc" class="pack.model.ExGugudanProc" />
+</beans>

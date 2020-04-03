@@ -1,0 +1,6 @@
+@charset "UTF-8";
+figure{
+	width:300px;
+	height:400px;
+	
+}

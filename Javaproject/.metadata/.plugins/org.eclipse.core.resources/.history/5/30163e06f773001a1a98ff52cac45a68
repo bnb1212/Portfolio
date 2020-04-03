@@ -1,0 +1,22 @@
+package pack.controller;
+
+import pack.model.ExGugudanInter;
+import pack.model.ExSetStudent;
+import pack.model.ExStudentInter;
+
+public class ExProcess implements ExInter {
+	private ExGugudanInter inter;
+	private ExStudentInter exStudentInter;
+	
+	public ExProcess(ExGugudanInter inter, ExStudentInter exStudentInter) {
+		this.inter = inter;
+		this.exStudentInter = exStudentInter;
+		inter.dispGugudan();
+	}
+
+	public void showStudent() {
+		System.out.println("작성자의 이름은 : " + exSetStudent.getStudent());
+		
+	}
+
+}

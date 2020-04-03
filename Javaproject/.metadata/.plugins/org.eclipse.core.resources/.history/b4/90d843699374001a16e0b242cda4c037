@@ -1,0 +1,18 @@
+package pack.auto;
+
+public class SenderProcess {
+	@Autowired
+	private Sender sender;
+	
+	public void setSender(Sender sender) {
+		this.sender = sender;
+		
+	}
+	
+	public Sender getSender() {
+		return sender;
+	}
+	public void dispData() {
+		sender.show();
+	}
+}

@@ -1,0 +1,6 @@
+package pack;
+
+public interface MassageInter {
+	void sayHello(String name);
+	
+}

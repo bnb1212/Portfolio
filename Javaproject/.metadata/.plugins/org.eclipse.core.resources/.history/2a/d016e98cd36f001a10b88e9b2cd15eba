@@ -1,0 +1,32 @@
+package pack.admin;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import pack.business.DataFormBean;
+import pack.business.SqlMapperInter;
+import pack.mybatis.SqlMapConfig;
+
+public class AdminLoginProc {
+	private SqlSessionFactory factory = SqlMapConfig.getSqlSession();
+	
+	public boolean adminLogin(String id, String password) {
+		boolean b = false;
+		SqlSession sqlSession = factory.openSession();
+
+		try {
+			SqlMapperInter inter = (SqlMapperInter) sqlSession.getMapper(SqlMapperInter.class);
+			if (inter.insertData(bean) > 0)
+				b = true;
+			sqlSession.commit();
+		} catch (Exception e) {
+			System.out.println("insertData err : " + e);
+			sqlSession.rollback();
+		} finally {
+			if (sqlSession != null)
+				sqlSession.close();
+		}
+		return b;
+	}
+
+}

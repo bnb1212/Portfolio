@@ -1,0 +1,366 @@
+package javapro4_normal;
+
+import java.awt.GridLayout;
+import java.awt.event.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import javapro4_normal.DBTest10crd.InsertForm;
+import javapro4_normal.GreatFrame;
+
+public class GukgaMain extends JFrame implements ActionListener{
+	
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	
+	String datas [][] = new String[0][4];
+	String title [] = {"국가번호","국가이름","대륙","수도"};
+	String sql;
+	JTable table;
+	DefaultTableModel model;
+	JTextArea txtResult;
+	JButton btnInsert = new JButton("insert");
+	JButton btnDelete = new JButton("delete");
+	JButton btnExit = new JButton("Exit");
+	String gukgaName;
+	GreatFrame greatFrame;
+	
+	public GukgaMain() {
+		super("국가별 정보 ");
+		GukgaLogin gukgaLogin = new GukgaLogin();
+		gukgaLogin.setVisible(true);
+		layInit();
+		
+		
+		setBounds(300, 300, 400, 250);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		accDb();
+		showData();
+		showResult();
+		
+		table.addMouseListener(new MouseAdapter() {
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				table = (JTable)e.getComponent();//마우스가 테이블 클릭하면 이벤트 발생하게함
+				model = (DefaultTableModel)table.getModel();
+				gukgaName = (String)model.getValueAt(table.getSelectedRow(), 1);
+//				System.out.println(model.getValueAt(table.getSelectedRow(), 0));
+				greatFrame.setGukgaNo(Integer.parseInt((String)model.getValueAt(table.getSelectedRow(), 0)));
+//				System.out.println(Integer.parseInt((String)model.getValueAt(table.getSelectedRow(), 0)));
+//				
+				System.out.println(gukgaName);
+				//greatPeople(gukgaName);
+				
+			}
+		});
+	}
+	
+	private void layInit() {
+		//setLayout(new GridLayout(3,1));
+		//1행
+		JPanel pn1 = new JPanel();
+		pn1.add(btnInsert);
+		pn1.add(btnDelete);
+		pn1.add(btnExit);
+		add("North",pn1);
+		
+		//2행
+		model = new DefaultTableModel(datas,title);
+		table = new JTable(model);
+		JScrollPane pn2 = new JScrollPane(table);
+		add("Center",pn2);
+		
+		//3행
+		txtResult = new JTextArea();
+		JScrollPane pn3 = new JScrollPane(txtResult);
+		add("South",pn3);
+		
+		btnInsert.addActionListener(this);
+		btnDelete.addActionListener(this);
+		btnExit.addActionListener(this);
+		
+	}
+	
+	private void accDb() { //DB접속
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		} catch (Exception e) {
+			System.out.println("드라이버 로딩실패 " + e);
+			return;
+		}
+		
+	}
+	
+	private void showData() {
+		model.setNumRows(0);
+		
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test","root","123");
+			 String sql = "select * from gukga";
+			 pstmt = conn.prepareStatement(sql);
+			 
+			 rs = pstmt.executeQuery();
+			 
+			 while(rs.next()) {
+				
+				 String [] imsi = {
+						 rs.getString("gukga_no"),
+						 rs.getString("gukga_name"),
+						 rs.getString("gukga_continent"),
+						 rs.getString("gukga_sudo")
+						
+				 };
+				 model.addRow(imsi);
+			 }
+				 
+		} catch (Exception e) {
+			System.out.println("showData err : " + e);
+		}finally {
+			try {
+			if(rs != null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		} catch (Exception e2) {
+			
+		}
+	}
+			
+		}
+		
+	
+	
+	private void showResult() {
+		txtResult.setText("국가를 클릭하시면 국가별 위인이 출력됩니다.");
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource() == btnInsert) {//상품추가
+			InsertForm insertForm = new InsertForm(this);//추가를 위한 내부 클래스 호출하고있다.
+			
+			showData();//추가가 된 후 자료를 보기.
+			
+		}else if(e.getSource()==btnDelete) {//상품삭제
+			String delNo = JOptionPane.showInputDialog(this,"삭제할 국가 번호 입력");//키보드로 값을 입력받는거다. String으로 입력받아짐
+			if(delNo==null) return;
+			//System.out.println("delNo : " + delNo);//삭제가 진짜도 되는지 알아보는과정
+			
+			//삭제 시작
+			try {
+				conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test","root","123");//DB와 연동
+				String sql = "delete from gukga where gukga_no=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, delNo);//위에 delNo를 String으로 설정했기 때문에 setString으로 받아온다. 타입 유의할 것.
+				
+				if(pstmt.executeUpdate()==0) {
+					JOptionPane.showMessageDialog(this, delNo + "번은 등록된 국가가 아닙니다.");
+					return;//else if delete문을 빠져나온다.
+				}
+				
+				showData();//삭제후 자료들 초기화 하고 보기.
+				
+			} catch (Exception e2) {
+				System.out.println("삭제 실패 : " + e2);
+			}finally {
+				try {
+					if(rs != null) rs.close();
+					if(pstmt != null) pstmt.close();
+					if(conn != null) conn.close();
+				} catch (Exception e2) {
+					
+				}
+			}
+		}else if(e.getSource()==btnExit) {//종료
+			int re = JOptionPane.showConfirmDialog(GukgaMain.this, "정말 종료할까요?", "종료", JOptionPane.OK_CANCEL_OPTION);
+			if (re == JOptionPane.OK_OPTION) {
+				
+				try {
+					if(rs != null) rs.close();
+					if(pstmt != null) pstmt.close();
+					if(conn != null) conn.close();
+				} catch (Exception e2) {
+					
+				}finally {
+					
+					System.exit(0);
+				}
+				
+			}else
+			{
+				setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+			}
+			
+			
+		}
+		
+		
+	}
+	//추가를 위한 내부클래스
+	class InsertForm extends JDialog implements ActionListener{
+		JTextField txtNo = new JTextField();
+		JTextField txtName = new JTextField();
+		JTextField txtContinent = new JTextField();
+		JTextField txtSudo = new JTextField();
+		JButton btnOk = new JButton("등록");
+		JButton btnCancle = new JButton("지움");
+		
+		public InsertForm(JFrame frame) {
+			super(frame, "국가추가");
+			setModal(true);
+			
+			JPanel pn1 = new JPanel(new GridLayout(5,2));
+			//1행2열씩 4개
+			pn1.add(new JLabel("번호 : "));
+			pn1.add(txtNo);
+			
+			pn1.add(new JLabel("이름: "));
+			pn1.add(txtName);
+			
+			pn1.add(new JLabel("대륙 : "));
+			pn1.add(txtContinent);
+			
+			pn1.add(new JLabel("수도 : "));
+			pn1.add(txtSudo);
+			
+			pn1.add(btnOk);
+			pn1.add(btnCancle);
+			
+			btnOk.addActionListener(this);
+			btnCancle.addActionListener(this);
+			
+			add("North",new JLabel("국가자료 입력"));
+			add("Center",pn1);
+			
+			setBounds(310, 310, 200, 150);
+			setVisible(true);
+			
+			addWindowListener(new WindowAdapter() {
+				
+				@Override
+				public void windowClosing(WindowEvent e) {
+					dispose();
+				}
+			});
+			
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			//System.out.println("aa");
+			if(e.getSource()==btnOk) {//상품 추가
+				//입력자료 검사
+				if(txtNo.getText().equals("")) {
+					JOptionPane.showMessageDialog(this, "번호 입력");
+					txtNo.requestFocus();
+				
+				}
+				if(txtName.getText().equals("")) {
+					JOptionPane.showMessageDialog(this, "이름 입력");
+					txtName.requestFocus();
+				}
+						
+					if(txtContinent.getText().equals("")) {
+						JOptionPane.showMessageDialog(this, "대륙 입력");
+						txtContinent.requestFocus();
+						
+						return;
+					
+				}if(txtSudo.getText().equals("")) {
+					JOptionPane.showMessageDialog(this, "수도 입력");
+					txtSudo.requestFocus();
+					
+					return;
+				
+			}
+					
+					//수량과 단과는 숫자
+					int no = 0;
+					try {
+						no =Integer.parseInt(txtNo.getText().trim());
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(this, "번호는 숫자만 허용!");
+						txtNo.requestFocus();
+						return;
+					}
+						
+				
+				
+	
+				
+				//등록 가능한 상태
+				try {
+					 conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test","root","123");
+					// int new_code = 0;
+					 String sql = "Select * from gukga";
+					 pstmt = conn.prepareStatement(sql);
+					 rs=pstmt.executeQuery();
+//					 if(rs.next()) {
+//						 new_code = rs.getInt(1);// new_code = rs.geiInt("max");
+//					 }
+					 //System.out.println("새상품 코드 : " + (new_code + 1));
+					 
+					 sql = "insert into gukga values(?,?,?,?)";//이렇게 하면 보안이 좋음.
+					 pstmt = conn.prepareStatement(sql);
+					 pstmt.setInt(1, no);//해줘야지 primary key가 안겹친다. 아니면 끝값이랑 계속 겹쳐서 오류남 상품코드 마지막이랑 겹침
+					 pstmt.setString(2, txtName.getText());
+					 pstmt.setString(3, txtContinent.getText());
+					 pstmt.setString(4, txtSudo.getText());
+//					 int re = pstmt.executeUpdate();
+//					 if(re>0) {
+//						 
+//					 }
+					 if(pstmt.executeUpdate()>0) {
+						 JOptionPane.showMessageDialog(this, "등록 성공");
+					 }else {
+						 JOptionPane.showMessageDialog(this, "등록 실패");
+					 }
+					 //0은 업데이트가 안된거 1부터는 업데이트가 된값을 반환한다.
+				} catch (Exception e2) {
+					System.out.println("국가 추가 에러 : " + e2);
+				}finally {
+					try {
+						if(rs != null) rs.close();
+						if(pstmt != null) pstmt.close();
+						if(conn != null) conn.close();
+					} catch (Exception e2) {
+						
+					}
+				}
+				
+			}else if(e.getSource()==btnCancle) {//입력자료 초기화
+				txtNo.setText("");//txtSang.setText(null); 이랑 같음
+				txtName.setText(null);
+				txtContinent.setText(null);
+				txtSudo.requestFocus();
+				
+			}
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		new GukgaMain();
+
+	}
+
+}

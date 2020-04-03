@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<jsp:useBean id="bean" class="pack.equip.EquipFormBean" />
+<jsp:setProperty property="*" name="bean" />
+<jsp:useBean id="memberProcess" class="pack.equip.EquipProc" />
+
+<%
+	boolean b = memberProcess.insertData(bean);
+
+	if (b) {
+		response.sendRedirect("list.jsp");
+	} else {
+		response.sendRedirect("fail.jsp");
+	}
+%>

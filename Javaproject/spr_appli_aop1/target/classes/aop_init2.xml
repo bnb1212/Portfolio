@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- Business Logic 객체 생성 -->
+	<bean id="logicImpl" class="pack2.LogicImpl">
+		<constructor-arg>
+			<ref bean="articleDao"/>
+		</constructor-arg>
+	</bean>
+	<bean id="articleDao" class="pack2.ArticleDao"/>
+	
+	<!-- AOP(관심지향프로그램) 설정 --><!-- logicImpl에 myAspect를 Weaving한다. -->
+	<bean id="myAspect" class="pack2.MyAspect" />
+	<aop:config>
+		<aop:aspect ref="myAspect">
+			<!-- public에 pack2패키지의 하위패키지를 모두 포함하고 파라메터가 0개  이상인 모든 메소드 선택 -->
+			<!-- expression="execution(public ~) or execution(public ~)" 로 다중선택 가능-->
+			<aop:pointcut expression="execution(public * pack2..*(..))" id="poi"/>
+			<aop:around method="kbs" pointcut-ref="poi"/>
+		</aop:aspect>
+	</aop:config>
+	
+</beans>

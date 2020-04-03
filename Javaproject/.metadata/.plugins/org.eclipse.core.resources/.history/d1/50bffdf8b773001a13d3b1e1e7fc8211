@@ -1,0 +1,8 @@
+package pack;
+
+public class HobbyModel {
+	public static HobbyModel model = new HobbyModel();
+	public static HobbyModel getInstance() {
+		return model();
+	}
+}

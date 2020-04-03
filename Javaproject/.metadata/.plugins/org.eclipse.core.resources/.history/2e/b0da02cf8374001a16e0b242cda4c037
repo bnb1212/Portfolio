@@ -1,0 +1,6 @@
+package pack;
+
+public class MyInfo {
+	public String myData;
+	
+}

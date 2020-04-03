@@ -1,0 +1,11 @@
+package pack.model;
+
+public class ExSetStdent implements ExStudentInter{
+	private String student ="";
+	
+	public String setStudent(String student) {
+		
+		return null;
+	}
+
+}

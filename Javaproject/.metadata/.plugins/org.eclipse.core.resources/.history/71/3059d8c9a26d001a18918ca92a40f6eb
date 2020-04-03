@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
+	%>
+	<!--isELIgnored="true"--!>
+	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	EL 연습 : 연산자, 내장 객체
+	<br> --- 연산자 사용
+	<br> \${3+4} --> ${3+4}
+	<br>\${5/4}-->${5/4}, <!-- 이거 에러 아님  ${5 div 4 }<br> --> 
+	<br>\${5 / 0 } --> ${5/0 }
+	<br>\${5 % 4} --> ${5 % 4}
+	<!-- 여기서부터는 논리 연산 -->
+	<br><br>
+	\${5 >= 4} --> ${5>=4}
+	<br>\${5 le 4} --> ${5 le 4 }<br>
+	<br>\${5 > 4 and 3 gt 2 } --> ${5 > 4 and 3 gt 2 }
+	<br>\${5 > 4?10:20 * 2 } --> ${5 > 4?10:20 *2 }
+	<br>
+	---- 내장 객체 사용-----
+	<br>
+	<%
+	request.setAttribute("aa", "air");
+	session.setAttribute("bb", "book");
+	application.setAttribute("cc", "cat");
+	%>
+	<%=request.getAttribute("aa") %> &nbsp; ${requestScope.aa }<br>
+	<%=session.getAttribute("bb") %> &nbsp; ${sessionScope.bb }<br>
+	<%=application.getAttribute("cc") %> &nbsp; ${applicationScope.cc }<br>
+	<br>
+	jsp의 내장 객체 : <%=request.getHeader("host") %>
+	<br>EL의 내장 객체 : ${header.host}, 
+	</body>
+</html>

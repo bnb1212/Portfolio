@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>장비 세부 안내</title>
+</head>
+<body>
+<h3>== 기구 안내 ==</h3><p/>
+<main>
+<article>
+<img src="../upload/${e.equip_image}" width="250" height="250">
+</article>
+<article>
+
+</article>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+package pack.auto;
+
+import org.springframework.stereotype.Component;
+
+@Component("sender")
+public class Sender2 implements SenderInter {
+	public void show() {
+		System.out.println("show 메소드2 수행");
+	}
+}

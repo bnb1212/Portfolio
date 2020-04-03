@@ -1,0 +1,28 @@
+package pack.controller;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import pack.model.MoneyInter;
+
+public class MyProcess implements MyInter {
+	private MoneyInter inter;
+	
+	public MyProcess(MoneyInter inter) {
+		this.inter = inter;
+	}
+
+	public void inputMoney() {
+		try {
+			InputStreamReader reader = new InputStreamReader(System.in);
+			BufferedReader breader = new BufferedReader(reader);
+		} catch (Exception e) {
+			
+		}
+	}
+
+	public void showResult() {
+		// TODO Auto-generated method stub
+	}
+
+}

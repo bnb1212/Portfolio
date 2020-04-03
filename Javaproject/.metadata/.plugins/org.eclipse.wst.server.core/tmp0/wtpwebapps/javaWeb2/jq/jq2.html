@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.focused {
+	background-color: #bbb;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("label").css("color", "#a12");
+		$("h1").css({
+			"color" : "red",
+			"text-decoration" : "underline"
+		});
+		// h1태그를 에 css 스타일 적용함
+		$("#message").wrap("<h2/>"); //<h2>대상</h2>
+
+		//이벤트
+		/*
+		$("input").focus(function() {
+			$(this).addClass("focused");
+		});
+		 */
+		$("input").on("focus", function() {
+			$(this).addClass("focused");
+		});
+		$("input").on("blur", function() {
+			$(this).removeClass("focused");
+		});
+
+		$("#frm").submit(function(event){
+			event.preventDefault(); // 고유의 이벤트 기능을 해제 후 다른 기능을 기술가능하게 함
+			// alery("abc");
+			
+			var newEle = "<li>" + $("#data").val() + "</li>";
+			$("#disp").append(newEle);
+		});
+		
+		$("a").click(function(event){
+			event.preventDefault();
+			alert("다른 일 하기");
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>jQuery 메소드 실습</h1>
+	<div id="message">이벤트</div>
+
+	<form action="#" id='frm'>
+		<label for="data">자료 입력 : </label> <input type="text" id="data">
+		<input type="submit" id="확인">
+	</form>
+	<ul id="disp"></ul>
+	<p />
+	<a href="https://www.naver.com.">naver</a>
+</body>
+</html>

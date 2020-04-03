@@ -1,0 +1,14 @@
+package aa.bb.pack4;
+
+import java.util.Scanner;
+
+public class MachineUse {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("동전을 입력하세요 : ");
+		Machine machine = new Machine(sc.nextInt());
+		machine.showData();
+	}
+}

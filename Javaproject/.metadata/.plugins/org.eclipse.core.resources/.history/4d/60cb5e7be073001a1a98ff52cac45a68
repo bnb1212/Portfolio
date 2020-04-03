@@ -1,0 +1,13 @@
+package pack.model;
+
+public class MoneyCalc implements MoneyInter {
+	public int[] calcMoney(int money) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void dispMoney() {
+		// TODO Auto-generated method stub
+
+	}
+}

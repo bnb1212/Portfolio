@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/plain; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.sql.*"%>
+
+<%
+String irum = "한국인";
+String nai = "22";
+
+String re = "[";
+re += "{\"name\":" + "\"" + irum + "\",\"age\":" + nai + "}";
+re += "]";
+
+out.print(re);
+%>

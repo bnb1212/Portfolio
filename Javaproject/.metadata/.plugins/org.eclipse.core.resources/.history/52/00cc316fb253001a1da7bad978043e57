@@ -1,0 +1,28 @@
+package javapro4_normal;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class GreatUpdate {
+	JTextField txtName = new JTextField("", 5);
+	JTextArea txtInfo = new JTextArea();
+	JTextField txtBirth = new JTextField("", 10);
+	JTextField txtJik = new JTextField("", 6);
+	ButtonGroup group = new ButtonGroup();
+	JRadioButton rBtnMale = new JRadioButton("남");
+	JRadioButton rBtnFemale = new JRadioButton("여");
+	private int gukgaNum;
+	JButton btnOk = new JButton("등록");
+	JButton btnReset = new JButton("모두 지움");
+
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+}

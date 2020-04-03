@@ -1,0 +1,20 @@
+package aa.bb.pack4;
+
+import java.util.Scanner;
+
+public class Machine {
+	private int cupCount;
+	CoinIn coinin;
+	Scanner sc = new Scanner(System.in);
+	//생성자
+	public Machine(int coin) {
+		coinin = new CoinIn(coin);
+		System.out.println("몇 잔을 원하세요 : ");
+		cupCount = sc.nextInt();
+		
+	}
+	public void showData() {
+		System.out.println("커피 "+cupCount+"잔과 잔돈 "+coinin.calc(cupCount)+"원");
+	}
+	
+}

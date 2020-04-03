@@ -1,0 +1,50 @@
+package javapro4_normal;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class GreatUpdate {
+	JTextField txtName = new JTextField("", 5);
+	JTextArea txtInfo = new JTextArea();
+	JTextField txtBirth = new JTextField("", 10);
+	JTextField txtJik = new JTextField("", 6);
+	ButtonGroup group = new ButtonGroup();
+	JRadioButton rBtnMale = new JRadioButton("남");
+	JRadioButton rBtnFemale = new JRadioButton("여");
+
+	JButton btnOk = new JButton("수정");
+	JButton btnReset = new JButton("모두 지움");
+
+	Connection conn;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	
+	public GreatUpdate(JFrame frame) {
+		super(frame, "인물 수정", true);
+		this.gukgaNum = gukgaNum;
+		// ==== 추가 폼 레이아웃 ====
+		layInit();
+		
+		setBounds(310, 310, 600, 500);
+		setVisible(true);
+		setResizable(false);
+
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				dispose();
+			}
+		});
+
+	}
+}

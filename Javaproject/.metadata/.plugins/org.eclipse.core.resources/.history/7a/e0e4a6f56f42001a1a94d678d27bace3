@@ -1,0 +1,10 @@
+package aa.bb.pack4;
+
+import java.util.Scanner;
+
+public class MachineUse {
+	
+	public static void main(String[] args) {
+		new Machine().showData();
+	}
+}

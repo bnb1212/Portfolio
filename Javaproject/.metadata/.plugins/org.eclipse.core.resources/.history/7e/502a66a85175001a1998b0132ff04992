@@ -1,0 +1,8 @@
+package pack4;
+
+public class LogicImpl implements LogicInter{
+	public void startProcess() {
+		// TODO Auto-generated method stub
+		
+	}
+}

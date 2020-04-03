@@ -1,0 +1,27 @@
+package pack2;
+
+import java.sql.PreparedStatement;
+
+import com.sun.jdi.connect.spi.Connection;
+
+public class DbEx {
+	try
+	{
+
+	}catch(
+	Exception e)
+	{
+		System.out.println('err' + ㄷ);
+	}
+
+	public DbEx() {
+
+	private Connection conn = null;
+	private PreparedStatement pstmt = null
+	private resultSet rs = null;}cat ch2
+
+	public public static void main(String[] args) {
+		new DbEx();
+
+	}
+}}
