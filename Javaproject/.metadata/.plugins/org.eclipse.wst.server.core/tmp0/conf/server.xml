@@ -153,11 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\work\jsou\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\work\jsou\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\semi_project" path="/semi_project" reloadable="true" source="org.eclipse.jst.jee.server:semi_project"/><Context docBase="C:\work\jsou\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\javaWebShop" path="/javaWebShop" reloadable="true" source="org.eclipse.jst.jee.server:javaWebShop">
-
-	<Resource auth="Container" driverClassName="org.mariadb.jdbc.Driver" loginTimeout="10" maxActive="500" maxIdle="100" maxWait="5000" name="jdbc_maria" password="123" testOnBorrow="true" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/test" username="root"/>
-
-</Context><Context docBase="C:\work\jsou\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\javaWeb2" path="/javaWeb2" reloadable="true" source="org.eclipse.jst.jee.server:javaWeb2"/><Context docBase="C:\work\jsou\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\javaWeb6Mvc" path="/javaWeb6Mvc" reloadable="true" source="org.eclipse.jst.jee.server:javaWeb6Mvc"/></Host>
+      <Context docBase="C:\work\Portfolio\Javaproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\work\Portfolio\Javaproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\sprWeb1" path="/sprWeb1" reloadable="true" source="org.eclipse.jst.jee.server:sprWeb1"/></Host>
     </Engine>
   </Service>
 </Server>

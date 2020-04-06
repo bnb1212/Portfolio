@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="pack.controller.ExInter"/>
-    <fullyQualifiedTypeName name="pack.model.ExSetStudent"/>
-    <fullyQualifiedTypeName name="pack.model.ExStudentInter"/>
     <fullyQualifiedTypeName name="spr_sppli_di_arrange.MessageInter"/>
     <fullyQualifiedTypeName name="spr_sppli_di_arrange.MessageImpl"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
@@ -60,4 +57,7 @@
     <fullyQualifiedTypeName name="javax.annotation.Resource"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="pack.DbDataSource"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>
