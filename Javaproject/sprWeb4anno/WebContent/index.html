@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+annotation
+<br>
+<a href="hello.do">헬로우(인사관리)</a><br> <!-- get -->
+<form action="hello.do" method="post"> <!-- post -->
+	<input type="submit" value="post로  hello 요청">
+</form>
+<hr>
+<a href="world.do">와알도(영업관리) - get</a><br>
+<a href="good.do">와알도(영업관리) - get</a><br>
+<a href="nice.do">와알도(영업관리) - get</a><br>
+<a href="nice1.do">와알도(영업관리) - get</a><br>
+<a href="nicekorea.do">와알도(영업관리) - get</a><br>
+<form action="world.do" method="post">
+	<input type="submit" value="post로  world 요청">
+</form>
+<hr>
+<a href="happy.do">행복하자 행복하자 우리 행복하자아 - GET</a><br>
+<a href="javascript:func();">happy - post</a>
+<form name="f"></form>
+	<script type="text/javascript">
+	function func(){
+		f.action="happy.do";
+		f.method="post";
+		f.submit();
+	}
+	</script>
+	</body>
+</html>
+

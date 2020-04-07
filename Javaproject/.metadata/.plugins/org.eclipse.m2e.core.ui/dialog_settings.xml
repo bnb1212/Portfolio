@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\work\Portfolio\Javaproject\spr_appli_jdbc1\src\main\java\pack\SangpumImpl.java"/>
 			<item value="C:\work\Portfolio\spr_appli_aop1"/>
 			<item value="C:\work\jsou\spr_appli_di_anno\src\main\resources\anno2.xml"/>
 			<item value="C:\work\jsou\spr_sppli_di_arrange\src\main\java\pack\Main2.java"/>
@@ -54,6 +55,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="spr_appli_jdbc2"/>
 			<item value="spr_appli_jdbc_ex"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -74,11 +76,23 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="sprWeb5"/>
+			<item value="sprWeb4anno"/>
+			<item value="sprWeb4"/>
+			<item value="sprWeb3anno"/>
+			<item value="sprWeb3controller"/>
+			<item value="sprWeb2maven"/>
 			<item value="spr_di"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="sprWeb5"/>
+			<item value="sprWeb4anno"/>
+			<item value="sprWeb4"/>
+			<item value="sprWeb3anno"/>
+			<item value="sprWeb3controller"/>
+			<item value="sprWeb2maven"/>
 			<item value="spr_di"/>
 		</list>
 		<list key="version">
