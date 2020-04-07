@@ -76,6 +76,8 @@
 	</section>
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="sprWeb6anno"/>
+			<item value="sprWeb6summary"/>
 			<item value="sprWeb5"/>
 			<item value="sprWeb4anno"/>
 			<item value="sprWeb4"/>
@@ -87,6 +89,8 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="sprWeb6anno"/>
+			<item value="sprWeb6summary"/>
 			<item value="sprWeb5"/>
 			<item value="sprWeb4anno"/>
 			<item value="sprWeb4"/>

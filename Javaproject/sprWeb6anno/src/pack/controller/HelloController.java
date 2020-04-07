@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import pack.model.HelloModel;
 
 @Controller
-@RequestMapping({"hello", "abc/world", "h*"}) // GET , POST 모두 허용
+@RequestMapping({"bakemono","abc/world", "h*"}) // GET , POST 모두 허용
 public class HelloController {
 	@Autowired
 	private HelloModel helloModel;

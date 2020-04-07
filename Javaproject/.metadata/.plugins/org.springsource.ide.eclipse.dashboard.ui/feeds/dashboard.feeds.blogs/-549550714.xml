@@ -5,7 +5,36 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-04-07T07:10:20Z</updated>
+  <updated>2020-04-07T08:50:18Z</updated>
+  <entry>
+    <title>This Week in Spring - April 7th, 2020</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/04/07/this-week-in-spring-april-7th-2020" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2020-04-07:4025</id>
+    <updated>2020-04-07T08:50:18Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! How&amp;rsquo;re you doing? I&amp;rsquo;m doing all right, all things considered! I miss you all. &lt;/p&gt;
+&lt;p&gt;OK, so, first things first: we&amp;rsquo;re kicking off #TanzuTuesday today. Join us &lt;strong&gt;TODAY&lt;/strong&gt; at 1pm PST/PDT and I&amp;rsquo;ll introduce you to the wide world of &lt;a href="https://twitter.com/VMwareTanzu/status/1247268752112209923"&gt;Reactive Spring&lt;/a&gt;! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2020/04/03/a-bootiful-podcast-kubernetes-co-creator-joe-beda"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I talked to Kubernetes co-creator &lt;em&gt;Joe Beda&lt;/em&gt;&lt;/a&gt; - yes, &lt;em&gt;that&lt;/em&gt; &lt;a href="http://twitter.com/jbeda"&gt;Joe Beda&lt;/a&gt;! Do &lt;em&gt;not&lt;/em&gt; miss this!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/07/spring-data-for-apache-solr-discontinued"&gt;Spring Data for Apache Solr Discontinued&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/06/getting-started-with-rsocket-spring-boot-channels"&gt;Getting Started With RSocket: Spring Boot Channels&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/03/spring-boot-2-3-0-m4-available-now"&gt;Spring Boot 2.3.0.M4 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2020/04/02/spring-security-5-3-1-5-2-3-5-1-9-5-0-15-4-2-15-released"&gt;Spring Security 5.3.1, 5.2.3, 5.1.9, 5.0.15, 4.2.15 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2020/04/01/spring-tips-manipulating-the-platform-with-the-spring-cloud-cloud-foundry-java-client-autoconfiguration"&gt;&lt;em&gt;Spring Tips&lt;/em&gt;, I look at manipulating the Cloud Foundry PaaS with the Spring Cloud Cloud Foundry Java Client Autoconfiguration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Anyone interested in Spring Cloud Config with Microprofile? &lt;a href="https://github.com/spring-cloud/spring-cloud-config/issues/1591"&gt;Vote on this issue&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Check out this blog on &lt;a href="https://spring.io/blog/2020/04/07/spring-data-for-apache-solr-discontinued"&gt;the future of Spring Data for Solr&lt;/a&gt;: it&amp;rsquo;s looking for maintenance by the community&lt;/li&gt;
+  &lt;li&gt;KSQL (which you can use with Apache Kafka) is now out of preview and ready for production! Learn about why they built it, the new web interface, and &lt;a href="https://t.co/Khy8LLMi9C"&gt;how Confluent Cloud KSQL synergistically integrates with other components of Confluent Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.marcobehler.com/guides/spring-security"&gt;Spring Security: Authentication and Authorization In-Depth&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Srinivas Vasu has a nice post on how to use JHipster &lt;a href="https://medium.com/@srinivasan.surprise/kloud-native-jhipster-ba09b2ffbf63"&gt;(which is powered by Spring Boot with KNative (powered by Kubernetes)) &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Have you seen &lt;a href="https://kube.academy/"&gt;the VMWare KubeAcademy&lt;/a&gt;-one of the easiest ways to learn Kubernetes.&lt;/li&gt;
+  &lt;li&gt;This doesn&amp;rsquo;t have to do with Spring, &lt;em&gt;per se&lt;/em&gt;, but it&amp;rsquo;s been top of mind for me of late as I&amp;rsquo;ve been moving (personal) code to Github Actions: &lt;a href="https://blogs.vmware.com/opensource/2020/04/02/ci-tests-tools/"&gt;comparing GitHub Actions and CircleCI for Testing Pull Request Changes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Learn how to use the open-source Greenplum &lt;a href="https://t.co/II11pUR6jj"&gt;Database modernizes data warehouses&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data for Apache Solr Discontinued</title>
     <link rel="alternate" href="https://spring.io/blog/2020/04/07/spring-data-for-apache-solr-discontinued" />
@@ -1113,102 +1142,6 @@ class ConfiguredWebClientRunner {&#xD;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Getting Started With RSocket: Spring Boot Request-Stream</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/03/23/getting-started-with-rsocket-spring-boot-request-stream" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Ben Wilcock</name>
-    </author>
-    <id>tag:spring.io,2020-03-12:3996</id>
-    <updated>2020-03-23T16:00:00Z</updated>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Time: about 15 minutes.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Previously in this series, you experimented with &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;request&lt;/a&gt;-&lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;response&lt;/a&gt; and &lt;a href="https://spring.io/blog/2020/03/16/getting-started-with-rsocket-spring-boot-fire-and-forget"&gt;fire-and-forget&lt;/a&gt; messaging in Spring Boot with RSocket. This time you&amp;rsquo;ll try another of RSocket&amp;rsquo;s fresh new messaging models ? request-stream.&lt;/p&gt;
-&lt;p&gt;In this exercise, you&amp;rsquo;ll learn how to stream data using the conventional &lt;em&gt;&amp;lsquo;client-requests-a-server-stream&amp;rsquo;&lt;/em&gt; approach. &lt;/p&gt;
-&lt;p&gt;One thing that I haven&amp;rsquo;t mentioned until now is that RSocket lets you use its messaging models in either direction. Therefore, if you wanted to use the less common &lt;em&gt;&amp;lsquo;server-requests-a-client-stream&amp;rsquo;&lt;/em&gt; model, that&amp;rsquo;s no problem for RSocket. Plus, there are lots of non-java &lt;a href="https://rsocket.io/docs/Implementations"&gt;RSocket implementations&lt;/a&gt; to choose from, including Go, Javascript, and .Net?ideal if your architecture includes platforms where Java isn&amp;rsquo;t perhaps the best fit.&lt;/p&gt;
-&lt;p&gt;With that cleared up, follow the steps below to add the streaming data capability to your existing RSocket client and server code from previous posts.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;If you didn&amp;rsquo;t read the previous posts on &lt;a href="https://spring.io/blog/2020/03/02/getting-started-with-rsocket-spring-boot-server"&gt;server-side&lt;/a&gt;, &lt;a href="https://spring.io/blog/2020/03/09/getting-started-with-rsocket-spring-boot-client"&gt;client-side&lt;/a&gt; request-response messaging, or &lt;a href="..."&gt;fire-and-forget&lt;/a&gt; now&amp;rsquo;s your chance! The code sample is &lt;a href="https://github.com/benwilcock/spring-rsocket-demo"&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-1-add-the-server-side-stream-method" class="anchor" name="step-1-add-the-server-side-stream-method"&gt;&lt;/a&gt;Step 1: Add The Server-Side Stream Method&lt;/h4&gt;
-&lt;p&gt;Working once more in your server-side &lt;code&gt;RSocketController&lt;/code&gt; class, add a new method called &lt;code&gt;.stream()&lt;/code&gt; with the signature ? &amp;lsquo;accept-an-object, return-a-flux&amp;rsquo; ? which RSocket expects for this messaging model. Annotate this new method with the &lt;code&gt;@MessageMapping&lt;/code&gt; annotation, specifying a suitable mapping name ? such as &lt;code&gt;&amp;quot;stream&amp;quot;&lt;/code&gt;. The sample code for the method is below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @MessageMapping(&amp;quot;stream&amp;quot;)&#xD;
-    Flux&amp;lt;Message&amp;gt; stream(Message request) {&#xD;
-        log.info(&amp;quot;Received stream request: {}&amp;quot;, request);&#xD;
-        return Flux&#xD;
-                .interval(Duration.ofSeconds(1))&#xD;
-                .map(index -&amp;gt; new Message(SERVER, STREAM, index))&#xD;
-                .log();&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; is in the &lt;code&gt;rsocket-server&lt;/code&gt; folder in the &lt;code&gt;io.pivotal.rsocketserver&lt;/code&gt; package.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The &lt;code&gt;.stream()&lt;/code&gt; method&amp;rsquo;s sole parameter, &lt;code&gt;Message&lt;/code&gt;, comes from the &lt;code&gt;io.pivotal.rsocketserver.data&lt;/code&gt; package discussed previously. This message forms the basis of the client&amp;rsquo;s request for a data stream. The code above logs the client&amp;rsquo;s request to the console as soon as it&amp;rsquo;s received.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Flux&lt;/code&gt; object returned by the method is part of &lt;a href="https://projectreactor.io/"&gt;Project Reactor&lt;/a&gt; and is also used in the &lt;a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/web-reactive.html#webflux-why-reactive"&gt;reactive support&lt;/a&gt; of the Spring Framework.&lt;/p&gt;
-&lt;p&gt;RSocket uses &lt;code&gt;Flux&lt;/code&gt; because it dramatically simplifies the handling of reactive data streams. Flux is a &amp;ldquo;Publisher&amp;rdquo; of data. It describes streams of 0 to N elements and offers a great many operators for processing streaming data ? similar to &lt;a href="https://www.oracle.com/technical-resources/articles/java/ma14-java-se-8-streams.html"&gt;Java 8&amp;rsquo;s streaming APIs&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In the code above, a new &lt;code&gt;Long&lt;/code&gt; element gets added to the Flux every second ? set via the &lt;code&gt;.interval()&lt;/code&gt; call ? essentially providing a constant stream of data. The &lt;code&gt;.map()&lt;/code&gt; function creates a new message object using the &lt;code&gt;Long&lt;/code&gt; as the index value, and on the last line, the call to the &lt;code&gt;.log()&lt;/code&gt; method prints all elements flowing through the Flux to the console, including errors etc.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-2-add-the-client-side-stream-method" class="anchor" name="step-2-add-the-client-side-stream-method"&gt;&lt;/a&gt;Step 2: Add The Client-Side Stream Method&lt;/h4&gt;
-&lt;p&gt;In the client-side project&amp;rsquo;s &lt;code&gt;RSocketShellClient&lt;/code&gt; class, first, add a global reference to a &lt;code&gt;Disposable&lt;/code&gt; object like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;private static Disposable disposable;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The &lt;code&gt;RSocketShellClient&lt;/code&gt; is in the &lt;code&gt;io.pivotal.rsocketclient&lt;/code&gt; package in the &lt;code&gt;rsocket-client&lt;/code&gt; folder.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This &lt;code&gt;Disposable&lt;/code&gt; object allows you to control the data stream once it starts.&lt;/p&gt;
-&lt;p&gt;Next, add a &lt;code&gt;.stream()&lt;/code&gt; method to your &lt;code&gt;RSocketShellClient&lt;/code&gt;. Annotate this method with the &lt;code&gt;@ShellMethod&lt;/code&gt; annotation. The sample code for this is below:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @ShellMethod(&amp;quot;Send one request. Many responses (stream) will be printed.&amp;quot;)&#xD;
-    public void stream() {&#xD;
-        log.info(&amp;quot;\nRequest-Stream. Sending one request. Waiting for unlimited responses (Stop process to quit)...&amp;quot;);&#xD;
-        this.disposable = this.rsocketRequester&#xD;
-                .route(&amp;quot;stream&amp;quot;)&#xD;
-                .data(new Message(CLIENT, STREAM))&#xD;
-                .retrieveFlux(Message.class)&#xD;
-                .subscribe(er -&amp;gt; log.info(&amp;quot;Response received: {}&amp;quot;, er));&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In the code above, the &lt;code&gt;rsocketRequester&lt;/code&gt; is told to route requests to the server&amp;rsquo;s &lt;code&gt;.stream()&lt;/code&gt; method by specifying &lt;code&gt;&amp;quot;stream&amp;quot;&lt;/code&gt; as the &lt;code&gt;.route()&lt;/code&gt;. A new message object provides the &lt;code&gt;.data()&lt;/code&gt; for your request. Because you want the server to return a stream, you used the &lt;code&gt;.requestFlux()&lt;/code&gt; method on the &lt;code&gt;rsocketRequester&lt;/code&gt;, specifying that the &lt;code&gt;Flux&lt;/code&gt; returned contains elements of type &lt;code&gt;Message&lt;/code&gt;. Finally, you set a log function to act as your subscriber to the stream in the &lt;code&gt;.subscribe()&lt;/code&gt; method. &lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Notice how the &lt;code&gt;Disposable&lt;/code&gt; produced by the &lt;code&gt;rsocketRequester&lt;/code&gt; is being kept. You&amp;rsquo;ll need it to stop the stream.&lt;/p&gt;
-&lt;/blockquote&gt;&lt;h4&gt;&lt;a href="#step-3-add-the-client-side-stop-stream-method" class="anchor" name="step-3-add-the-client-side-stop-stream-method"&gt;&lt;/a&gt;Step 3: Add The Client Side Stop Stream Method&lt;/h4&gt;
-&lt;p&gt;By keeping a reference to the stream, you can dispose of it when you want the streaming to stop. To add your stream canceling feature to your &lt;code&gt;RSocketShellClient&lt;/code&gt;, add a new method called &lt;code&gt;.s()&lt;/code&gt; and annotate it with &lt;code&gt;@ShellMethod&lt;/code&gt; as follows: &lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;    @ShellMethod(&amp;quot;Stop streaming messages from the server.&amp;quot;)&#xD;
-    public void s(){&#xD;
-        if(null != disposable){&#xD;
-            disposable.dispose();&#xD;
-        }&#xD;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Inside the method, calling &lt;code&gt;disposable.dispose()&lt;/code&gt; cancels the stream. With this method in place, to stop the stream, type &lt;code&gt;s&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt and then tap &lt;code&gt;Enter&lt;/code&gt;. The stream will then stop. Your coding tasks are now complete. Next, test the client and server are working together.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-4-build-and-run-the-rsocket-server" class="anchor" name="step-4-build-and-run-the-rsocket-server"&gt;&lt;/a&gt;Step 4: Build And Run The RSocket Server&lt;/h4&gt;
-&lt;p&gt;Open a terminal window and move to the &lt;code&gt;rsocket-server&lt;/code&gt; directory. Run the server using Maven and Spring Boot plugin as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-server&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The server starts up on &lt;code&gt;localhost&lt;/code&gt; port &lt;code&gt;7000&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-5-build-and-run-the-rsocket-client" class="anchor" name="step-5-build-and-run-the-rsocket-client"&gt;&lt;/a&gt;Step 5: Build And Run The RSocket Client&lt;/h4&gt;
-&lt;p&gt;Open a &lt;em&gt;second&lt;/em&gt; terminal window and move to the &lt;code&gt;rsocket-client&lt;/code&gt; directory. From there, build and run the RSocket client application as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;cd rsocket-client&#xD;
-./mvnw clean package spring-boot:run -DskipTests=true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once booted, Spring Shell presents you with a new prompt:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;shell:&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You request a stream from the server by typing &lt;code&gt;stream&lt;/code&gt; at the prompt. The client sends one &lt;code&gt;Message&lt;/code&gt; as its request for a stream. Each &lt;code&gt;Message&lt;/code&gt; in the steam gets printed both as the server sends it, and as the client receives it. The console log on the client looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint none"&gt;shell:&amp;gt;stream&#xD;
-Request-Stream. Sending one request. Waiting for responses (Type &amp;#39;s&amp;#39; to stop)...&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=0, created=1583923683) (Type &amp;#39;s&amp;#39; to stop.)&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=1, created=1583923684) (Type &amp;#39;s&amp;#39; to stop.)&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=2, created=1583923685) (Type &amp;#39;s&amp;#39; to stop.)&#xD;
-New Response: Message(origin=Server, interaction=Stream, index=3, created=1583923686) (Type &amp;#39;s&amp;#39; to stop.)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To stop the stream, type &lt;code&gt;s&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt and then tap &lt;code&gt;Enter&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#step-5-tidy-up" class="anchor" name="step-5-tidy-up"&gt;&lt;/a&gt;Step 5: Tidy Up&lt;/h4&gt;
-&lt;p&gt;You can stop the &lt;code&gt;rsocket-client&lt;/code&gt; by typing &lt;code&gt;exit&lt;/code&gt; at the &lt;code&gt;shell:&amp;gt;&lt;/code&gt; prompt like this.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint bash"&gt;shell:&amp;gt;exit
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can stop the &lt;code&gt;rsocket-server&lt;/code&gt; process by pressing &lt;code&gt;Ctrl-C&lt;/code&gt; in its terminal window.&lt;/p&gt;&lt;h4&gt;&lt;a href="#how-it-works" class="anchor" name="how-it-works"&gt;&lt;/a&gt;How It Works&lt;/h4&gt;
-&lt;p&gt;The &lt;code&gt;.stream()&lt;/code&gt; method in the &lt;code&gt;RSocketShellClient&lt;/code&gt; uses the &lt;code&gt;RSocketRequester&lt;/code&gt; to send a single request message to the server. This request initiates a stream of data from the server to the client. The client then logs every message it receives to the console.&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;RSocketController&lt;/code&gt; on the server-side examines the request message&amp;rsquo;s metadata for the &lt;code&gt;route&lt;/code&gt;. The route was set to &lt;code&gt;&amp;quot;stream&amp;quot;&lt;/code&gt; for this message, so the server passes the message to the corresponding &lt;code&gt;.stream(Message request)&lt;/code&gt; method. The server then proceeds to send a stream of messages to the client every second until the client asks it to stop.&lt;/p&gt;
-&lt;p&gt;The client can stop the stream at any time. In the &lt;code&gt;.s()&lt;/code&gt; method, this is done by calling &lt;code&gt;.dispose()&lt;/code&gt; on the &lt;code&gt;Disposable&lt;/code&gt; returned by the original stream subscription.&lt;/p&gt;&lt;h4&gt;&lt;a href="#final-thoughts" class="anchor" name="final-thoughts"&gt;&lt;/a&gt;Final Thoughts&lt;/h4&gt;
-&lt;p&gt;In this post, you learned how to build a request-stream capability with RSocket in Spring Boot. In the next post, we&amp;rsquo;ll add channel messaging. See you next time!&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

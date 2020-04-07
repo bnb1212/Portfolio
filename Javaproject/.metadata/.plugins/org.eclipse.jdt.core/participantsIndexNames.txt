@@ -83,6 +83,8 @@ C:\work\Portfolio\Javaproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsea
 \sprWeb8_para_post\src\main\java
 C:\work\Portfolio\Javaproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\273557753.index
 \sprWebTest\src\main\java
+C:\work\Portfolio\Javaproject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2929736605.index
+\sprWeb6anno\src
 C:\work\jsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\851312697.index
 \semi_project\src
 C:\work\jsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2346492522.index
