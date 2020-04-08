@@ -11,6 +11,7 @@
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="alwaysMustRevalidate" value="true" />
 	</bean>
+	
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 		<property name="alwaysUseFullPath" value="true"></property>
 	</bean>
