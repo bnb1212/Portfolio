@@ -1,8 +1,0 @@
-package pack.controller;
-
-public class SelectServiceImpl implements SelectService{
-	public void selectProcess() {
-		
-		
-	}
-}

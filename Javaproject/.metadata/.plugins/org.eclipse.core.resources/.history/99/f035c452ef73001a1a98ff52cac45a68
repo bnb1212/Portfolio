@@ -1,6 +1,0 @@
-package pack.model;
-
-public interface ExInter {
-	public void dispStudent(String student);
-	public void dispGugudan(int number);
-}

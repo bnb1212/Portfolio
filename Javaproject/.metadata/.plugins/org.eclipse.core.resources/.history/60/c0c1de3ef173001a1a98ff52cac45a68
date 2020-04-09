@@ -1,7 +1,0 @@
-package pack.model;
-
-public class ExGugudanProc implements ExGugudanInter {
-	public void dispGugudan() {
-
-	}
-}
