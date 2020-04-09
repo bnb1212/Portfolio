@@ -9,8 +9,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from mem
 	</select>
 
-	<select id="selectSearch" parameterType="string"
-		resultType="dto">
-		select code, sang, su, dan from sangdata where sang like concat('%',#{searchValue},'%')
+	<select id="selectPart" parameterType="string" resultType="dto">
+		select * from mem where num=#{num}
 	</select>
+
+	<insert id="insertData" parameterType="form">
+		insert into mem
+		values(#{num},#{name},#{addr})
+	</insert>
+
+	<update id="updateData" parameterType="form">
+		update mem set
+		name=#{name}, addr=#{addr}
+	</update>
+
+	<delete id="deleteData" parameterType="String">
+		delete from mem where
+		num=#{num}
+	</delete>
+
 </mapper>
