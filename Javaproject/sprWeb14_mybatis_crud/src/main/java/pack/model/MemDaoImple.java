@@ -11,28 +11,32 @@ import pack.controller.MemBean;
 
 @Repository
 public class MemDaoImple extends SqlSessionDaoSupport implements MemDaoInter {
-	
+
 	@Autowired
 	public MemDaoImple(SqlSessionFactory factory) {
 		setSqlSessionFactory(factory);
 	}
-	
+
 	@Override
 	public List<MemDto> getDataAll() {
 		return getSqlSession().selectList("selectDataAll");
 	}
+
 	@Override
 	public boolean deleteData(String num) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-
-
 	@Override
 	public boolean insertData(MemBean bean) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			getSqlSession().insert("", bean);
+			return true;
+		} catch (Exception e) {
+			System.out.println("insert err : " + e);
+			return false;
+		}
 	}
 
 	@Override

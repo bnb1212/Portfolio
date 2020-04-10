@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Sel"/>
+		<item key="selection" value="th"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="td"/>
 			<item value="br&gt;"/>
 			<item value="&#x09;&lt;a href=&quot;mbc/m.html&quot;&gt;m doc&lt;/a&gt;&lt;br&gt;"/>
 			<item value="sel"/>
@@ -22,9 +23,9 @@
 			<item value="j"/>
 			<item value="i"/>
 			<item value="cost"/>
-			<item value="price"/>
 		</list>
 		<list key="replacehistory">
+			<item value="th"/>
 			<item value="bub"/>
 			<item value=""/>
 			<item value="lion"/>

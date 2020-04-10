@@ -1,5 +1,0 @@
-package spr_sppli_di_arrange;
-
-public interface MessageInter {
-
-}

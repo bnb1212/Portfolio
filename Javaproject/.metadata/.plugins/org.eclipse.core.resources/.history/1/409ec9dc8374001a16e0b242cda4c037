@@ -1,8 +1,0 @@
-package pack;
-
-public class MyInfo {
-	public String myData() {
-		return "취미는 프로그래밍";
-	}
-	
-}

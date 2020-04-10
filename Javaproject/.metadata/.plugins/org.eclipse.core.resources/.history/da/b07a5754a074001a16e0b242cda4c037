@@ -1,5 +1,0 @@
-package pack.auto;
-
-public interface SenderInter {
-
-}
