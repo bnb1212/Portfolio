@@ -24,14 +24,22 @@ public class MemDaoImple extends SqlSessionDaoSupport implements MemDaoInter {
 
 	@Override
 	public boolean deleteData(String num) {
-		// TODO Auto-generated method stub
+		try {
+			int re = getSqlSession().delete("deleteData", num);
+			if (re > 0)
+				return true;
+		} catch (Exception e) {
+			System.out.println("deleteDB err : " + e);
+			return false;
+		}
+
 		return false;
 	}
 
 	@Override
 	public boolean insertData(MemBean bean) {
 		try {
-			getSqlSession().insert("", bean);
+			getSqlSession().insert("insertData", bean);
 			return true;
 		} catch (Exception e) {
 			System.out.println("insert err : " + e);
@@ -41,14 +49,18 @@ public class MemDaoImple extends SqlSessionDaoSupport implements MemDaoInter {
 
 	@Override
 	public MemDto selectPart(String num) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSqlSession().selectOne("selectPart", num);
 	}
 
 	@Override
 	public boolean updateData(MemBean bean) {
-		// TODO Auto-generated method stub
-		return false;
+		try {
+			getSqlSession().update("updateData", bean);
+			return true;
+		} catch (Exception e) {
+			System.out.println("updateDB err : " + e);
+			return false;
+		}
 
 	}
 }

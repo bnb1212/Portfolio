@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+	<select id="selectDataAll" resultType="dto">
+		select * from springboard
+	</select>
+
+
+	<select id="selectDetail" parameterType="string"
+		resultType="dto">
+		select * from springboard where num=#{num}
+	</select>
+
+	<select id="selectSearch" parameterType="form" resultType="dto">
+	select * from springboard
+	where ${searchName} like concat("%",#{searchValue}, "%")
+	</select>
+	
+	<update id="addReadCnt" parameterType="string">
+		update springboard set readcnt= readcnt + 1 where num=#{num}
+	</update>
+
+	<insert id="insertData" parameterType="form">
+		insert into springboard
+		(author, title, content) values(#{author},#{title},#{content})
+	</insert>
+
+	<update id="updateData" parameterType="form">
+		update springboard set
+		author=#{author}, title=#{title}, content=#{content} where num=#{num}
+	</update>
+
+	<delete id="deleteData" parameterType="String">
+		delete from springboard
+		where
+		num=#{num}
+	</delete>
+
+</mapper>

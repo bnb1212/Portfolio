@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<update id="updateData" parameterType="form">
 		update mem set
-		name=#{name}, addr=#{addr}
+		name=#{name}, addr=#{addr} where num=#{num}
 	</update>
 
 	<delete id="deleteData" parameterType="String">
