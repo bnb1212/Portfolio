@@ -106,6 +106,8 @@ $(document).ready(function(){
 
 
 <body>
+<% String id = (String)session.getAttribute("id");%>
+<%=id %>님 반값습니다<a href="logout">로그아웃</a>
 <div id="inputpart">
 <form action="jikwonlist" name="frm">
 	부서명 : <input class="buser" type="text" name="buser_name"/> &nbsp;
