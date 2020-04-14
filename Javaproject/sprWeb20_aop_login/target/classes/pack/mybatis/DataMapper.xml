@@ -6,7 +6,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dev">
 	<select id="selectDataAll" resultType="dto">
-		select * from sangdata
+		select jikwon_no, jikwon_name, jikwon_jik, jikwon_gen, buser_name
+		from jikwon left outer join buser
+		on buser_num = buser_no
 	</select>
 
+	<select id="selectLogin" parameterType="string" resultType="dto">
+		select jikwon_no, jikwon_name from jikwon
+		where jikwon_no=#{no}
+	</select>
 </mapper>

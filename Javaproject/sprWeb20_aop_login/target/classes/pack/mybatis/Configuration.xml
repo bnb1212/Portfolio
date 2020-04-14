@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="pack.model.SangpumDto" alias="dto" />
+		<typeAlias type="pack.model.JikwonDto" alias="dto" />
 	</typeAliases>
 
 	<mappers>
