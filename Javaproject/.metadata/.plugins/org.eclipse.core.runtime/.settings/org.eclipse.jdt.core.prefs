@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.ucls
 org.eclipse.jdt.core.classpathVariable.ASPECTJRT_LIB=C\:/work/eclipse/plugins/org.aspectj.runtime_1.9.2.202002051807.jar
 org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=C\:/work/eclipse/
 org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/Java/jdk-11.0.5/lib/jrt-fs.jar
