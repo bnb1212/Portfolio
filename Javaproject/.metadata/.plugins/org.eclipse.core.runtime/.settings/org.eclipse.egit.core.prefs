@@ -1,5 +1,6 @@
-GitRepositoriesView.GitDirectories=C\:\\work\\Portfolio\\Javaproject\\KIC_SpringProject\\.git;C\:\\work\\Portfolio\\.git;
-GitRepositoriesView.GitDirectories.relative=KIC_SpringProject\\.git;C\:\\work\\Portfolio\\.git;
+GitRepositoriesView.GitDirectories=C\:\\work\\Portfolio\\.git;C\:\\work\\jsou\\KIC_SpringProJect\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\work\\Portfolio\\.git;C\:\\work\\jsou\\KIC_SpringProJect\\.git;
+RepositoryGroups.uuids=
 RepositorySearchDialogSearchPath=C\:\\work\\Portfolio\\Javaproject\\KIC_SpringProject
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

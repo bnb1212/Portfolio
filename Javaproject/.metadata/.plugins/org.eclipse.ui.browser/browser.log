@@ -4,3 +4,14 @@
 3월 13, 2020 13:28:28.35 [5384:2252:0313/132828.351:ERROR:socket_stream.cc(218)] Closing stream with result -2
 3월 13, 2020 13:31:16.54 [5384:2252:0313/133116.547:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
 3월 13, 2020 17:32:02.23 [5384:2252:0313/173202.236:ERROR:socket_stream.cc(218)] Closing stream with result -2
+
+4월 24, 2020 18:04:28.53 NEW SESSION
+4월 24, 2020 18:04:28.53 [7104:9456:0424/180428.498:ERROR:browser_switcher_service.cc(238)] XXX Init()
+4월 24, 2020 18:04:38.49 [7104:9456:0424/180438.495:ERROR:device_event_log_impl.cc(162)] [18:04:38.495] Bluetooth: bluetooth_adapter_winrt.cc:1055 Getting Default Adapter failed.
+
+4월 27, 2020 08:33:19.75 NEW SESSION
+4월 27, 2020 08:33:19.75 [8540:8024:0427/083319.751:ERROR:browser_switcher_service.cc(238)] XXX Init()
+4월 27, 2020 08:33:30.31 [8540:8024:0427/083330.317:ERROR:device_event_log_impl.cc(162)] [08:33:30.317] Bluetooth: bluetooth_adapter_winrt.cc:1055 Getting Default Adapter failed.
+4월 27, 2020 13:18:14.45 [8540:8132:0427/131814.451:ERROR:socket_stream.cc(218)] Closing stream with result -2
+4월 27, 2020 13:18:18.49 [8540:8132:0427/131818.496:ERROR:socket_stream.cc(218)] Closing stream with result -2
+4월 27, 2020 13:48:58.50 [8540:8132:0427/134858.507:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
