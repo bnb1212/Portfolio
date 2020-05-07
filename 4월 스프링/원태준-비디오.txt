@@ -1,0 +1,305 @@
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/apw9jzcJ6vE','1','1','1',NOW(),'정렬1', '정렬에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/apw9jzcJ6vE','1','2','2',NOW(),'정렬2','정렬에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/apw9jzcJ6vE','1','3','3',NOW(),'정렬3','정렬에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/_XJPse7OQlc','1','4','4',NOW(),'그룹','그룹에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/Fkz8MgHNS7E','1','5','5',NOW(),'서복붙','서복붙에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/mgkjJ5XSA9g','1','6','6',NOW(),'글자정렬','글자정렬에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/y5YWOdKx1L8','1','7','7',NOW(),'기본단축키','기본단축키에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/MFxReMu425g','1','8','8',NOW(),'레이어','레이어에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/mgkjJ5XSA9g','1','9','9',NOW(),'텍스트, 붙여넣기와 서식','텍스트,붙여넣기와 서식에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/2sS-Ugi4DAU','1','10','10',NOW(),'스포이드, 컨알쉬','스포이드, 컨알쉬에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/WYhbj-4kSjE','1','11','11',NOW(),'화면,아웃트로','화면,아웃트로에대해서 공부합니다');
+
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/b4LxIniE9-M','2','1','1',NOW(),'자바스크립트 워밍업', '자바 스크립트 워밍업에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/Y3_2BLb3hz8','2','2','2',NOW(),'DOM 스크립트', 'DOM 스크립트에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/tS9wR5abszY','2','3','3',NOW(),'이벤트의 기본 동작', '이벤트의 기본 동작에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/lXeJSMGlRgE','2','4','4',NOW(),'this와 이벤트 객체', 'this와 이벤트 객체에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/QKDfObtRiAY','2','5','5',NOW(),'움직이는 캐릭터 에제', '움직이는 캐릭터 예제에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/-fFNuNsR8q4','2','6','6',NOW(),'이벤트 위임', '이벤트 위임에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/ZjgrNWvH66M','2','7','7',NOW(),'3개의 문', '3개의 문에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/MiLELE_yskc','2','8','8',NOW(),'객체', '객체에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/sXHPhhrQSV4','2','9','9',NOW(),'스크롤 이벤트 다루기', '스크롤 이벤트 다루기에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/by9C6VIgZVs','2','10','10',NOW(),'스크롤 위치에 따라 오브젝트 조작하기', '스크롤 위치에 따라 오브젝트 조작하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/IxRRA-lXx1Q','2','11','11',NOW(),'전진! 3D스크롤', '전진! 3D스크롤에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/hL-U7-a3nxs','3','1','1',NOW(),'얼굴드로잉', '얼굴드로잉에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/hENY_8KoGZ8','3','2','2',NOW(),'인체드로잉', '인체드로잉에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/yNuxt5uyFDA','3','3','3',NOW(),'빛과 그림자', '빛과 그림자에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/bi2bYA6Vl7U','3','4','4',NOW(),'투시', '투시에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/qYO6FPU_wOU','3','5','5',NOW(),'아이디어 떠올리기', '아이디어 떠올리에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/NhtOIcT7Zqc','3','6','6',NOW(),'발상의 예시', '발상의 예시임에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/1EoimgXU0i0','3','7','7',NOW(),'발상과 구도', '발상과 구도에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/Iw7N5bWSiZw','3','8','8',NOW(),'밑색깔기와 형태수정하기', '밑색깔기와 형태수정하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/3QfhVAzSM2M','3','9','9',NOW(),'스케치 마무리하기', '스케치 마무리하기에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/arE7778oJD4','3','10','10',NOW(),'채색과 큰것 묘사하기', '채색과 큰것 묘사하기에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/vcCaSBJpsHk?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','1','1',NOW(),'머신러닝과 딥러닝의 차이','머신러닝 딥러닝 위치, 머신러닝과 딥러닝 구조 차이, 뉴럴 네트워크, 인공 신경망 유형에 대해 학습합니다.');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/etM5NLvp_do?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','1','2',NOW(),'머신러닝과 수학','학습이란, 수학적 접근');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/dlE5Ht_Hrwg?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','1','3',NOW(),'머신러닝 학습 기준','overfitting, 머신러닝 접근');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/oL6LIuw_p94?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','1','4',NOW(),'머신러닝 키워드','머신러닝 접근 필요성, 머신러닝 키워드, 추론의 최적화');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title) 
+VALUES('https://www.youtube.com/embed/5Xy5Ju7hYo4?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','2','5',NOW(),'TensorFlow.js 개요');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title) 
+VALUES('https://www.youtube.com/embed/ku9-AxaznSA?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','2','6',NOW(),'TensorFlow.js 구성-1');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title) 
+VALUES('https://www.youtube.com/embed/dnJ3JESmBkE?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','2','7',NOW(),'TensorFlow.js 구성-2');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/8nX9C8EjYkw?list=PLS8gIc2q83OjStGjdTF2LZtc0vefCAbnX','4','2','8',NOW(),'TensorFlow.js 활용 데모','이미지 분류, 게임 컨트롤, 사용 가능 모델, 이미지 기반 모델, 오디오 모델');
+
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/XIySEGmUWd0','5','1','1',NOW(),'아나콘다, 텐서플로우 설치', '아나콘다, 텐서플로우 설치에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/zrV0cdIIlnk','5','2','2',NOW(),'기본개념과 상수', '기본개념과 상수에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/KGUw4_NE__s','5','3','3',NOW(),'변수와 플레이스 홀더', '변수와 플레이스홀더에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/kPxpJY6fRkY','5','4','4',NOW(),'Multi Variable의 개념', 'Multi Variable의 개념에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/paEAF5rRd-s','5','5','5',NOW(),'Logistic Regression의 개념', 'Logistic Regression의 개념에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/IN85XVfx2co','5','6','6',NOW(),'Binary Classification 비용 최적화', 'Binary Classification 비용 최적화에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/D5ep0-slc6U','5','7','7',NOW(),'판다스로 Qualifying', '판다스로 Qualifying에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/bqpyzFq6BzA','5','8','8',NOW(),'기록등급 데이터 만들기', '기록등급 데이터 만들기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/hIilkjG071Y','5','9','9',NOW(),'머신러닝 최적화', '머신러닝 최적화하기에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/DHJULJWsTwM','5','10','10',NOW(),'케라스, 인공지능의 공용어 완전정복', '케라스, 인공지능의 공용어 완전정복에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/NNmiOoWt86M','6','1','1',NOW(),'Systems of Linear Equations', 'Systems of Linear Equations에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/l69YjkuUym0','6','2','2',NOW(),'Row Reduction and Echelon Forms', 'Row Reduction and Echelon Forms에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/MkjazYnvNP8','6','3','3',NOW(),'Vector Equations', 'Vector Equations에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/F2lJ7oSwcyY','6','4','4',NOW(),'The Matrix Equations Ax=b', 'The Matrix Equations Ax=b에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/yLi8RxqfowA','6','5','5',NOW(),'Linear Independence', 'Linear Independence에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/4PCktDZJH8E','6','6','6',NOW(),'Introduction to Linear Transformation', 'Introduction to Linear Transformation에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/5zGZW1G5QQI','6','7','7',NOW(),'The Matrix of a Linear Transformation', 'The Matrix of a Linear Transformation에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/EFApWAl3NJw','6','8','8',NOW(),'Matrix Operations', 'Matrix Operations에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/AMLUikdDQGk','6','9','9',NOW(),'The inverse of a Matrix', 'The inverse of a Matrix에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/Ht2Zl0Hfg_I','6','10','10',NOW(),'Characterizations of Invertible Matrices', 'Characterizations of Invertible Matrices');
+
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/1Lb83xiE9Nc','7','1','1',NOW(),'파이썬 Print 사용법', '파이썬 Print 사용법에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/-Xuvb87jLXA','7','2','2',NOW(),'파이썬 변수', '파이썬 변수에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/3cgoQGU3EFM','7','3','3',NOW(),'숫자형', '숫자형에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/0jTIe3yG5yE','7','4','4',NOW(),'문자형', '문자형에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/1N3xwkiiyYE','7','5','5',NOW(),'리스트', '리스트의 개념에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/K3MZQU_6fd4','7','6','6',NOW(),'튜플', '튜플에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/OTiHXJJrOak','7','7','7',NOW(),'딕셔너리', '딕셔너리에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/p3cMq-icWW0','7','8','8',NOW(),'집합', '집합에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/lFxrKwUOhIg','7','9','9',NOW(),'if구문', 'if구문에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/j96pFPT8fHI','7','10','10',NOW(),'for구문', 'for구문에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/dw_VUMCtZTI','8','1','1',NOW(),'while', 'while에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/SfcaETNROxY','8','2','2',NOW(),'functions', 'functions에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/tqzXqPDHv3E','8','3','3',NOW(),'input', 'input에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/YQhJsWj6ydU','8','4','4',NOW(),'Class', 'Class에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/jFAWGF4UeAE','8','5','5',NOW(),'Module', 'Module에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/xTJE527Jy4o','8','6','6',NOW(),'Package', 'Package에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/grLgUouvWbM','8','7','7',NOW(),'Exception', 'Exception에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/7rjJrQy9gi4','8','8','8',NOW(),'Built-in Functions', 'Built-in Functions에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/NSbOtYzIQI0','8','9','9',NOW(),'External Functions', 'External Functions에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/PUunsYX10tA','8','10','10',NOW(),'File Write', 'File Write에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/NMesGSXr8H4','9','1','1',NOW(),'Markov Decision Process', 'Markov Decision Process에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/rrTxOkbHj-M','9','2','2',NOW(),'Planning by Dynamic Programming', 'Planning by Dynamic Programming에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/47FyZtBRglI','9','3','3',NOW(),'Model Free Prediction', 'Model Free Prediction에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/2h-FD3e1YgQ','9','4','4',NOW(),'Model Free Control', 'Model Free Control에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/71nH1BUjhNw','9','5','5',NOW(),'Value Function Approximation', 'Value Function Approximation에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/2YFBordM1fA','9','6','6',NOW(),'Policy Gradient', 'Policy Gradient에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/S216ZLuCdM0','9','7','7',NOW(),'Integrating Learning and Planning', 'Integrating Learning and Planning에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/nm6RwuA_pGE','9','8','8',NOW(),'Exploration and Exploitation', 'Exploration and Exploitation에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/C5_2v4pRc5c','9','9','9',NOW(),'Classic Games', 'Classic Games에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/NMesGSXr8H4','10','1','1',NOW(),'Markov Decision Process', 'Markov Decision Process에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/rrTxOkbHj-M','10','2','2',NOW(),'Planning by Dynamic Programming', 'Planning by Dynamic Programming에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/47FyZtBRglI','10','3','3',NOW(),'Model Free Prediction', 'Model Free Prediction에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/2h-FD3e1YgQ','10','4','4',NOW(),'Model Free Control', 'Model Free Control에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/71nH1BUjhNw','10','5','5',NOW(),'Value Function Approximation', 'Value Function Approximation에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/2YFBordM1fA','10','6','6',NOW(),'Policy Gradient', 'Policy Gradient에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/S216ZLuCdM0','10','7','7',NOW(),'Integrating Learning and Planning', 'Integrating Learning and Planning에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/nm6RwuA_pGE','10','8','8',NOW(),'Exploration and Exploitation', 'Exploration and Exploitation에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/C5_2v4pRc5c','10','9','9',NOW(),'Classic Games', 'Classic Games에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/os7BuYIymns','11','1','1',NOW(),'애널리틱스 기초 강의', '애널리틱스 기초 강의에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/T4P-Jqyd9o8','11','2','2',NOW(),'구글 애널리틱스 리포트 이해하기', '구글 애널리틱스 리포트 이해하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/mePRKAXJwco','11','3','3',NOW(),'획득 보고서 활용하기', '획득 보고서 활용하기에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/n1YMpcek_og','11','4','4',NOW(),'전자상거래 활용하기', '전자상거래 활용하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/v-B1SHSeDd8','11','5','5',NOW(),'애드워즈-애널리틱스 연결하기', '애드워즈-애널리틱스 연결하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/c0AXQPO7-xo','11','6','6',NOW(),'리마케팅 설정하기', '리마케팅 설정하기에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/n1YMpcek_og','11','7','7',NOW(),'전자상거래 설정하기', '전자상거래 설정하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/1k_ptO1bic8','11','8','8',NOW(),'목표와 이벤트로 전환 추적하기', '목표와 이벤트로 전환 추적하기에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/J3fcLTrewHA','12','1','1',NOW(),'전제조건 : PMF', '전제조건 : PMF에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/k6iph0DfdUs','12','2','2',NOW(),'AARRR 개요', 'AARRR 개요에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/b5iIW43yX7I','12','3','3',NOW(),'Acquisition', 'Acquisition에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/s-V7gKrsels','12','4','4',NOW(),'Activation', 'Activation에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/y0OtFpC7yag','12','5','5',NOW(),'Retention', 'Retention에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/LWDaDyYbVKM','12','6','6',NOW(),'Revenue', 'Revenue에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/nyKmQkHrE80','12','7','7',NOW(),'Referral', 'Referral에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/Ut66zDHiWpI','12','8','8',NOW(),'Retention 계산하기', 'Retention 계산하기에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/YprjxuGo4O0','12','9','9',NOW(),'Revenue Equation 만들기', 'Revenue Equation 만들기에대해서 공부합니다');
+
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/zZFGILl0fIU','13','1','1',NOW(),'개인사업자와 법인사업자 무엇이 스타트업에게 유리한가', '개인사업자와 법인사업자 무엇이 스타트업에게 유리한가에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/manhkGMs9j4','13','2','2',NOW(),'절세를 위한 체크리스트', '절세를 위한 체크리스트에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/qNSda2YLGmo','13','3','3',NOW(),'절세의 기본 증빙관리', '절세의 기본 증빙관리에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/nNudmQi40gI','13','4','4',NOW(),'스타트업은 어떤 세금을 내나요', '스타트업은 어떤 세금을 내나요에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/ub0ckrLAggw','13','5','5',NOW(),'간이과세자의 장점과 단점', '간이과세자의 장점과 단점에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/f1-E5qL7F3c','13','6','6',NOW(),'투자유치를 위한 미국법인 설립', '투자유치를 위한 미국법인 설립에대해서 공부합니다');
+
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/UaQHHJA2oMI','13','7','7',NOW(),'부가가치세 매입세액 불공제 항목', '부가가치세 매입세액 불공제 항목에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/lLwTs4IjlRo','13','8','8',NOW(),'사업자등록은 무조건 늦추는게 유리하다?', '사업자등록은 무조건 늦추는게 유리하다?에대해서 공부합니다');
+INSERT INTO video(video_url,class_no,section_no,order_no,upload_date,video_title,video_info) 
+VALUES('https://www.youtube.com/embed/yEmlYw1X85Q','13','9','9',NOW(),' 프리랜서가 사업자 등록을 하면 뭐가 달라지나요', ' 프리랜서가 사업자 등록을 하면 뭐가 달라지나요에대해서 공부합니다');

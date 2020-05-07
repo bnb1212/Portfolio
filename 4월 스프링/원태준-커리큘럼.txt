@@ -1,0 +1,138 @@
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','1','정렬1');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','2','정렬2');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','3','정렬3');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','4','그룹');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','5','서복붙');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','6','글자정렬');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','7','기본단축키');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','8','레이어');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','9','텍스트,붙여넣기와 서식');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','10','스포이드,컨알쉬');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('1','11','화면,아웃트로');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','1','자바스크립트 워밍업');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','2','DOM 스크립트');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','3','이벤트의 기본 동작');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','4','this와 이벤트 객체');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','5','움직이는 캐릭터 예제');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','6','이벤트 위임');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','7','3개의 문');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','8','객체');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','9','스크롤 이벤트 다루기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','10','스크롤 위치에 따라 오브젝트 조작하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('2','11','전진! 3D스크롤');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','1','얼굴드로잉');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','2','인체드로잉');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','3','빛과 그림자');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','4','투시');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','5','아이디어 떠올리기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','6','발상의 예시');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','7','발상과 구도, 러프 스케치하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','8','밑색깔기와 형태수정하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','9','스케치 마무리하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('3','10','채색과 큰 것 묘사하기');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','1','머신러닝과 딥러닝');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','2','TensorFlow.js 소개');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','3','Tensor와 Flow');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','4','벡터, 행렬');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','5','선형 회귀');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','6','배치, 확률적, 미니 배치 경사 하강법');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','7','옵티마이저');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','8','선형 회귀 정규화');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','9','활성화 함수');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('4','10','소프트맥스 회귀');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','1','아나콘다, 텐서플로우 설치');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','2','기본개념과 상수');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','3','변수과 플레이스 홀더');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','4','multi variable의 개념');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','5','Logistic Regression의 개념');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','6','Binary Classification 비용 최적화');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','7','판다스로 Qualifying');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','8','기록등급 데이터 만들기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','9','머신러닝 최적화');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('5','10','케라스, 인공지능의 공용어 완전정복');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','1','Systems of Linear Equations');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','2','Row Reduction and Echelon Forms');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','3','Vector Equations');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','4','The Matrix Equations Ax=b');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','5','Linear Independence');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','6','Introduction to Linear Transformation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','7','The Matrix of a Linear Transformation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','8','Matrix Operations');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','9','The inverse of a Matrix');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('6','10','Characterizations of Invertible Matrices');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','1','파이썬 Print 사용법');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','2','파이썬 변수');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','3','숫자형');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','4','문자형');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','5','리스트');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','6','튜플');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','7','딕셔너리');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','8','집합');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','9','if구문');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('7','10','for구문');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','1','while');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','2','functions');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','3','input');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','4','Class');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','5','Module');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','6','Package');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','7','Exception');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','8','Built-in Functions');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','9','External Functions');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('8','10','File Write');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','1','Markov Decision Process');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','2','Planning by Dynamic Programming');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','3','Model Free Prediction');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','4','Model Free Control');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','5','Value Function Approximation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','6','Policy Gradient');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','7','Integrating Learning and Planning');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','8','Exploration and Exploitation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('9','9','Classic Games');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','1','Markov Decision Process');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','2','Planning by Dynamic Programming');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','3','Model Free Prediction');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','4','Model Free Control');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','5','Value Function Approximation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','6','Policy Gradient');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','7','Integrating Learning and Planning');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','8','Exploration and Exploitation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('10','9','Classic Games');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','1','애널리틱스 기초 강의');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','2','구글 애널리틱스 리포트 이해하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','3','획득 보고서 활용하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','4','전자상거래 활용하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','5','애드워즈-애널리틱스 연결하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','6','리마케팅 설정하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','7','전자상거래 설정하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('11','8','목표와 이벤트로 전환 추적하기');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','1','전제조건 : PMF');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','2','AARRR 개요');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','3','Acquisition');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','4','Activation');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','5','Retention');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','6','Revenue');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','7','Referral');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','8','Retention 계산하기');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('12','9',' Revenue Equation 만들기');
+
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','1','개인사업자와 법인사업자 무엇이 스타트업에게 유리한가');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','2','절세를 위한 체크리스트');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','3','절세의 기본 증빙관리');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','4','스타트업은 어떤 세금을 내나요');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','5','간이과세자의 장점과 단점');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','6','투자유치를 위한 미국법인 설립');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','7','부가가치세 매입세액 불공제 항목');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','8','사업자등록은 무조건 늦추는게 유리하다?');
+INSERT INTO curri(class_no,section_no,goal_title) VALUES('13','9',' 프리랜서가 사업자 등록을 하면 뭐가 달라지나요');
