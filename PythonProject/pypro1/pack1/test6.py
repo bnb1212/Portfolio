@@ -59,17 +59,77 @@ ss = '''
 '''
     
 print(ss)
-#정규 표현식으로 한글과 공백을 제외한 문자들을 없앰
+# 정규 표현식으로 한글과 공백을 제외한 문자들을 없앰
 ss2 = re.sub(r'[^가-힣\s]', '', ss)
 print(ss2)
 # 공백으로 구분
 ss3 = ss2.split(' ')
 print(ss3)
 print(len(ss3))
-#중복 제거
+# 중복 제거
 sdata = set(ss3)
 print(len(sdata))
 
+cou = {}  # 단어의 발생횟수를 dic type으로 저장
+for i in ss3: 
+    if i in cou:
+        cou[i] += 1
+    else:
+        cou[i] = 1
+        
+print(cou)
+# dict 자료로 과일값 출력하기
+price = {'사과':500, '수박':12000, '참외':600}
+my = {'사과' : 2, '수박': 1}
+bill = sum(price[f] * my[f] for f in my)
+print('총 구매 가격: {}원'.format(bill))
 
-
+print()
+datas = [1, 2, 'a', True, 3]
+li = [i * i for i in datas if type(i) == int]
+print(li)
     
+datas = {1, 1, 2, 2, 3}
+se = {i * i for i in datas}
+print(se)
+
+id_name = {1: 'tom', 2: 'james'}
+print(id_name)
+name_id = {val:key for key, val in id_name.items()}
+print(name_id)
+
+print()
+temp = [1, 2, 3]
+for i in temp:
+    print(i, end=' ')
+print()
+print([i for i in temp])
+print({i for i in temp})
+#    print((i for i in temp))
+temp2 = list()
+for i in temp:
+    temp2.append(i)
+print(temp2)
+    
+temp3 = [i + 10 for i in temp]
+print(temp3)
+
+print()
+aa = [(1,2), (3,4), (5,6)]    
+for a, b in aa:
+    print(a+b)
+    
+# range함수
+print(list(range(1,6)))
+print(tuple(range(1,6)))
+print(set(range(1,6)))
+
+for i in range(6):
+    print(i, end = " ")
+print()
+for i in range(2, 10):
+    for j in range(1, 10):
+        print('{}*{}={}'.format(i, j, i*j), end=' ')
+    print()
+    
+
