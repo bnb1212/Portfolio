@@ -1,7 +1,7 @@
 kor = 100
 
 def abc():
-    print("난 모듈의  멤버인 함수")
+    print("난 모듈의 멤버인 함수")
     
 class my:
     kor = 90
