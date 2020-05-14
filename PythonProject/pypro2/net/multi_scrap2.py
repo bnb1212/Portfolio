@@ -2,7 +2,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import time
-from multiprocessing import Pool
+from conda.core import link
 
 def get_link():
     url = "https://beomi.github.io/beomi.github.io_old/"
@@ -32,12 +32,10 @@ def get_content(link):
 if __name__ == '__main__':
     start_time = time.time()
 #    print(get_link())
-
-    pool = Pool(processes = 4)
-    pool.map(get_content, get_link())
+    for link in get_link():
+        get_content(link)
         
     print("처리 시간 : %s 초"%(time.time() - start_time))
     
-# 멀티 프로세싱 비교용
-# 처리 시간 : 19.423768758773804 초
+    
 
