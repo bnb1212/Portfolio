@@ -1,4 +1,4 @@
-"""django4_test_Db URL Configuration
+"""django_test5_ex URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from myfriend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+
     path('', views.Main),
-    path('show', views.Dbtest)
-]
+    path('show', views.Dbtest),
+    path('main', views.Main)
+    ]

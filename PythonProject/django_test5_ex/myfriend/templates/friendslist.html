@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/static/css/ex.css">
+<script type="text/javascript" src="/static/js/ex.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	* 친구 자료 *
+	<br> {% if friends.count > 0 %}
+	<table>
+		<tr>
+			<th>id</th>
+			<th>이름</th>
+			<th>주소</th>
+			<th>나이</th>
+
+		</tr>
+		{% for a in friends %}
+		<tr>
+			<td>{{a.id}}</td>
+			<td>{{a.name}}</td>
+			<td>{{a.addr}}</td>
+			<td>{{a.age}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br> 건수 : {{friends.count}} {% else %}
+	<p>자료가 없어요</p>
+
+	{% endif %}
+	<br>
+	<button id='btnHome' onclick="homeClick()">홈으로</button>
+</body>
+</html>
