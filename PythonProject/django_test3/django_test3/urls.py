@@ -1,4 +1,4 @@
-"""django_test1 URL Configuration
+"""django_test3 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from sessionapp import views
 
-# url과 view를 연결
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('', views.index),
-    path('hello', views.helloFunc),
-    path('hello_tem', views.hello_tem),
-    path('world', views.worldFunc),
+    
+    path('', views.main),
+    path('setos/', views.setos),
+    path('showos', views.showos),
+    # 요청명과 app의 이름이 같아서는 안된다. 직빵으로 에러 터진다.
+    # 요청명과 Function명은 같아도 되긴 함.
     
 ]

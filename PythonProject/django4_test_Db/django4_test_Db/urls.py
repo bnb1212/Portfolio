@@ -1,4 +1,4 @@
-"""django_test1 URL Configuration
+"""django4_test_Db URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -17,13 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from myapp import views
 
-# url과 view를 연결
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    path('', views.index),
-    path('hello', views.helloFunc),
-    path('hello_tem', views.hello_tem),
-    path('world', views.worldFunc),
     
+    path('', views.Main),
+#     path('dbtest', views.)
 ]
