@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	"내가 산 물품"
+	<br>
+	<table border='1'>
+		<tr>
+			<th>id</th>
+			<th>이름</th>
+			<th>가격</th>
+		</tr>
+		{% for s in sangdata %}
+		<tr>
+			<td>{{s.id}}</td>
+			<td>{{s.sang}}</td>
+			<td>{{s.price}}</td>
+		</tr>
+
+		{% endfor %}
+		<tr>
+			<td colspan='3'>건수 : {{sangdata.count}}</td>
+		</tr>
+	</table>
+
+</body>
+</html>
