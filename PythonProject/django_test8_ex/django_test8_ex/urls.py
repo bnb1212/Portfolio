@@ -1,4 +1,4 @@
-"""django_test8_sangdata URL Configuration
+"""django_test8_ex URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysangpum import views
-from django.urls.conf import include
+from myjikwon import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', views.MainFunc),
-    
-    path('sangpum/', include('mysangpum.urls')),
+    path('jiklist', views.JikFunc),
+    path('gogeklist', views.GogekFunc),
 ]

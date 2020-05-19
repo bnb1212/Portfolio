@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Django 연습문제</h1>
+<h4>작성자 : 이지운</h4>
+부서정보
+<table border="1">
+	<tr>
+		<th>부서번호</th><th>부서명</th><th>부서전화</th><th>지역명</th>
+	</tr>
+	{% for b in busers %}
+		<tr>
+			<td>{{b.buser_no}}</td>
+			<td><a href="jiklist?buser_no={{b.buser_no}}">{{b.buser_name}}</a></td>
+			<td>{{b.buser_tel}}</td>
+			<td>{{b.buser_loc}}</td>
+		</tr>
+	{% endfor %}
+</table>
+</body>
+</html>
