@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/static/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="/static/js/script.js"></script>
+
+</head>
+<body>
+	<h2>**회원목록**</h2>
+	<a href="/member/insert" class="btn btn-primary btn-sm">회원 등록</a>
+	<br>
+	<table class="table">
+		<thead>
+			<th>id</th>
+			<th>회원id</th>
+			<th>회원명</th>
+			<th>기타</th>
+		</thead>
+		<tbody>
+		{% if members.count > 0 %}
+			{% for m in members %}
+		<tr>
+		<td>{{m.id}}</td>
+		<td>{{m.memid}}</td>
+		<td>{{m.name}}</td>
+			<td>
+			전화 : {{m.phone}}, 이메일:{{m.email}}, 직업:{{m.job}}, 
+			우편번호 : {{m.zipcode}}, 주소 : {{m.address}}
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<tr><td colspan="4"> 회원자료가 없어요 </td></tr>
+		{% endif %}
+		</tbody>
+	</table>
+</body>
+</html>

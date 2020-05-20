@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="/static/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="/static/js/script.js"></script>
+
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById("btnZipClose").onclick = function(){
+		window.close()
+	}
+}
+</script>
+</head>
+<body>
+<b> ** 주소 검색 ** </b><br>
+<form action="/member/zipcheckok" name='zipForm' method="post">
+<table class="table">
+	<tbody>
+		<tr>
+			<td> 동 이름 입력 : 
+			<input type="text" class="form-control" name="area3"> {% csrf_token %}
+			<br><br>
+			<input type="submit" class="btn btn-success" value="찾기">
+			<input type="button" class="btn btn-outline-primary" value="닫기" id="btnZipClose">
+			<input type="hidden" class="form-control" name="check" value="n">
+			</td>
+		</tr>
+	</tbody>
+</table>
+</form>
+
+{% if check == "n" %}
+	{% if datas.count == 0 %}
+		<b>등록된 동 이름이 아닙니다</b>
+	{% else %}
+		<table class="table">
+			<thead>
+				<tr>
+					<td>동 이름을 클릭하면 주소가 입력됩니다.
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+					{% for z in datas %}
+						<a href="javascript:send('{{z.1}}', '{{z.2}}', '{{z.3}}', '{{z.4}}', '{{z.5}}')">
+						{{z.1}} {{z.2}} {{z.3}} {{z.4}} {{z.5}}</a><br>
+					{% endfor %}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	{% endif %}
+{% endif %}
+
+</body>
+</html>

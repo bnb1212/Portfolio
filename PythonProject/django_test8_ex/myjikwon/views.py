@@ -42,5 +42,20 @@ def GogekFunc(request):
                 gender=functions.Substr('gogek_jumin',8,1))
     return render(request, 'gogeklist.html', {'gogeks':gogek_data})
 
-
+    '''
+    datas = models.Gogek.objexts.filter(gogek_damsano=damsano).annotate(
+            gender=Case(
+                        When
+                            gogek_jumin__contains='-1',
+                        then=Value('남')
+                        ),
+                         When(
+                            gogek_jumin__contains='-2',
+                        then=Value('여')
+                        ),
+                    default=Value('중성'),
+                    output_field=CharField(),
+                    )
+                ).all()
+    '''
 

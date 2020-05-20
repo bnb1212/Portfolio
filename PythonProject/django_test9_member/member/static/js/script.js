@@ -1,0 +1,4 @@
+function idCheck(){
+	alert('a')
+}
+
