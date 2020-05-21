@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 만들기</title>
+
+
+<!-- bootstrap script -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<!-- bootstrap end -->
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+			메뉴 1
+		</div>
+		<div class="col-lg-3">
+			메뉴 2
+		</div>
+		<!-- html 구문을 해석하는 | safe 구문 -->
+		{{main|safe}}
+		<div class="col-lg-3">
+			<a href="/board/list">게시판</a>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

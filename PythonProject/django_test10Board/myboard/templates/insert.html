@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>추가</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+
+<script type="text/javascript">
+	function chkFunc() {
+		if (frm.name.value == "" || frm.passwd.value == ""
+				|| frm.mail.value == "" || frm.title.value == ""
+				|| frm.cont.value == "") {
+			alert("입력자료를 모두 채우시오");
+			return;
+		}
+		frm.submit();
+	}
+</script>
+</head>
+<body>
+	<div class="container">
+		<h2>* 글 입력 *</h2>
+		<form name="frm" action="/board/insertok" method="post"> {%csrf_token%}
+			<table class="table">
+				<tbody>
+					<tr>
+						<td>작성자</td>
+						<td><input type="text" name="name" class="form-control" /></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="text" name="passwd" class="form-control" /></td>
+					</tr>
+					<tr>
+						<td>이메일</td>
+						<td><input type="text" name="mail" class="form-control" /></td>
+					</tr>
+					<tr>
+						<td>글제목</td>
+						<td><input type="text" name="title" class="form-control" /></td>
+					</tr>
+					<tr>
+						<td>글내용</td>
+						<td><textarea rows="5" cols="50" name="cont" class="form-control"></textarea>
+					</tr>
+					<tr style="text-align: center;">
+						<td colspan="2">
+							<input type="button" class="btn btn-success" value="등록" onclick="chkFunc()"> 
+							<!-- onclick event를 inline으로 거는 것은 권장하지 않는다 -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

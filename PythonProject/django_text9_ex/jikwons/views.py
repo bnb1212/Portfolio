@@ -19,7 +19,7 @@ def jikwonFunc(request):
     
     # gogek_data.gogek_damsano는 jikwon Object이다. 외래키이기 떄문에?
     jikwon_data = gogek_data.gogek_damsano
-
+    
     # 부서 데이터 획득 ====================
     # get 반환 객체에 접근 할때는 . 으로 접근 (dot notation)
     buser_num = jikwon_data.buser_num

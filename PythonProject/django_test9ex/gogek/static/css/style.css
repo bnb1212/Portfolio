@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body{
+	font-size:30px;
+	background-image: url('/static/images/달콤가득질리언.jpg');
+	text-align: center;
+}
+span {
+	font-size: 80px;
+	background-color: white;
+}
+
+a {
+	background-color: white;
+}

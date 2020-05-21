@@ -22,6 +22,11 @@
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
 </head>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btnSearch").onclick = goSearch
+	}
+</script>
 <body>
 	<div class="container-fluid">
 		<h3>고객 정보 입력</h3>
@@ -32,7 +37,7 @@
 					<div class="input-group">
 						<!-- name -->
 						<div class="input-group-prepend">
-							<span class="input-group-text">고객명</span>
+							<span class="input-grou p-text">고객명</span>
 						</div>
 						<input type='text' class="form-control" name="inp_gogek_name">
 					</div>
@@ -47,7 +52,7 @@
 					</div>
 				</div>
 				<div class="col col-sm-2">
-					<input type="submit" value='확인' class="btn btn-primary">
+					<input type="submit" value='확인' class="btn btn-primary" id='btnSearch'>
 				</div>
 			</div>
 		</form>

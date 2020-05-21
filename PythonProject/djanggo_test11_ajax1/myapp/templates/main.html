@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<script type="text/javascript">
+	$(document).ready(function() {
+		// alert('a')
+		$('#btn1').click(function() {
+			var msg = $('#txtMsg').val()
+			// alert(msg)
+
+			$('#showData1').empty()
+
+			$.ajax({
+				url : 'startajax',
+				// 넘기는 방식
+				type : 'get',
+
+				// 넘기는 데이터
+				data : {
+					'msg' : msg
+				},
+
+				// 받는 값은 Json 혹은 xml
+				dataType : 'json',
+
+				success : function(data) {
+					// alert(data)
+
+					//자바스크립트 반복문 유의
+					for ( var k in data) {
+						var str = k + "<br>" + data[k] + "<br>"
+					}
+					str += "<br><br>" + data['key']
+					$('#showData1').html(str)
+				},
+
+				error : function() {
+					$('showData1').text('에러')
+				}
+			})
+		})
+
+	})
+</script>
+<body>
+	<div class="container">
+		<h1>메인</h1>
+		<h4>AJAX 연습</h4>
+		<div class="row">
+			<div class="col form-inline">
+				<input type="text" id='txtMsg' class="form-control">
+				<button id="btn1" class="btn btn-primary">click1</button>
+			</div>
+			<div class="col" id="showData1">실습 1 결과보기</div>
+		</div>
+	</div>
+</body>
+</html>

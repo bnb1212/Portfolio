@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>담담직원 검색기</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#btnSearch").click(function() {
+		alert('눌림')
+		gogek_name = $("#name").val()
+		gogek_tel = $("#gtel").val()
+		$.ajax({
+			url: "/gogek/show",
+			data: {name:gogek_name,tel:gogek_tel},
+			type:"GET",
+			dataType : "json",
+			success: function(response){
+				$("#jikwon_name").val(response.jikwon_name)
+				$("#jikwon_jik").val(response.jikwon_jik)
+				$("#buser_name").val(response.buser_name) 
+				$("#buser_tel").val(response.buser_tel)
+				$("#jikwon_gen").val(response.jikwon_gen)
+				var ibsail = response.jikwon_ibsail
+				var ibsayear = ibsail.substring(0,4)
+				var year = 2020 - parseInt(ibsayear)
+				$("#jikwon_ibsail").val(year)
+				if(response.jikwon_gen == '남'){
+					$("#gen_img").attr("src","/static/images/질리언.png")
+				}else{
+					$("#gen_img").attr("src","/static/images/케이틀린.jpg")
+				}
+				
+				if(response.jikwon_rating == 'a'){
+					$("#jikwon_rating").val('우수')
+				}else if(response.jikwon_rating == 'b'){
+					$("#jikwon_rating").val('보통')
+				}else{
+					$("#jikwon_rating").val('일반')
+				}
+			},
+			error: function(request,status,error){
+				alert('ajax 에러')
+			}
+		});
+	});
+});
+
+</script>
+</head>
+<body>
+<table border="1">
+	<tr style="background-color: lime; height: 50px; text-align: center;" >
+		<td colspan="4">
+			<span><b>고객정보 입력</b></span>
+		</td>
+	</tr>
+	<tr style="background-color: cyan;">
+		<td>
+			<span>고객명 : <input type="text" id="name"></span>
+		</td>
+		<td colspan="2">
+			<span>고객전화 : <input type="text" id="gtel"></span>
+		</td>
+		<td>
+			<span><input type="button" id="btnSearch" value="찾기"></span>
+		</td>
+	</tr>
+	<tr>
+		<td style="background-color: fuchsia; height: 50px; text-align: center;" colspan="4">
+			<span><b>담당직원</b></span>
+		</td>
+	</tr>
+	<tr style="background-color: yellow;">
+		<td>
+			<span>직원명 : </span><input type="text" id = "jikwon_name">
+		</td>
+		<td colspan="3">
+			<span>직급 : </span><input type="text" id = "jikwon_jik">
+		</td>
+	</tr>
+	<tr style="background-color: orange;">
+		<td>
+			<span>부서명 : </span><input type="text" id = "buser_name">
+		</td>
+		<td colspan="3">
+			<span>부서전화 : </span><input type="text" id = "buser_tel">
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<input type="hidden" id = "jikwon_gen"><img id="gen_img" src="">
+		</td>
+		<td colspan="2">
+			<span>근무년수 : </span><input type="text" id = "jikwon_ibsail">
+		</td>
+		<td colspan="2">
+			<span>평점 : </span><input type="text" id = "jikwon_rating">
+		</td>
+	</tr>
+</table>
+</body>
+</html>

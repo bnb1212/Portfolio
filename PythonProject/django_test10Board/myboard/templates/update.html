@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+	<h2>* 게시글 수정 *</h2>
+		<form action="/board/updateok" method="post">
+			{%csrf_token%} <input type="hidden" name="id" value="{{data_one.id}}" />
+			<table class="table">
+				<tr>
+					<td>name</td>
+					<td><input type="text" name="name" value="{{data_one.name}}" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>passwd</td>
+					<td><input type="password" name="up_passwd" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>mail</td>
+					<td><input type="text" name="mail" value="{{data_one.mail}}" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>Title</td>
+					<td><input type="text" name="title" value="{{data_one.title}}" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>cont</td>
+					<td><textarea name="cont" rows="10" cols="50" class="form-control">{{data_one.cont}}</textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="수정" class="btn btn-success"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

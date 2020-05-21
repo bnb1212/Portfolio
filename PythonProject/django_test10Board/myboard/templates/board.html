@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- bootstrap script -->
+<!-- CSS only -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+
+<body>
+	<div class='container'>
+		<!-- board head -->
+		<div class="row">
+			<div class="col-lg-6">
+				<h2 >게시판 목록</h2>
+			</div>
+			<div class="col-lg-6 text-right">
+				<a href="/board/insert" class="btn btn-outline-primary">글쓰기</a>
+			</div>
+		</div>
+		<!-- board body -->
+		<div class="row">
+			<div class="col">
+				<!-- board table start -->
+				<table class="table">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% if data %}
+						{% for s in data %}
+						<tr>
+							<td>{{s.id}}</td>
+							<!-- 들여쓰기를 위해 템플릿 문법 - with, 반복문 사용 -->
+							<td>
+							{% with ''|center:s.nested as range%}
+								{%for _ in range %}
+									->
+								{% endfor %}
+							{% endwith %}
+							<a href="/board/content?id={{s.id}}&page={{data.number}}">{{s.title}}</a>
+							</td>
+							<td>{{s.name}}</td>
+							<td>{{s.bdate.year}}.{{s.bdate.month}}.{{s.bdate.day}}</td>
+							<td>{{s.readcnt}}</td>
+						{% endfor %}
+					{% else %}
+						<tr>
+							<td colspan="5">게시판 글이 없습니다</td>
+						</tr>	
+					{% endif %}
+						<tr>
+							<td colspan="5" class="text-center">
+							{% if data.has_previous %}
+								<a href="/board/list?page={{data.previous_page_number}}"><i class="fas fa-backward"></i></a>
+							{% endif %}
+							{% if data.has_next %}
+								<a href="/board/list?page={{data.next_page_number}}"><i class="fas fa-forward"></i></a>
+							{% endif %}
+							[{{data.number}}] / [{{data.paginator.num_pages}}]
+							</td>
+						<tr>
+						  	<td colspan="6" style="text-align: center;">	
+								<form action="/board/search" method="post" class="form-inline">{%csrf_token%}
+									<div class="form-group text-center">
+										<select name="s_type" class="form-control">
+											<option value="title" selected>글제목</option>
+											<option value="name">작성자</option>
+										</select>
+										<input type="text" name="s_value" class="form-control">
+										<input type="submit" value="검색" class="form-control btn btn-dark" >
+									</div>
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- board table end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

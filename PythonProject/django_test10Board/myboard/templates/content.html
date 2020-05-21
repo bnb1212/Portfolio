@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상세보기</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h2>* 게시글 *</h2>
+		<table class="table">
+			<tr>
+				<td style="text-align: right;"><a
+					href="/board/update?id={{data_one.id}}" class="btn btn-info">수정</a> <a
+					href="/board/delete?id={{data_one.id}}" class="btn btn-info">삭제</a> <a
+					href="/board/list?page={{page}}" class="btn btn-info">목록</a></td>
+			</tr>
+		</table>
+		<table class="table">
+			<tr style="background-color: silver;">
+				<td>작성자 : <a href="mailto:{{data_one.mail}}">{{data_one.name}}
+						(ip : {{data_one.bip}})</a></td>
+				<td>작성일 : {{data_one.bdate.month}}.{{data_one.bdate.day}} {{data_one.bdate.hour}}:{{data_one.bdate.minute}}</td>
+				<td>조회수 : {{data_one.readcnt}}</td>
+			</tr>
+			<tr>
+				<td colspan="3">제목 : {{data_one.title}}
+			</tr>
+			<tr>
+				<td colspan="3"><textarea rows="8" class="form-control-plaintext" readonly>{{data_one.cont}}</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="/board/reply?id={{data_one.id}}" class="btn btn-info">댓글</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

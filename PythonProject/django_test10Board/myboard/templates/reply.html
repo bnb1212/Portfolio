@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h2>* 댓글 쓰기 *</h2>
+		<form action="/board/replyok" method="post">
+		
+			<!-- hidden data -->
+			{%csrf_token%} <input type="hidden" name="id" value="{{data_one.id}}" />
+			<input type="hidden" name="gnum" value="{{data_one.gnum}}" /> 
+			<input
+				type="hidden" name="onum" value="{{data_one.onum}}" /> 
+			<input
+				type="hidden" name="nested" value="{{data_one.nested}}" />
+				
+			<!-- table start -->
+			<table class="table">
+				<tr>
+					<td>작성자</td>
+					<td><input type="text" name="name" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="password" name="passwd" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>메일</td>
+					<td><input type="text" name="mail" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>제목</td>
+					<td><input type="text" name="title"
+						value="[RE]: {{data_one.title}}" style="width: 375px" class="form-control"></td>
+				</tr>
+				<tr>
+					<td>내용</td>
+					<td><textarea name="cont" rows="5" cols="50" class="form-control"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="작성 확인" class="btn btn-success"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

@@ -100,3 +100,5 @@ def DeleteFunc(request): # try - except 안에서 하는 것이 정석임.
     delRec.delete()
     
     return HttpResponseRedirect('list')
+
+
