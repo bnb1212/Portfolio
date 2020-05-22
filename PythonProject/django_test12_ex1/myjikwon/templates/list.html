@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<script type="text/javascript">
+	$(document).ready(function() {
+		//ready test
+		//console.log('ready test')
+		
+		$('#btnSearch').bind('click', function() {
+		var jik = $('input[name=frm_jik]').val()
+		
+		// 입력자료 검사
+		if (jik === ""){
+			alert("자료를 입력하세요")
+			
+		}
+		$("#showData").empty()
+		//click test
+		console.log('search click test')
+		
+		console.log(jik)
+		$.ajax({
+				url:'search',
+				type:'GET',
+				data : {
+					'frm_jik' : jik
+				},
+				dataType:'json',
+				success:function(data){
+					console.log(typeof(data))
+					// console.log("alert Test"+ data)
+					var str = "<table class='table table-bordered'>"
+					var count = 0
+					str += "<thead class='thead-dark'><tr><th>직원번호</th><th>직원명</th><th>부서명</th></tr></thead>"
+					str += "<tbody>"
+					
+					// 반복문 돌리기
+					$.each(data, function(index, entry){
+						str += "<tr>"
+						str += "<td>" + entry['jikwon_no'] + "</td>"
+						str += "<td>" + entry['jikwon_name'] + "</td>"
+						str += "<td>" + entry['buser_name'] + "</td>"
+						str += "</tr>"
+						count += 1
+					})
+					
+					
+					str += "</tbody></table>"
+					
+					$("#showData").append(str)
+					$("#showData").append('건수: ' + count)
+				},
+				error:function(){
+					$("#showData").text('ERROR!')
+				}
+			})
+			
+		})
+	})
+</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row" style="padding: 3rem">
+			<div class="col-6">
+				<h3>직원 정보 입력</h3>
+			</div>
+			<div class="col-6">
+				<div class='form-inline'>
+					<label>직급 : &nbsp;</label> 
+					<input type="text" class="form-control" name="frm_jik">
+					<!--  
+					<input type="submit" id="btnSearch" class="btn btn-secondary" value="결과보기" >
+					 -->
+					<button id="btnSearch" class="btn btn-secondary">결과보기</button> 
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div id="showData">
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

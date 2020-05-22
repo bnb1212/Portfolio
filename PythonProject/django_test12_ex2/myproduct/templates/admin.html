@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ADMIN Page</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<script>
+$(document).ready(function(){
+	$('#showInsertForm').hide()
+	
+	// 상품 리스트 출력
+	$('button[name=btnAdminList]').bind('click', function(){
+		$('#showProductList').empty()
+		
+		$.ajax({
+			url:'adminlist',
+			type:'GET',
+			dataType:'json',
+			success:function(data){
+			// console.log("alert Test"+ data)
+			var str = "<table class='table table-bordered'>"
+			var count = 0
+			str += "<thead class='thead-dark'><tr><th>id</th><th>분류</th><th>제품명</th><th>가격</th><th>재고량</th><th>설명</th></tr></thead>"
+			str += "<tbody>"
+					
+			// 반복문 돌리기
+			$.each(data, function(index, entry){
+				str += "<tr>"
+				str += "<td>" + entry['id'] + "</td>"
+				str += "<td>" + entry['category'] + "</td>"
+				str += "<td>" + entry['pname'] + "</td>"
+				str += "<td>" + entry['price'] + "</td>"
+				str += "<td>" + entry['stock'] + "</td>"
+				str += "<td>" + entry['description'] + "</td>"
+				str += "</tr>"
+				count += 1
+				})
+					
+				str += "</tbody></table>"
+					
+				$("#showProductList").append(str)
+				$("#showProductList").append("건수 : " + count) 
+				
+			},
+			error:function(){
+				$("#showProductList").text('ERROR!')
+			}
+		})
+	})
+	
+	// 상품 추가 폼 출력
+	$('button[name=btnShowInsert]').bind('click', function(){
+		$('#showInsertForm').show()
+	})
+	
+})
+</script>
+<body>
+	<div class="container-fluid">
+		<!-- menu -->
+		<div class="row" style="padding: 3rem">
+			<div class="col-2">
+				<h4>메뉴</h4>
+			</div>
+			<div class="col-10">
+				<button name="btnAdminList" class="btn btn-primary" >상품 보기</button>
+				<button name="btnShowInsert" class="btn btn-success">상품 추가</button>
+				<a class="btn btn-light" href="/">메인화면</a>
+			</div>
+		</div>
+
+		<div class="row" style="padding: 3rem">
+			<div class="col-8">
+				<!-- product list -->
+				<div id="showProductList">
+				
+				</div>
+				<!-- Count money -->
+			</div>
+			<div class="col-4">
+				<div id="showInsertForm">
+					<h4>상품추가</h4>
+					<form action="insertok" method='POST'> {% csrf_token %}
+					<div class="form-check form-check-inline">
+						<span style="margin-right:2em">분류 : </span>
+						
+						<input class="form-check-input" type="radio" name="categoryIns" value="1" checked>
+						<label class="form-check-label">버거</label> 
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="categoryIns" value="2">
+						<label class="form-check-label">음료</label> 
+					</div>
+					<div class="insf">
+						<input type="text" class='form-control' name="pnameIns" placeholder="품명">
+					</div>
+					<div class="insf">
+						<input type="text" class='form-control' name="priceIns" placeholder="가격">
+					</div>
+					<div class="insf">
+						<input type="text" class='form-control' name="stockIns" placeholder="재고">
+					</div>
+					<div class="insf">
+						<textarea class='form-control' name="descriptionIns" placeholder="설명"></textarea>
+					</div>
+					<div class="text-right">
+						<input type='submit' class="btn btn-success" name="btnInsertOk" value="확인">
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
