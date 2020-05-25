@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+	// 가장 큰 id를 저장하는 변수
+	greatest_id = 0
+	
+	
+	// 처음부터 관리자 화면에 상품띄우기
+	show()
+	
+	$('#show').click(function(){
+		show()
+	});
+	
+	// 새로 상품추가 하는 부분
+	$('#new').click(function(){
+			var str = "<form action='/order/insert'>" 
+			str += '<input type="hidden" name ="id" value='+greatest_id+'>'
+			str += "<table border='1'>"	
+			str += "<tr>"
+			str += "<td>카테고리 : "
+			str += '<input type="radio" name="category"  checked="checked" value="burger">버거'
+			str += '<input type="radio" name="category" value="beverage">음료'			
+			str += "</td>"
+			str += "</tr>"
+			str += "<td>상품이름 : "
+			str += '<input type="text" name ="pname">'
+			str += "</td>"
+			str += "<tr>"
+			str += "<td>가격 : "
+			str += '<input type="text" name ="price">'
+			str += "</td>"
+			str += "</tr>"
+			str += "<tr>"
+			str += "<td>재고 : "
+			str += '<input type="text" name ="stock">'
+			str += "</td>"
+			str += "</tr>"
+			str += "<tr>"
+			str += "<td>상품설명: "
+			str += '<textarea name ="description"></textarea>'
+			str += "</td>"
+			str += "</tr>"
+			str += "<tr>"
+			str += "<td><input type='submit' value='제출'>"
+			str += "</td>"
+			str += "</tr>"
+			str += "</table>"
+			str += "</form>"
+			$('#newproduct').html(str)
+	});
+	$('#main').click(function(){
+		$(location).attr('href','/order/main')
+	});
+});
+
+function show(){
+	$.ajax({
+		url:'/order/show',
+		type:'get',
+		dataType:'json',
+		success:function(response){
+			var str = "<table border='1'>"	
+			str += "<tr>"
+			str += "<th>아이디</th>"
+			str += "<th>카테고리</th>"
+			str += "<th>상품이름</th>"
+			str += "<th>가격</th>"
+			str += "<th>재고</th>"
+			str += "<th>상품설명</th>"
+			str += "</tr>"				
+			$.each(response,function(index,content){
+				str += "<tr>"
+				str += "<td>"+content['id']+"</td>"
+				str += "<td>"+content['category']+"</td>"	
+				str += "<td>"+content['pname']+"</td>"	
+				str += "<td>"+content['price']+"</td>"	
+				str += "<td>"+content['stock']+"</td>"	
+				str += "<td>"+content['description']+"</td>"	
+				str += "</tr>"
+				greatest_id = parseInt(content['id'])
+			})
+			greatest_id = greatest_id + 1
+			str += "</table>"
+			$('#showdata').html(str)
+		},
+		error:function(){
+			alert('ajax 오류')
+		}
+	})
+}
+
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td><button id="show">상품보기</button></td>
+			<td><button id="new">상품등록</button></td>
+			<td><button id='main'>메인으로</button></td>
+		</tr>
+	</table>
+	<div id='showdata'></div>
+	<div id='newproduct'></div>
+
+</body>
+</html>

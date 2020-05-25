@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h2>{{question.question_text}}</h2>
+		<div class="row">
+			<div class="col">
+				결과 :
+				<ul>
+				{% for choice in question.choice_set.all %}
+				<li>
+					{{choice.choice_text}} - {{choice.votes}} 표
+				</li>
+				{% endfor %}
+				</ul>
+				<a href="{% url 'detail' question.id %}" class="btn btn-secondary">같은 항목 투표하기</a>
+				<a href="/gogo" class="btn btn-secondary">투표 초기 화면</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

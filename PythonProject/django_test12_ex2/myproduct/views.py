@@ -84,7 +84,8 @@ def insertOkFunc(request):
 def payFunc(request):
     p_data = Producttab.objects.get(id=request.GET.get('id'))
     
-    p_data.stock=request.GET.get('stock')
+    print(p_data)
+    p_data.stock = request.GET.get('quantity')
     p_data.save()
     
     datas = [] 
@@ -103,5 +104,18 @@ def payFunc(request):
     # 값만을 넘겨줄 때에는 HttpResponse
     return HttpResponse(json.dumps(datas), content_type="application/json")
     
+def Update(request):
+    name = request.GET.get('name')
+    quantity = request.GET.get('quantity')
     
-    
+    order = Producttab.objects.get(pname=name)
+    old_stock = Producttab.objects.filter(pname=name).values_list('stock')[0][0]
+    new_stock = int(old_stock) - int(quantity)
+    order.stock = new_stock
+    try:
+        order.save()
+        result = {'result':'ok'}
+    except:
+        result = {'result':'booo'}
+        
+    return HttpResponse(json.dumps(result), 'application/json')

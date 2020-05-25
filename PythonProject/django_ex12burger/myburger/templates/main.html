@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버거킹</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	total = 0
+	orderlist = []
+	$('#buger').click(function(){
+		data = 'burger'
+		call(data)
+	});
+	
+	$('#beverage').click(function(){
+		data = 'beverage'
+		call(data)
+	});
+	
+	$('#admin').click(function(){
+		$(location).attr('href','/order/admin')
+	});
+	
+	$(document).on("click",".btnclear",function(){
+		
+		
+		$('#showorder').empty()
+		$('#showcost').empty()
+		orderlist.length = 0
+		total = 0
+	});
+	
+	$(document).on("click",".order",function(){
+		var flag = 0
+		$('#showcost').empty()
+		
+		// $(this)는 주문 button 입니다 그것의 부모는 td이고 다시 그것의 부모는 tr이고 tr의 자식은 td들인데 td들의 순서를 이용해서 값을 가지고 올수있습니다.
+		var name = $(this).parent().parent().children().eq(0).text()
+		var cost = $(this).parent().parent().children().eq(2).text()
+		var quantity = $(this).parent().parent().children().eq(3).children().val()
+		var dict = {'name':name,'quantity':quantity}
+		if(orderlist.length == 0){
+			orderlist.push(dict)
+		}
+		else{
+			for(i=0;i<orderlist.length;i++){			
+				if(orderlist[i].name === dict.name){
+					flag = 1
+					orderlist[i].quantity = parseInt(orderlist[i].quantity) + parseInt(dict.quantity)					
+				}
+			}
+			if(flag == 0){
+				orderlist.push(dict)
+			}
+		}
+		total = total + cost*quantity
+		
+		var str = "<table border='1'>"
+		for(i=0;i<orderlist.length;i++){			
+			str += "<tr>"
+			str += "<td>"
+			str += orderlist[i].name + '&nbsp;&nbsp;'
+			str += "</td>"
+			str += "<td>"
+			str += orderlist[i].quantity + '개 '
+			str += "</td>"			
+			str += "</tr>"
+		}
+		str += '<tr>'
+		str += '<td>'
+		str += "합계가격: " + total	
+		str += "</td>"
+		str += '<td>'
+		str += "<button id='btnok'>계산확인</button>"
+		str += '<button class = "btnclear">주문취소</button>'	
+		str += "</td>"
+		str += "</tr>"			
+
+		$('#showcost').append(str)
+	});
+	
+	$(document).on("click","#btnok",function(){
+		$('#showorder').empty()
+		var str = "<table border='1'>"		
+		for(i=0;i<orderlist.length;i++){			
+			update(orderlist[i])
+			str += "<tr>"
+			str += "<td>"
+			str += orderlist[i].name + '&nbsp;&nbsp;'
+			str += "</td>"
+			str += "<td>"
+			str += orderlist[i].quantity + '개 '
+			str += "</td>"			
+			str += "</tr>"
+		}
+		str += '<tr>'
+		str += '<td>'
+		str += '주문완료!'		
+		str += "</td>"
+		str += '<td>'
+		str += '<button class = "btnclear">초기화</button>'		
+		str += "</td>"
+		str += "</tr>"
+		$('#showorder').append(str)
+		orderlist.length = 0
+		
+	});
+	function call(data){
+		$.ajax({
+			url:'/order/menus',
+			type:'get',
+			data:{'menu':data},
+			dataType:'json',
+			success:function(response){
+				var str = "<table border='1'>"	
+		
+				str += "<tr><th>제품명</th><th>설명</th><th>가격</th><th colspan='2'>주문</th></tr>"
+				$.each(response,function(index,entry){					
+					str += "<tr>"
+					str += "<td>"+"<div class='menu'>"+entry['pname']+"</div>"+"</td>"
+					str += "<td>"+"<div class='description'>"+entry['description']+"</div>"+"</td>"	
+					str += "<td>"+"<div class='price'>"+entry['price']+"</div>"+"</td>"
+					str += "<td>"+"주문수량: "+"<select id='1-100'></select>"+"</td>"
+					str += "<td>"+"<button class='order'>주문</button></td>"
+					str += "</tr>"	
+				})
+				str +="</table>"
+				$('#showdata').html(str)
+				var $select = $("#1-100");
+				for (i = 1; i <= 100; i++) {
+					$select.append($('<option></option>').val(i).html(i))
+				}
+		
+			},
+			error:function(){
+				alert('오류발생')
+			}			
+		})
+	}	
+	function update(list){
+		$.ajax({
+			url:'/order/update',
+			type:'get',
+			data:{'name':list.name,'quantity':list.quantity},
+			dataType:'json',
+			success:function(response){
+				//alert(response)
+				if(response['result']=='ok'){
+					for(i=0;i<orderlist.length;i++){
+						//alert(orderlist[i])
+						update(orderlist[i])
+						
+					}
+				}
+			},
+			error:function(){
+				alert('오류발생')
+			}			
+		})
+	}
+});
+
+</script>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td><button id="buger">버거</button></td>
+		<td><button id="beverage">음료</button></td>
+		<td><button>이벤트</button></td>
+		<td><button id='admin'>관리자</button></td>
+	</tr>
+</table>
+<div id="showdata"></div>
+<span id="showcost"></span>
+<span id="showorder"></span>
+</body>
+</html>

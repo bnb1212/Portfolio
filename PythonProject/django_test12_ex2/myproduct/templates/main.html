@@ -17,10 +17,11 @@ var product_id = 0
 var product_stock = 0
 var input_stock = 0
 
-
+// 계산 확인용 id / 임시재고 저장용 Array
+orderlist = new Array()
 
 $(document).ready(function(){
-	console.log('ready test')
+	//console.log('ready test')
 	
 	// 계산버튼 숨기기
 	$('#caldiv').hide()
@@ -33,7 +34,7 @@ $(document).ready(function(){
 		$('#showProductList').empty()
 		var category = $(this).attr('value')
 		
-		console.log(category)	
+		//console.log(category)	
 		$.ajax({
 			url:'productlist',
 			type:'GET',
@@ -42,7 +43,7 @@ $(document).ready(function(){
 				},
 				dataType:'json',
 				success:function(data){
-					console.log(typeof(data))
+					//console.log(typeof(data))
 					// console.log("alert Test"+ data)
 					var str = "<table class='table table-bordered'>"
 					var count = 0
@@ -52,12 +53,15 @@ $(document).ready(function(){
 					// 반복문 돌리기
 					$.each(data, function(index, entry){
 						str += "<tr>"
-						str += "<td><input type='hidden' id='productName"+entry['id']+"' value='"+entry['name']+"'>" + entry['pname'] + "</td>"
+						// 제품id hidden으로 저장
+						str += "<td><input type='hidden' id='productName"+entry['id']+"' value='"+entry['pname']+"'>" + entry['pname'] + "</td>"
 						str += "<td>" + entry['description'] + "</td>"
+						// 제품 price hidden으로 저장
 						str += "<td><input type='hidden' id='productPrice"+entry['id']+"' value='"+entry['price']+"'>" + entry['price'] + "</td>"
 						str += "<td><div class='form-inline'>주문수량 : \&nbsp\;"
 						str += "<input type='text' class='form-control' id='productCount"+entry['id']+"'>"
 						str += "<button class='btn btn-success' name='btnCal' value='"+entry['id']+"'>확인</button></div>"
+						// 제품 재고 hidden으로 저장
 						str += "<input type='hidden' id='productStock"+entry['id']+"' value='"+entry['stock']+"'>"
 						str += "</tr>"
 					})
@@ -80,6 +84,8 @@ $(document).ready(function(){
 })
 
 $(document).on('click', 'button[name=btnCal]', function(){
+	var flag = 0
+	
 	// 제품의 id 획득
 	product_id = $(this).attr('value')
 	
@@ -92,9 +98,11 @@ $(document).on('click', 'button[name=btnCal]', function(){
 	// 제품 가격 획득
 	product_price = $('#productPrice'+product_id).val()
 	
+	product_name = $('#productName'+product_id).val()
+	
 	// 입력 주문수량 확인(콘솔)
-	console.log(input_stock)
-	console.log(product_price)
+	//console.log(input_stock)
+	//console.log(product_price)
 	
 	// 제품 가격 X 입력 주문 수량 해서 총합에 더하기
 	var product_cost = product_price * input_stock
@@ -103,49 +111,78 @@ $(document).on('click', 'button[name=btnCal]', function(){
 	if (product_stock - input_stock < 0){
 		alert("수량이 부족합니다")
 		$('#productCount'+product_id).val("")
+		
 		//재고가 충분하다면 각 input에 저장된 재고에서 입력 재고를 빼고 총액 연산
 	}else{
 		$('#productStock'+product_id).val(product_stock - input_stock)
 		// console.log($('#productStock'+product_id).val())
+		
 		total = total + product_cost
+		
+		var dict = {'id' : product_id , 'name': product_name, 'quantity':$('#productStock'+product_id).val()}
+		
+		// 값 확인
+		console.log(dict)
+		if(orderlist.length == 0){
+			orderlist.push(dict)
+		}
+		else{
+			for(i=0;i<orderlist.length;i++){			
+				if(orderlist[i].name === dict.name){
+					flag = 1
+					orderlist[i].quantity = $('#productStock'+product_id).val()					
+				}
+			}
+			if(flag == 0){
+				orderlist.push(dict)
+			}
+		}
 	}
 	// total값 갱신 출력
 	$('#showCount').text("전체가격 : "+ total +"원")
-	console.log(product_stock)
+	//console.log(product_stock)
 	
 })
 
+// 총액 계산 함수 / 계산확인 버튼
 $(document).on('click', '#btnCalOk', function(){
-	console.log('click')
+	//console.log('click')
 	$("#showStock").empty()
 	
-	$.ajax({
-		url:'pay',
-		type:'GET',
-		data : {
-				'id' : product_id,
-				'stock':product_stock,
-			},
-		dataType:'json',
-		success:function(data){
-			console.log(data[0]['stock'])
-			var str=""
-			
-			str += data[0]['pname']
-			str += "-->"
-			str += data[0]['stock']
-			
-			$("#showStock").append(str)
-			total = 0
-			$('#showCount').text("전체가격 : "+ total +"원")
-		},
-		error:function(){
-			$("#showStock").text('ERROR!')
-		}
-	})
-	
+	for(i=0 ; i < orderlist.length; i++){			
+		updateStock(orderlist[i])
+	}
 })
 
+function updateStock(list){
+		$.ajax({
+			url:'pay',
+			type:'GET',
+			data : {
+					'id' : list.id,
+					'quantity': list.quantity,
+				},
+			dataType:'json',
+			success:function(data){
+				//console.log(data[0]['stock'])
+				var str = ""
+				$.each(data, function(index, entry){
+					str += entry['pname']
+					str += "-->"
+					str += entry['stock']+"<br>"	
+				})
+				
+				
+				$("#showStock").append(str)
+				total = 0
+				$('#showCount').text("전체가격 : "+ total +"원")
+			},
+			error:function(){
+				$("#showStock").text('ERROR!')
+			}
+		})
+	}
+	
 </script>
 <body>
 	<div class="container-fluid">
