@@ -11,7 +11,7 @@ def Handle(socket):
         
         data = socket.recv(1024)
         if not data: continue
-        print(data.decode('utf-8'))
+        print(data.decode('utf-8'))
 
 sys.stdout.flush()
 
