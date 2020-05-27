@@ -55,7 +55,7 @@ print(df < 3)
 df[df<3] = 0
 print(df)
 
-print('DataFrame 슬라이싱 관련 메소드')
+print('DataFrame index 슬라이싱 관련 메소드')
 # loc : 라벨 지원 , iloc : 숫자지원
 print(df.loc['3월'])
 print(df.loc['3월', :])

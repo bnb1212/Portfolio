@@ -93,6 +93,8 @@ frame2['tel'] =val
 print(frame2)
 
 print(frame2.T)
+
+# 값 뽑아내기 values
 print(frame2.values)
 print(frame2.values[0, 2])
 # 슬라이싱
