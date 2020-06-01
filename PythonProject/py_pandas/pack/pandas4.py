@@ -13,7 +13,7 @@ print(df_row)
 df_col = df_row.unstack
 print(df_col)
 
-# 중복 제ㅓㄱ
+# 중복 제거
 data = {'data1' : ['a'] * 4, 'data2': [1, 1, 2, 2]}
 print(data)
 df2 = pd.DataFrame(data)

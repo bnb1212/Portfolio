@@ -8,3 +8,27 @@
 # 
 # 출력
 # 첫째 줄에 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력한다.
+
+# 135 246 369
+def hanSu(number):
+    if number <= 99:
+        return True
+    else:
+        
+        
+    
+    pass
+    
+    
+
+N = int(input())
+
+count = 0
+for i in range(1, N+1):
+    if hanSu(i):
+        count += 1
+    else:
+        pass
+    
+print(count)
+    
