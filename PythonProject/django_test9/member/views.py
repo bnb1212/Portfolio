@@ -5,9 +5,9 @@ from django.http.response import HttpResponseRedirect
 
 config = {
     'host':'127.0.0.1',
+    'database':'dbmember',
     'user':'root',
     'password':'123',
-    'database':'dbmember',
     'port':3306,
     'charset':'utf8',
     'use_unicode':True

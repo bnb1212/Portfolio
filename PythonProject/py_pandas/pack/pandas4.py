@@ -30,7 +30,7 @@ cut = [3, 7, 9, 11] # 구간 기준값
 result_cut = pd.cut(price, cut)
 
 ### (a, b] --> a < x <= b
-print(result_cut)
+print(result_cut, type(result_cut))
 print(pd.value_counts(result_cut))
 
 print()

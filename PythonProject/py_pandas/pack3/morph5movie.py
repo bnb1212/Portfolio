@@ -62,4 +62,71 @@ for mov in movies:
             words_basket.append(word[0])
 
 print(words_basket)
+
+# 빈도수 높은 단어 확인
 print(Counter(words_basket).most_common(50))    
+
+movies = [m.replace('ㅋㅋㅋㅋ','') for m in movies]
+movies = [ m.replace('저런','') for m in movies]
+movies = [ m.replace('있었고','') for m in movies]
+print(movies, len(movies))
+print('--------------------------------------------------------------------------')
+def word_separate(movises):
+    result = []
+    for mov in movies:
+        words = okt.pos(mov)
+        one_result = []
+        for word in words:
+            if(word[1] in ['Noun', "Adjective"]) and len(word[0]) >= 2:
+                one_result.append(word[0])
+        result.append(" ".join(one_result))
+    return result
+
+word_list= word_separate(movies)
+print(word_list)
+print(len(word_list))
+print()
+print('---------------------------------------------------------------------------------------')
+# 토큰 생성 후 벡터화
+# 1 : CountVectorizer()
+count = CountVectorizer(min_df=2)
+print(count)
+cou_dtm = count.fit_transform(word_list).toarray()
+print(cou_dtm)
+cou_dtm_df = pd.DataFrame(cou_dtm, columns = count.get_feature_names(),
+                          index = ['yeogoksung', 'rpoint', 'nalci', 'goyang2', 'coco'])
+print(cou_dtm_df)
+
+
+print('---------------------------------------------------------------------------------------')
+# 2 : TfidfVectorizer()
+idf_maker = TfidfVectorizer(min_df = 2)
+tfidf_dtm = idf_maker.fit_transform(word_list).toarray()
+print(tfidf_dtm)
+tfidf_dtm_df = pd.DataFrame(tfidf_dtm, columns=count.get_feature_names(),
+                            index = ['yeogoksung', 'rpoint', 'nalci', 'goyang2', 'coco'])
+# 단어들의 중요도를 알 수 있는 가충치로 출력
+print(tfidf_dtm_df)
+
+# 코사인 유사도를 이용해 단어의 유사성 출력
+def cosin_func(doc1, doc2):
+    bunja = sum(doc1 * doc2)
+#     bunmo = ((sum(doc1) ** 2) * (sum(doc2) ** 2)) ** 0.5
+#     bunmo = ((sum(doc1 ** 2)) ** 0.5) * ((sum(doc2 ** 2)) ** 0.5)
+    bunmo = (sum(doc1 ** 2) * sum(doc2 ** 2)) ** 0.5
+    return bunja /bunmo
+
+res = np.zeros((5, 5))
+print(res)
+
+for i in range(5):
+    for j in range(5):
+        res[i, j] = cosin_func(tfidf_dtm_df.iloc[i], tfidf_dtm_df.iloc[j].values)
+
+df = pd.DataFrame(res, index = ['yeogoksung', 'rpoint', 'nalci', 'goyang2', 'coco'],
+                  columns= ['yeogoksung', 'rpoint', 'nalci', 'goyang2', 'coco'])
+
+print(df)
+
+
+
