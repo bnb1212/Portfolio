@@ -15,7 +15,7 @@ print(html_data, type(html_data))
 
 soup = BeautifulSoup(html_data, 'html.parser')
 print(soup, type(soup))
-
+print()
 h1 = soup.html.body.h1
 # 같은 태그가 여러개일때
 p1 = soup.html.body.p

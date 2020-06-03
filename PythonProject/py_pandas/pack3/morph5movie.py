@@ -105,7 +105,7 @@ tfidf_dtm = idf_maker.fit_transform(word_list).toarray()
 print(tfidf_dtm)
 tfidf_dtm_df = pd.DataFrame(tfidf_dtm, columns=count.get_feature_names(),
                             index = ['yeogoksung', 'rpoint', 'nalci', 'goyang2', 'coco'])
-# 단어들의 중요도를 알 수 있는 가충치로 출력
+# 단어들의 중요도를 알 수 있는 가중치로 출력
 print(tfidf_dtm_df)
 
 # 코사인 유사도를 이용해 단어의 유사성 출력

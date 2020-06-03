@@ -52,12 +52,13 @@ def mainFunc(request):
         fig.savefig("C:/work/Portfolio/PythonProject/pandasDjango_ex/myjikwon/static/images/mean.png")
 #         print(buser_sum)
 
-        df_html = df.to_html()
-        buser_sum_html = buser_sum.to_html()
-        buser_mean_html = buser_mean.to_html()
-        jik_sum_html = jik_sum.to_html()
-        jik_mean_html = jik_mean.to_html()
+        df_html = df.to_html(classes=['table','table-bordered','table-striped'])
+        buser_sum_html = buser_sum.to_html(classes=['table','table-bordered'])
+        buser_mean_html = buser_mean.to_html(classes=['table','table-bordered'])
+        jik_sum_html = jik_sum.to_html(classes=['table','table-bordered'])
+        jik_mean_html = jik_mean.to_html(classes=['table','table-bordered'])
         
+        print(df_html)
         cursor.close()
         conn.close()
     except Exception as e:
