@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); font-family: 'Noto Sans KR', sans-serif;
+</style>
+</head>
+<body>
+	<div class='container-fluid'>
+	<form action='/surveyprocess' method='post' name='frm'> {%csrf_token%}
+		<div class='form-row' style='padding-top: 3rem'>
+			<div class="col">
+				<div class="form-check form-check-inline">
+					귀하의 성별은? &nbsp;
+					<input class="form-check-input" type="radio"
+						name="gender" id="genM" value="남" checked='checked'>
+					<label class="form-check-label" for="genM">남</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="gender" id="genF" value="여">
+					<label class="form-check-label" for="genF">여</label>
+				</div>
+			</div>
+		</div>
+		<div class='form-row'>
+			<div class="col">
+				<div class="form-check form-check-inline">
+					귀하의 나이는? &nbsp;
+					<input class="form-check-input" type="radio"
+						name="age" id="age10" value="10" checked='checked'>
+					<label class="form-check-label" for="age10">10대</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="age" id="age20" value="20">
+					<label class="form-check-label" for="age20">20대</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="age" id="age30" value="30">
+					<label class="form-check-label" for="age30">30대</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="age" id="age40" value="40">
+					<label class="form-check-label" for="age40">40대</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio"
+						name="age" id="age50" value="50">
+					<label class="form-check-label" for="age50">50대</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class='form-row'>
+			<div class="col">
+				<div class="form-check form-check-inline">
+					귀하가 선호하는 커피 전문점은? &nbsp;
+					<input class="form-check-input" type="radio" 
+						name="coffeebrand" id="starbucks" value="스타벅스" checked='checked'> 
+					<label class="form-check-label" for="">스타벅스</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" 
+						name="coffeebrand" id="coffeebean" value="커피빈">
+					<label class="form-check-label" for="">커피빈</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" 
+						name="coffeebrand" id="ediya" value="이디야">
+					<label class="form-check-label" for="">이디야</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" 
+						name="coffeebrand" id="tomandtoms" value="탐앤탐스">
+					<label class="form-check-label" for="">탐앤탐스</label>
+				</div>
+			</div>
+		</div>
+		<div class='form-row'>
+			<div class="col">
+				<button class="btn btn-primary mb-2" type="submit" >설문완료</button> 
+				<button class="btn btn-warning mb-2" type="reset" >초기화</button>
+			</div>
+		</div>
+		
+	</form>
+	</div>
+</body>
+</html>

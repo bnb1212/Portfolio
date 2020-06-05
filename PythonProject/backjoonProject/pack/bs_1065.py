@@ -10,16 +10,13 @@
 # 첫째 줄에 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력한다.
 
 # 135 246 369
-def hanSu(number):
+def hanSuResult(number):
     if number <= 99:
         return True
     else:
-        
-        
-    
-    pass
-    
-    
+        list_n = []
+        while number < 1:
+            list_n.append(number % 10)
 
 N = int(input())
 
