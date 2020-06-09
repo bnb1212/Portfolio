@@ -28,5 +28,58 @@ print(average(male), average(female))
 # 통계학 적으로는 차이가 없다고 보는것.
 
 # T검정시 정규성, 등분산성 체크해야함
+#-----------------------------------------------------------------------------------------------------------
+# 실습 ) 두 가지 교육 방법에 따른 평균 시험 점수에 대한 검정 수행 two_sample.csv
+# 귀무 : 두 가지 교육 방법에 따른 평균 시험 점수에 차이가 없다.
+# 대립 : 두 가지 교육 방법에 따른 평균 시험 점수에 차이가 있다.
+data = pd.read_csv("../testdata/two_sample.csv")
+print(data.head(3))
+result = data[['method', 'score']]
+print(result[:3])
 
-# 실습 )
+# 데이터 분리
+m1 = result[result['method'] == 1]
+m2 = result[result['method'] == 2]
+
+score1 = m1['score']
+score2 = m2['score']
+print(score1)
+print(score2)
+
+# NaN은 평균으로 대체
+# NaN 확인 : describe(), isnull().sum(), innull(any=')
+sco1 = score1.fillna(score1.mean())
+sco2 = score2.fillna(score2.mean())
+
+# 분포를 시각화
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.distplot(sco1, kde=True, fit=stats.norm) 
+sns.distplot(sco2, kde=True, fit=stats.norm)
+plt.show() 
+
+# 정규성 확인 함수
+print(stats.shapiro(sco1)) # 0.36799 > 0.05이므로 정규성 분포를 이룸
+print(stats.shapiro(sco2)) # 0.67141 > 0.05이므로 정규성 분포를 이룸
+
+# 등 분산성
+print(stats.levene(sco1, sco2).pvalue)
+print(stats.fligner(sco1, sco2).pvalue)
+print(stats.bartlett(sco1, sco2).pvalue)
+
+# print(stats.ttest_ind(sco1, scro2))
+# 등분산성 : 두 집단의 데이터 분포(분산)가 같은지
+print(stats.ttest_ind(sco1, sco2, equal_var = True)) # 등분산성을 만족한 경우
+# 해석 : p-value(0.8450) > 0.05 
+# Ttest_relResult(statistic=2.0303229870795767, pvalue=0.0450057502344844)
+
+print(stats.ttest_ind(sco1, sco2, equal_var=False)) # 등분산성을 만족하지 않은 경우
+#Ttest_relResult(statistic=1.8127433876244892, pvalue=0.10328484007335693)
+
+# 만약 정규성을 만족하지 않은경우
+# stats.manwhitneyu()
+
+
+# stats.wilcoxon()을 사용한다.
+# stats.kruskal()
