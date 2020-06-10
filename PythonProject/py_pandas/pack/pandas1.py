@@ -105,6 +105,8 @@ print()
 frame3 = frame2.drop('d') 
 frame3 = frame2.drop('d', axis = 0)
 print(frame3)
+
+# 열삭제
 frame4 = frame2.drop('tel' ,axis=1) 
 print(frame4)
 
