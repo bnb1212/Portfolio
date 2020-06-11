@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); font-family: 'Noto Sans KR', sans-serif;
+</style>
+<script> 
+function press(f){ 
+	if(f.keyCode == 13){ //javascript에서는 13이 enter키를 의미함 
+	formname.submit(); //formname에 사용자가 지정한 form의 name입력 
+	} 
+} 
+</script>
+
+
+</head>
+<body>
+<div class='container'>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-md-auto col-md-6 text-center" >
+			<div class="card border-dark">
+  				<div class='card-header'>설문조사</div>
+  				<div class="card-body">
+  				<form action="survey_process" class='was-validated' method='POST' name='surveyform'> {%csrf_token%}
+  					<ul class="list-group list-group-flush">
+    					<li class="list-group-item"><h5>귀하의 직업은 무엇입니까?</h5>
+    						<div class="form-check form-check">
+								<input class="form-check-input" type="radio"
+									name="job" id="jobWhite" value="화이트칼라" checked='checked'>
+								<label class="form-check-label" for="jobWhite">화이트칼라</label>
+							</div>
+							<div class="form-check form-check">
+								<input class="form-check-input" type="radio"
+									name="job" id="jobBlue" value="블루칼라">
+								<label class="form-check-label" for="jobBlue">블루칼라</label>
+							</div>
+							<div class="form-check form-check">
+								<input class="form-check-input" type="radio"
+									name="job" id="jobStudent" value="학생">
+								<label class="form-check-label" for="jobStudent">학생</label>
+							</div>
+							<div class="form-check form-check">
+								<input class="form-check-input" type="radio"
+									name="job" id="jobEtc" value="기타">
+								<label class="form-check-label" for="jobEtc">기타</label>
+							</div>
+    					</li>
+    					<li class="list-group-item"><h5>귀하의 성별은 무엇입니까?</h5>
+    						<div class="form-check form-check">
+								<input class="form-check-input" type="radio"
+									name="gender" id="genM" value="남" checked='checked'>
+								<label class="form-check-label" for="genM">남</label>
+							</div>
+    						<div class="form-check form-check">
+								<input class="form-check-input" type="radio"
+									name="gender" id="genF" value="여" checked='checked'>
+								<label class="form-check-label" for="genF">여</label>
+							</div>
+    					</li>
+    					<li class="list-group-item"><h5>귀하의 하루 평균 게임 사용 시간은?</h5>
+    						<input class="form-control is-invalid" type='number' name='game_time' min='0' max='24' required>
+    					</li>
+    					<li class="list-group-item">
+    						<input type='submit' value="제출하기" class="btn btn-success">
+    					</li>
+  					</ul>
+  				</form>
+  				</div>
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
+</body>
+</html>

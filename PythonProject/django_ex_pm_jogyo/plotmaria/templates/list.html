@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr colspan="2">
+			<th>직급별 급여합</th>
+		</tr>
+		<tr>
+			<td>{{datas|safe}}</td>
+			<td>{% load static %} <img src="{% static 'img/js.png' %}" width="50%">
+			</td>
+		</tr>
+		<tr colspan="2">
+			<th>직급별 급여평균</th>
+		</tr>
+		<tr>
+			<td>{{datas2|safe}}</td>
+			<td><img src="{% static 'img/jm.png' %}" width="50%">
+			</td>
+		</tr>
+		<tr colspan="2">
+			<th>부서별 급여합</th>
+		</tr>
+		<tr>
+			<td>{{datas3|safe}}</td>
+			<td><img src="{% static 'img/bs.png' %}" width="50%">
+			</td>
+		</tr>
+		<tr colspan="2">
+			<th>부서별 급여평균</th>
+		</tr>
+		<tr>
+			<td>{{datas4|safe}}</td>
+			<td><img src="{% static 'img/bm.png' %}" width="50%">
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
