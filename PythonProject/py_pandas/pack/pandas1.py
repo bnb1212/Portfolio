@@ -12,7 +12,7 @@ obj = Series((3, 7, -5, 4))
 # 자동으로 인덱스가 따라 붙는다.
 print(obj, type(obj))
 
-print()
+ㅂㅈㄷㅈㅂㄷㅂㅈㄷprint()
 # 인덱스를 직접 지정 가능
 obj2 = Series([3, 7, -5, 4], index=['a', 'b', 'c', 'd'])
 print(obj2, type(obj2))
