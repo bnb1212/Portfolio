@@ -1,4 +1,6 @@
-# 분류 결과가 두 가지 이상인 경우 다항분류 모델을 사용 Logistic Regression
+'''=====================================
+SVM을 활용한 iris dataset으로 품종 분류 - 3가지(다항)
+====================================='''
 
 from sklearn import datasets
 from sklearn.model_selection._split import train_test_split
@@ -27,45 +29,6 @@ print('target : ', y[:3], ' ', set(y))
 
 print()
 
-# 참고 : 확률에 의해 꽃 종류가 결정되는 결정 간격 확인
-log_reg = LogisticRegression()
-print(log_reg)
-x = iris['data'][:, 3:]
-y = (iris['target'] == 2).astype(np.int)  # 0, 1로 target을 나눔
-# print(x)
-# print(y)
-
-log_reg.fit(x, y)
-
-# np.linspace() 평균 0 표준편차 3인 1000개의 난수 생성
-x_new = np.linspace(0, 3, 1000).reshape(-1, 1)
-# print(x_new)
-print(x_new.shape)  # (1000, 1)
-
-# 확률 값으로 출력 predict_proba
-y_proba = log_reg.predict_proba(x_new)
-print(y_proba)  # [[9.99250016e-01 7.49984089e-04] ... 
-
-# 시각화
-import matplotlib.pyplot as plt 
-plt.plot(x_new, y_proba[:, 1], 'r-', label='virginica')
-plt.plot(x_new, y_proba[:, 0], 'b--', label='notvirginica')
-plt.legend()
-plt.show()
-plt.close()
-print(log_reg.predict([[1.5], [1.7]]))  # [0 1]
-print(log_reg.predict([[2.5], [0.7]]))  # [1 0]
-print(log_reg.predict_proba([[2.5], [0.7]])) 
-# 대략 1.6보다 커지면 virginica 작으면 not virginica
-
-# predict proba의 결과값
-# [[0.02563061 0.97436939] 1번째가 0.97로 0.5를 넘음
-# [0.98465572 0.01534428]] 0번째가 0.98로 0.5를 넘음 
-# 따라서 [1 0]
-
-# LogisticRegression()은 출력 값이 두 개 이상인 경우에 있어 확률 값이 큰 요소의 index가 출력된다.
-# LogisticRegression()은 다중 클래스(label)를 지원하도록 일반화되어있다. softmax를 사용함.
-
 x = iris.data[:, [2, 3]]  # petal.length, petal.width 
 y = iris.target
 
@@ -91,8 +54,9 @@ print('\n스케일링 처리 후')
 print(x_train[:3])
 
 print('---- 분류 모델 사용---------------')
-# C= 모델에 패널티(L2 정규화)를 부여함(overfitting 관련) 모델 정확도를 조정
-ml = LogisticRegression(C=0.1, random_state=0)
+# SVM 분류모델 사용
+from sklearn import svm
+ml = svm.SVC(C = 0.1)
 print(ml)
 
 result = ml.fit(x_train, y_train)  # train data로 모델 학습
@@ -118,11 +82,13 @@ print((con_mat[0][0] + con_mat[1][1] + con_mat[2][2]) / len(y_test))
 print(ml.score(x_test, y_test))
 
 # 시각화 ------------------
+import numpy as np
+import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
+from matplotlib import font_manager, rc
 
 plt.rc('font', family='malgun gothic')
 plt.rcParams['axes.unicode_minus'] = False
-
 
 
 def plot_decision_region(X, y, classifier, test_idx=None, resolution=0.02, title=''):
@@ -164,8 +130,9 @@ y_combined = np.hstack((y_train, y_test))
 plot_decision_region(X=x_combined_std, y=y_combined, classifier=ml,
 
                     test_idx=range(105, 150), title='scikit-learn제공')
+
+
 # 새로운 값으로 예측
 new_data = np.array([[5.1, 2.4], [0.3, 0.3], [1.4, 3.4]])
 new_pred = ml.predict(new_data)
 print('예측 결과 :', new_pred)
-

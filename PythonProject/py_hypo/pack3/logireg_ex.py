@@ -47,7 +47,7 @@ crawl_list = crawl_data.split('\n')
 crawl_dict = {}
 print(crawl_list)
 for cl in crawl_list:
-    crawl_dict[crawl_list.index(cl)]= {
+    crawl_dict[crawl_list.index(cl)] = {
         '요일':cl.split(',')[0],
         '외식여부':cl.split(',')[1],
         '소득수준':cl.split(',')[2]
@@ -57,8 +57,12 @@ print(crawl_dict)
 data = pd.DataFrame.from_dict(crawl_dict, orient='index') 
 # print(data)
 
-data = data.drop(['요일'], axis=1)
+# 주말 거르기
+data = data[data['요일'].isin(['토','일'])]
 # print(data)
+
+data = data.drop(['요일'], axis=1)
+
 data = data.astype(float)
 
 # train / test data로 분리
@@ -66,7 +70,6 @@ train, test = train_test_split(data, test_size=0.3, random_state=0)
 
 # print(data)
 # print(train)
-
 
 # formula
 my_formula = '외식여부 ~ 소득수준'
@@ -116,9 +119,8 @@ x_test = sc.transform(x_test)
 print('\n스케일링 처리 후')
 print(x_train[:3])
 
-
 print('---- 분류 모델 사용---------------')
-# C= 모델에 패널티(L2 정규화)를 부여함(overfitting 관련) 모델 정확도를 조정
+# C= 모델에 패널티(L2 정규화)를 부여함(overfitting 관련) 모델 정확도를 조정 (C는 10의 제곱수. 1, 1/10, 10, 100 등등)
 ml = LogisticRegression(C=0.1, random_state=0)
 
 # train data로 모델 학습
@@ -127,7 +129,7 @@ result = ml.fit(x_train, y_train)
 # 모델 학습 후 객체를 저장
 import pickle
 fileName = 'final_model_ex.sav'
-pickle.dump(ml, open(fileName,'wb'))
+pickle.dump(ml, open(fileName, 'wb'))
 ml = pickle.load(open(fileName, 'rb'))
 
 # 입력받기
@@ -139,15 +141,3 @@ new_data = np.array([[game_time, tv_time]])
 new_pred = ml.predict(new_data)
 print('예측 결과 :', new_pred)
 
-
-# 학습모델 생성
-# model = smf.logit(formula=formula, data=train).fit()
-# 
-# print(model.summary())
-# game_time = int(input('게임시간을 입력해보세요 :'))
-# tv_time = int(input('tv시청시간을 입력해보세요 :'))
-# newdf = use_data.iloc[:1].copy()
-# newdf['게임시간'] = game_time
-# newdf['TV시청'] = tv_time
-# 
-# print('안경유무 \n', np.rint(model.predict(newdf)))
