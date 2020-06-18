@@ -66,5 +66,3 @@ plt.axis('equal')
 plt.show()
 
 
-plt.show()
-
