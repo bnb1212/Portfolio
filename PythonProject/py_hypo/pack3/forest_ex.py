@@ -32,7 +32,7 @@ print(pt_data.head())
 # 독립변수 / 종속변수 설정
 #- 독립변수 ID를 제외한 나머지
 x = pt_data.iloc[:, 2:]
-# print(x)
+
 
 #- 종속변수 
 y = pt_data['STA']
@@ -75,6 +75,8 @@ print('\n----------------------------------------------------------\n')
 wine_data = pd.read_csv("../testdata/winequality-red.csv")
 # print(wine_data.head(3))
 
+# Noise에는 결측치 말고도 아웃라이어도 있다.
+
 # 결측치 제거
 # print(wine_data.isnull().any()) # 결측치 하나도 없음
 
@@ -105,3 +107,5 @@ print('분류 정확도 : ', accuracy_score(test_y, pred))
 print('특성 중요도 :\n{}'.format(model.feature_importances_))
 
 plot_feature_importances(model)
+
+
