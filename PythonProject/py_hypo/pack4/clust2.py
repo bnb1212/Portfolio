@@ -9,7 +9,11 @@ from scipy.spatial.distance import pdist, squareform
 
 # 데이터 읽기
 iris = load_iris()
+<<<<<<< HEAD
 iris_df = pd.DataFrame(iris['data'], columns=iris['feature_names'])
+=======
+iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
+>>>>>>> branch 'master' of https://github.com/bnb1212/Portfolio.git
 print(iris_df.head(3))
 
 distmatrix = pdist(iris_df.loc[:, ['sepal length (cm)', 'sepal width (cm)']], 
