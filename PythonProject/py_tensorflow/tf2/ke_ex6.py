@@ -14,6 +14,7 @@ y_data = np.array([11, 32, 53, 64, 70], dtype=np.float32)
 print(np.corrcoef(x_data, y_data))
 # 상관관계는 최소한 0.35이상이어야 의미가 있다.
 # 상관관계는 있지만 인과관계가 없다면, 회귀분석을 하지 않는다.
+
 print('\n----------모델작성 방법1\n--------')
 # 모델 작성 1 : 완전 연결 모델
 model = Sequential() 
@@ -54,10 +55,11 @@ outputs = Dense(1, activation='linear')(output1)  # 히든 레이어 2개
 
 model2 = Model(inputs, outputs)
 
-opti = optimizers.SGD(lr=0.01)
+opti = optimizers.SGD(lr=0.001)
 model2.compile(opti, loss='mse', metrics='mse')
 model2.fit(x=x_data, y=y_data, batch_size=1, epochs=100, verbose=1)
 
+# 모델 평가
 loss_metrics = model.evaluate(x_data, y_data)
 print('loss_metrics: ', loss_metrics)
 
@@ -128,5 +130,5 @@ model4 = MyMLP()
 model4.compile(opti, loss='mse', metrics='mse')
 model4.fit(x=x_data, y=y_data, batch_size=1, epochs=100, verbose=1)
 
-print('실제값2:', y_data)
-print('예측값2:', model4.predict(x_data).flatten())
+print('실제값3:', y_data)
+print('예측값3:', model4.predict(x_data).flatten())

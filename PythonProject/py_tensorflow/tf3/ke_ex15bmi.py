@@ -10,7 +10,7 @@ import pandas as pd
 bmi = pd.read_csv('https://raw.githubusercontent.com/pykwon/python/master/testdata_utf8/bmi.csv')
 print(bmi.head(2))
 
-# 정규화(미작업시 분류 정확도가 낮아짐
+# 정규화(미작업시 분류 정확도가 낮아짐)
 bmi['height'] /= 200
 bmi['weight'] /= 100
 print(bmi.head(2))
