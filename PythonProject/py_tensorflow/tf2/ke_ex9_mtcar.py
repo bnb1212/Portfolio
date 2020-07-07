@@ -123,6 +123,9 @@ print('test dataset으로 평가  loss : '.format(loss))
 test_pred = model.predict(st_test_data).flatten() #차원 떨어뜨려
 print(test_pred)
 
+from sklearn.metrics import r2_score
+print('r2_score:', r2_score(test_labels, test_pred))
+
 # 데이터 분포와 모델에 의한 선형회귀선 시각화
 plt.scatter(test_labels,test_pred)
 plt.xlabel('True value[mpg]')

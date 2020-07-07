@@ -96,24 +96,27 @@ import seaborn as sns
 import tensorflow as tf
 from tensorflow.keras import layers
 
+plt.rc('font', family='malgun gothic')
+plt.rcParams['axes.unicode_minus'] = False
+
 data = pd.read_excel('cri.xlsx', index=None)
 # print(data)
 # print(data.info())
 # print(data.replace())
 
-data_1 = data.iloc[:, :2]
+data_1 = data.iloc[:, :3]
 # data_1 = data_1.astype(float)
 print(data_1)
 print(data_1.corr())
 
 # feature & label 설정
-x_data = data_1['기간']
-# print(x_data, type(x_data))
+x_data = data_1.iloc[: ,[0, 2]]
+print(x_data, type(x_data))
 y_data = data_1['합계발생']
 # print(y_data)
 
 # 시각화
-sns.pairplot(data_1[['기간', '합계발생']], diag_kind='kde')
+sns.pairplot(data_1[['기간', '합계발생','합계검거']], diag_kind='kde')
 plt.show()
 
 # train / test 분리
@@ -148,13 +151,7 @@ print('-----------')
 # 모델 작성 후 예측
 def build_model():
     network = tf.keras.Sequential([
-        layers.Dense(units=128, activation=tf.nn.relu, input_shape=[1]),
-        layers.Dense(128, activation='relu'),
-        layers.Dense(128, activation='relu'),
-        layers.Dense(128, activation='relu'),
-        layers.Dense(128, activation='relu'),
-        layers.Dense(128, activation='relu'),
-        layers.Dense(128, activation='relu'),
+        layers.Dense(units=128, activation=tf.nn.relu, input_shape=[2]),
         layers.Dense(128, activation='relu'),
         layers.Dense(1)
     ])
@@ -175,7 +172,7 @@ print(model.predict(st_train_data[:3]))  # 결과는 신경쓰지 않음
 epochs = 10000
 
 # 학습 조기 종료
-early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=30)  # 같은 값이 다섯번 나오면 멈춰라
+early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)  # 같은 값이 다섯번 나오면 멈춰라
 
 history = model.fit(st_train_data, train_labels, epochs=epochs, validation_split=0.2, verbose=2, callbacks=[early_stop])  # 여기에 텐서보드 넣을 수도있음
 
@@ -194,7 +191,7 @@ def plot_history(history):
     hist = pd.DataFrame(history.history)
     hist['epoch'] = history.epoch
     
-    plt.figure(figsize=(8, 12))
+    plt.figure(figsize=(12, 8))
     
     plt.subplot(2, 1, 1)
     plt.xlabel('Epoch')
@@ -205,7 +202,7 @@ def plot_history(history):
     
     plt.subplot(2, 1, 2)
     plt.xlabel('Epoch')
-    plt.ylabel('Mean Square Error')  # mpg 2승 기호 [$MPG^2$]
+    plt.ylabel('Mean Square Error')
     plt.plot(hist['epoch'], hist['mean_squared_error'], label='Train Error')
     plt.plot(hist['epoch'], hist['val_mean_squared_error'], label='Val Error')
     plt.legend()
@@ -228,14 +225,6 @@ print(f'실제값: {test_labels}')
 # 설명력
 from sklearn.metrics import r2_score
 print('r2_score:', r2_score(test_labels, test_pred))
-
-# 새로운 값 예측
-test_pred_ex = model.predict(st_test_data)
-# 예측 시각화
-plt.plot(st_test_data, test_pred, label='예측')
-plt.plot(st_test_data, test_labels, label='실제')
-plt.legend()
-plt.show()
 
 # 데이터 분포와 모델에 의한 선형회귀선 시각화
 plt.scatter(test_labels, test_pred)
