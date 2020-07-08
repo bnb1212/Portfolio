@@ -69,6 +69,7 @@ print('test_loss:',loss)
 # 설명력
 from sklearn.metrics import r2_score
 print('r2_score:', r2_score(y_test, model.predict(x_test)))
+
 pred = model.predict(x_test)
 print('실제값 :', y_test[:5])
 print('예측값 :', pred[:5].flatten())

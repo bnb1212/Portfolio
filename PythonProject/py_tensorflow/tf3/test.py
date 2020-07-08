@@ -8,6 +8,7 @@
 최종 수정자 : 이지운
 최종 수정 내용 : 
 ============================================'''
+from sklearn.preprocessing._data import MinMaxScaler
 '''
 import pandas as pd
 from sklearn.preprocessing._data import MinMaxScaler
@@ -95,28 +96,48 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
 from tensorflow.keras import layers
+import statsmodels.formula.api as sm
+from scipy import stats
 
 plt.rc('font', family='malgun gothic')
 plt.rcParams['axes.unicode_minus'] = False
 
+# 읽어오기
 data = pd.read_excel('cri.xlsx', index=None)
 # print(data)
 # print(data.info())
 # print(data.replace())
 
-data_1 = data.iloc[:, :3]
+# 데이터 슬라이싱
+data_1 = data.iloc[:, :2]
 # data_1 = data_1.astype(float)
 print(data_1)
 print(data_1.corr())
 
+# 정규성 검사 (표준화를 위하여)
+mdl = sm.ols(formula='합계발생~기간', data=data_1)
+
+resid = mdl.fit().resid
+
+print(stats.shapiro(resid))
+
+'''
+# 정규화 : 0 ~ 1 사이로 scaling ( DataFrame to ndarray) 
+scaler = MinMaxScaler(feature_range=(0, 1))
+scaler = MinMaxScaler()
+nor_data_1 = scaler.fit_transform(data_1)
+
+# 정규화된 ndarray를 다시 데이터 프레임으로 변환
+nor_data_1 = pd.DataFrame(data_1, columns=["기간","합계발생"])
+
 # feature & label 설정
-x_data = data_1.iloc[: ,[0, 2]]
+x_data = data_1.loc[:,'기간']
 print(x_data, type(x_data))
-y_data = data_1['합계발생']
-# print(y_data)
+y_data = data_1.loc[:, '합계발생']
+print(y_data)
 
 # 시각화
-sns.pairplot(data_1[['기간', '합계발생','합계검거']], diag_kind='kde')
+sns.pairplot(data_1[['기간', '합계발생']], diag_kind='kde')
 plt.show()
 
 # train / test 분리
@@ -135,29 +156,21 @@ print(train_labels[:2])
 test_labels = test_dataset.pop('합계발생')
 print(test_labels[:2])
 
-
-def st_func(x):  # 표준화 처리 함수(요소값 - 평균)/표준편차
-    return ((x - train_stat['mean']) / train_stat['std'])
-
-
-# print('st_func(10) : ',st_func(10))
-# print(st_func(train_dataset[:3]))
-st_train_data = st_func(train_dataset)
-st_test_data = st_func(test_dataset)
-
 print('-----------')
 
 
 # 모델 작성 후 예측
 def build_model():
     network = tf.keras.Sequential([
-        layers.Dense(units=128, activation=tf.nn.relu, input_shape=[2]),
-        layers.Dense(128, activation='relu'),
-        layers.Dense(1)
+        layers.Dense(units=128, activation=tf.nn.relu, input_shape=[1]),
+        layers.Dense(64, activation='relu'),
+        layers.Dense(32, activation='relu'),
+        layers.Dense(1, activation="linear")
     ])
 #     opti = tf.keras.optimizers.RMSprop(0.001)
+    # 모델 컴파일
     opti = tf.keras.optimizers.Adam(0.001)
-    network.compile(optimizer=opti, loss='mean_squared_error', metrics=['mean_squared_error', 'mean_absolute_error'])  # mse, mae 평균제곱, 평균절대
+    network.compile(optimizer=opti, loss='mse', metrics=['mse', 'mae'])  # mse, mae 평균제곱, 평균절대
     
     return network  # model = network
 
@@ -166,18 +179,17 @@ model = build_model()
 print(model.summary())
 
 # fit() 전에 모델을 실행해 볼 수도 있다.
-print(model.predict(st_train_data[:3]))  # 결과는 신경쓰지 않음
+print(model.predict(train_dataset[:3]))  # 결과는 신경쓰지 않음
+
+# 학습 조기 종료 설정
+early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=30)  # 같은 값이 다섯번 나오면 멈춰라
 
 # 모델 훈련
-epochs = 10000
-
-# 학습 조기 종료
-early_stop = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)  # 같은 값이 다섯번 나오면 멈춰라
-
-history = model.fit(st_train_data, train_labels, epochs=epochs, validation_split=0.2, verbose=2, callbacks=[early_stop])  # 여기에 텐서보드 넣을 수도있음
+epochs = 1000
+history = model.fit(train_dataset, train_labels, epochs=epochs, validation_split=0.2, verbose=2, callbacks=[early_stop])  # 여기에 텐서보드 넣을 수도있음
 
 df = pd.DataFrame(history.history)
-print(df.head(3))
+# print(df.head(3))
 print(df.columns)
 # ['loss', 'mean_squared_error', 'mean_absolute_error', 'val_loss',
 #        'val_mean_squared_error', 'val_mean_absolute_error'],  val_붙은거는 validation_split 이거때문에 보여
@@ -196,15 +208,15 @@ def plot_history(history):
     plt.subplot(2, 1, 1)
     plt.xlabel('Epoch')
     plt.ylabel('Mean Abs Error')
-    plt.plot(hist['epoch'], hist['mean_absolute_error'], label='Train Error')
-    plt.plot(hist['epoch'], hist['val_mean_absolute_error'], label='Val Error')
+    plt.plot(hist['epoch'], hist['mae'], label='Train Error')
+    plt.plot(hist['epoch'], hist['val_mae'], label='Val Error')
     plt.legend()
     
     plt.subplot(2, 1, 2)
     plt.xlabel('Epoch')
     plt.ylabel('Mean Square Error')
-    plt.plot(hist['epoch'], hist['mean_squared_error'], label='Train Error')
-    plt.plot(hist['epoch'], hist['val_mean_squared_error'], label='Val Error')
+    plt.plot(hist['epoch'], hist['mse'], label='Train Error')
+    plt.plot(hist['epoch'], hist['val_mse'], label='Val Error')
     plt.legend()
     plt.show()
 
@@ -212,16 +224,18 @@ plot_history(history)
 plt.close()
 
 # 모델 평가
-loss, mae, mse = model.evaluate(st_test_data, test_labels)
+loss, mae, mse = model.evaluate(test_dataset, test_labels)
 print(f'test dataset으로 평가  mae : {mae:5.3f}')
 print(f'test dataset으로 평가  mse : {mse:5.3f}')
 print(f'test dataset으로 평가  loss : {loss:5.3f}')
 
 # 예측 : 주의 - 새로운 데이터로 예측을 원한다면 표준화 작업을 선행
-test_pred = model.predict(st_test_data).flatten()  # 차원 떨어뜨려
+test_pred = model.predict(test_dataset)  # 차원 떨어뜨려
 print(f'예측값: {test_pred}')
 print(f'실제값: {test_labels}')
 
+new_x = model.predict([[1954]])
+print("새값 : ",new_x)
 # 설명력
 from sklearn.metrics import r2_score
 print('r2_score:', r2_score(test_labels, test_pred))
@@ -238,3 +252,4 @@ plt.hist(err, bins=20)
 plt.xlabel('pred error')
 plt.show()
 plt.show()
+'''
