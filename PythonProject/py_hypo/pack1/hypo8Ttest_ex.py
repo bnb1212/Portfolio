@@ -84,6 +84,7 @@ df = pd.read_sql(sql, conn)
 # print(df)
 
 chongmu = df[df['buser_name'] == '총무부']
+print(chongmu)
 youngup = df[df['buser_name'] == '영업부']
 # print(type(chongmu))
 
