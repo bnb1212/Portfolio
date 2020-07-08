@@ -50,6 +50,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\work\Portfolio\Javaproject"/>
 			<item value="C:\work\jsou\KIC_SpringProJect"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

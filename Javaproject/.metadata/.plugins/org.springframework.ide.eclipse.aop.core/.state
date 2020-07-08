@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="KIC_SpringProject">
-<aspect-definition advice-class-name="pack.aspect.MemberLoginAspect" advice-method-name="aopProcess(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="40" aspect-name="memberLoginAspect" aspect-start-line-number="40" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/KIC_SpringProject/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" pointcut-expression="execution(* searchProcess(..))" proxy-target-class="false">
-<aop-reference advice-type="AROUND" bean="1:BeansModel|2:KIC_SpringProject|3:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml|7:beans:beans:11|8:cashController:11" bean-file="/KIC_SpringProject/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" bean-start-line="11" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/KIC_SpringProject/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" source="=KIC_SpringProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;pack.aspect{MemberLoginAspect.java[MemberLoginAspect~aopProcess~QProceedingJoinPoint;" source-start-line="21" target="=KIC_SpringProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;pack.controller{CashController.java[CashController~searchProcess~QHttpServletRequest;~QHttpServletResponse;~QString;" target-start-line="30"/>
-</aspect-definition>
-</aop-project>
+<aop-project name="spr_appli_simple"/>
+<aop-project name="sprWeb12_db_jdbcdaosupport"/>
+<aop-project name="sprWeb13_db_mybatis_anno"/>
+<aop-project name="sprWeb7_para_get"/>
+<aop-project name="sprWeb13_db_mybatis"/>
+<aop-project name="sprWeb20_aop_login"/>
+<aop-project name="spr_appli_jdbc_ex"/>
+<aop-project name="spr_appli_jdbc2_mybatis"/>
+<aop-project name="sprWeb1"/>
+<aop-project name="sprWeb21"/>
+<aop-project name="sprWeb10_springtag"/>
+<aop-project name="sprWeb18_ex"/>
+<aop-project name="spr_appli_di_anno"/>
+<aop-project name="spr_appli_jdbc1"/>
+<aop-project name="spr_appli_maven"/>
+<aop-project name="sprWebTest"/>
+<aop-project name="sprWeb15_mini_board"/>
+<aop-project name="sprWeb14_mybatis_crud_anno"/>
+<aop-project name="sprWeb11_db_legacy"/>
+<aop-project name="sprWeb13_ex"/>
+<aop-project name="sprWeb9_params"/>
+<aop-project name="sprWeb5share"/>
+<aop-project name="sprWeb14_mybatis_crud"/>
+<aop-project name="sprWeb19_aop"/>
+<aop-project name="sprWeb18_ajax_db"/>
+<aop-project name="sprWeb16_xml"/>
+<aop-project name="sprWeb17_json"/>
+<aop-project name="spr_appli_di"/>
+<aop-project name="spr_appli_aop1"/>
+<aop-project name="sprWeb8_para_post"/>
+<aop-project name="spr_sppli_di_arrange"/>
 </aop-reference-model>

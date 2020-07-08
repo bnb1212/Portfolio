@@ -2,14 +2,15 @@
 <section name="Workbench">
 	<item key="CommitDialog.showUntracked" value="true"/>
 	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/bnb1212/TeamProject_Django.git"/>
 		<item value="https://github.com/bnb1212/KIC_SpringProJect.git"/>
 		<item value="file:///C:\work\jsou\KIC_SpringProJect"/>
 		<item value="https://github.com/bnb1212/r_study.git"/>
 		<item value="https://github.com/bnb1212/Portfolio.git"/>
 	</list>
 	<list key="EGit.KnownHosts">
-		<item value="bitbucket.org"/>
 		<item value="git.eclipse.org"/>
+		<item value="bitbucket.org"/>
 		<item value="github.com"/>
 	</list>
 	<list key="CommitDialog.authorValues">
@@ -40,6 +41,9 @@
 			<item value="f4cf1084275f1cfa03d2b7297b0393845bc9ac62"/>
 			<item value="0"/>
 			<item value="false"/>
+		</list>
+		<list key="C:\work\TeamProject_Django\.git">
+			<item value="empty"/>
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">

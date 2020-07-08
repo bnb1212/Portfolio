@@ -1,6 +1,6 @@
-GitRepositoriesView.GitDirectories=C\:\\work\\Portfolio\\.git;C\:\\work\\jsou\\KIC_SpringProJect\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\work\\Portfolio\\.git;C\:\\work\\jsou\\KIC_SpringProJect\\.git;
+GitRepositoriesView.GitDirectories=C\:\\work\\TeamProject_Django\\.git;C\:\\work\\Portfolio\\.git;C\:\\work\\KIC_SpringProJect\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\work\\TeamProject_Django\\.git;C\:\\work\\Portfolio\\.git;C\:\\work\\KIC_SpringProJect\\.git;
 RepositoryGroups.uuids=
-RepositorySearchDialogSearchPath=C\:\\work\\Portfolio\\Javaproject\\KIC_SpringProject
+RepositorySearchDialogSearchPath=C\:\\work\\TeamProject_Django
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
