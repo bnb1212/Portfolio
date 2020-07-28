@@ -113,22 +113,22 @@ data_1 = data.iloc[:, :2]
 # data_1 = data_1.astype(float)
 print(data_1)
 print(data_1.corr())
-
+'''
 # 정규성 검사 (표준화를 위하여)
 mdl = sm.ols(formula='합계발생~기간', data=data_1)
 
 resid = mdl.fit().resid
 
 print(stats.shapiro(resid))
-
 '''
+
 # 정규화 : 0 ~ 1 사이로 scaling ( DataFrame to ndarray) 
-scaler = MinMaxScaler(feature_range=(0, 1))
-scaler = MinMaxScaler()
-nor_data_1 = scaler.fit_transform(data_1)
+# scaler = MinMaxScaler(feature_range=(0, 1))
+# scaler = MinMaxScaler()
+# nor_data_1 = scaler.fit_transform(data_1)
 
 # 정규화된 ndarray를 다시 데이터 프레임으로 변환
-nor_data_1 = pd.DataFrame(data_1, columns=["기간","합계발생"])
+# nor_data_1 = pd.DataFrame(data_1, columns=["기간","합계발생"])
 
 # feature & label 설정
 x_data = data_1.loc[:,'기간']
@@ -251,5 +251,3 @@ err = test_pred
 plt.hist(err, bins=20)
 plt.xlabel('pred error')
 plt.show()
-plt.show()
-'''
